@@ -1,0 +1,272 @@
+tools:
+  - id: semgrep
+    name: Semgrep
+    type: github
+    repo: semgrep/semgrep
+    homepage: https://semgrep.dev
+    features_url: https://semgrep.dev/docs/
+    license: LGPL-2.1
+    pricing: Free / Paid
+    description: "Fast, lightweight, multi-language static analysis tool for finding bugs and enforcing code standards."
+    description_ja: "バグの発見とコード標準の強制に使用する、高速・軽量・多言語対応の静的解析ツール。"
+    features:
+      multi_language: true
+      dataflow_taint: true
+      ide_plugin: true
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: true
+      api_server: false
+      dashboard: true
+      centralized_management: true
+      sarif_output: true
+      auto_fix: false
+      iac: true
+    unique_features:
+      - "YAML-based custom rule writing with large community rule registry"
+      - "Taint analysis / dataflow tracking across function boundaries"
+      - "Supports 30+ languages"
+      - "Semgrep Cloud Platform for team management and triage"
+    unique_features_ja:
+      - "大規模なコミュニティルールレジストリを持つYAMLベースのカスタムルール記述"
+      - "関数境界をまたいだテイント解析・データフロー追跡"
+      - "30以上の言語をサポート"
+      - "チーム管理・トリアージ用のSemgrep Cloud Platform"
+
+  - id: codeql
+    name: CodeQL
+    type: github
+    repo: github/codeql-action
+    homepage: https://codeql.github.com
+    features_url: https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql
+    license: MIT
+    pricing: Free (public repos) / GitHub Advanced Security
+    description: "Semantic code analysis engine by GitHub, deeply integrated with GitHub Actions and the GitHub Security tab."
+    description_ja: "GitHubによるセマンティックコード解析エンジン。GitHub ActionsおよびGitHub Securityタブと深く統合。"
+    features:
+      multi_language: true
+      dataflow_taint: true
+      ide_plugin: true
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: true
+      api_server: false
+      dashboard: true
+      centralized_management: true
+      sarif_output: true
+      auto_fix: true
+      iac: false
+    unique_features:
+      - "Semantic code analysis with the CodeQL query language (QL)"
+      - "GitHub-native integration with Security tab and Dependabot"
+      - "Copilot Autofix for AI-powered vulnerability remediation"
+      - "Variant analysis for finding similar issues across many repos"
+    unique_features_ja:
+      - "CodeQLクエリ言語（QL）によるセマンティックコード解析"
+      - "GitHub Securityタブ・DependabotとのネイティブGitHub統合"
+      - "AI活用の脆弱性修正提案（Copilot Autofix）"
+      - "多数のリポジトリにまたがる類似問題の検出（バリアント解析）"
+
+  - id: sonarqube
+    name: SonarQube
+    type: github
+    repo: SonarSource/sonarqube
+    homepage: https://www.sonarsource.com/products/sonarqube/
+    features_url: https://docs.sonarsource.com/sonarqube-server/latest/
+    license: LGPL-3.0
+    pricing: Free / Paid
+    description: "Widely-used continuous code quality and security platform supporting 30+ languages."
+    description_ja: "30以上の言語に対応する、広く使われているコード品質・セキュリティ継続改善プラットフォーム。"
+    features:
+      multi_language: true
+      dataflow_taint: true
+      ide_plugin: true
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: true
+      api_server: true
+      dashboard: true
+      centralized_management: true
+      sarif_output: true
+      auto_fix: true
+      iac: true
+    unique_features:
+      - "Quality gate enforcement for CI/CD pipelines"
+      - "SonarLint IDE plugin for real-time feedback"
+      - "SonarCloud as SaaS counterpart"
+      - "Broad language support (30+ including Java, JS, Python, C#, C++)"
+    unique_features_ja:
+      - "CI/CDパイプラインのためのクオリティゲートの強制"
+      - "リアルタイムフィードバックのためのSonarLint IDEプラグイン"
+      - "SaaSとしてのSonarCloud"
+      - "幅広い言語サポート（Java・JS・Python・C#・C++等30以上）"
+
+  - id: bandit
+    name: Bandit
+    type: github
+    repo: PyCQA/bandit
+    homepage: https://bandit.readthedocs.io
+    features_url: https://bandit.readthedocs.io/en/latest/
+    license: Apache-2.0
+    pricing: Free
+    description: "Security linter for Python code, designed to find common security issues in Python programs."
+    description_ja: "Pythonプログラムの一般的なセキュリティ問題を検出するためのPythonコードセキュリティリンター。"
+    features:
+      multi_language: false
+      dataflow_taint: false
+      ide_plugin: false
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: false
+      api_server: false
+      dashboard: false
+      centralized_management: false
+      sarif_output: true
+      auto_fix: false
+      iac: false
+    unique_features:
+      - "Python-specific security checks (AST-based analysis)"
+      - "Plugin-based extensible rule system"
+      - "Multiple output formats (JSON, XML, CSV, SARIF)"
+      - "Part of PyCQA (Python Code Quality Authority)"
+    unique_features_ja:
+      - "Python特化のセキュリティチェック（ASTベース解析）"
+      - "プラグインベースの拡張可能なルールシステム"
+      - "複数の出力形式（JSON・XML・CSV・SARIF）"
+      - "PyCQA（Python Code Quality Authority）の一部"
+
+  - id: brakeman
+    name: Brakeman
+    type: github
+    repo: presidentbeef/brakeman
+    homepage: https://brakemanscanner.org
+    features_url: https://brakemanscanner.org/docs/
+    license: MIT
+    pricing: Free
+    description: "Static analysis security vulnerability scanner for Ruby on Rails applications."
+    description_ja: "Ruby on Railsアプリケーション向けの静的解析セキュリティ脆弱性スキャナー。"
+    features:
+      multi_language: false
+      dataflow_taint: true
+      ide_plugin: false
+      ci_cd_plugin: true
+      custom_rules: false
+      saas: false
+      api_server: false
+      dashboard: false
+      centralized_management: false
+      sarif_output: true
+      auto_fix: false
+      iac: false
+    unique_features:
+      - "Rails-specific vulnerability detection (SQL injection, XSS, CSRF, etc.)"
+      - "Dataflow and taint tracking within Rails applications"
+      - "Low false positive rate tuned for Rails patterns"
+      - "Confidence levels attached to each finding"
+    unique_features_ja:
+      - "Rails特有の脆弱性検出（SQLインジェクション・XSS・CSRF等）"
+      - "Railsアプリケーション内のデータフローとテイント追跡"
+      - "Railsパターンに最適化された低い誤検知率"
+      - "各検出結果への信頼度レベル付与"
+
+  - id: gosec
+    name: gosec
+    type: github
+    repo: securego/gosec
+    homepage: https://github.com/securego/gosec
+    features_url: https://github.com/securego/gosec#available-rules
+    license: Apache-2.0
+    pricing: Free
+    description: "Security checker for Go source code that inspects the AST and SSA for security problems."
+    description_ja: "セキュリティ問題のためにGoソースコードのASTとSSAを検査するセキュリティチェッカー。"
+    features:
+      multi_language: false
+      dataflow_taint: false
+      ide_plugin: false
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: false
+      api_server: false
+      dashboard: false
+      centralized_management: false
+      sarif_output: true
+      auto_fix: false
+      iac: false
+    unique_features:
+      - "Go-specific security rules (AST and SSA based)"
+      - "Rule filtering and per-issue suppression support"
+      - "Multiple output formats (JSON, XML, SARIF, text)"
+      - "golangci-lint integration"
+    unique_features_ja:
+      - "Go特化のセキュリティルール（ASTおよびSSAベース）"
+      - "ルールフィルタリングと問題単位の抑制サポート"
+      - "複数の出力形式（JSON・XML・SARIF・テキスト）"
+      - "golangci-lintとの統合"
+
+  - id: pmd
+    name: PMD
+    type: github
+    repo: pmd/pmd
+    homepage: https://pmd.github.io
+    features_url: https://docs.pmd-code.org/latest/
+    license: BSD-style
+    pricing: Free
+    description: "Multi-language static source code analyzer with focus on Java and build tool plugin support."
+    description_ja: "Javaを中心とした多言語対応の静的ソースコード解析ツール。ビルドツールプラグイン対応。"
+    features:
+      multi_language: true
+      dataflow_taint: false
+      ide_plugin: true
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: false
+      api_server: false
+      dashboard: false
+      centralized_management: false
+      sarif_output: false
+      auto_fix: false
+      iac: false
+    unique_features:
+      - "Maven, Gradle, and Ant build tool plugins"
+      - "Copy-Paste Detector (CPD) for duplicate code detection"
+      - "Supports Java, JavaScript, Apex, PL/SQL, Kotlin, and more"
+      - "Designer GUI tool for custom rule development"
+    unique_features_ja:
+      - "Maven・Gradle・Antのビルドツールプラグインを提供"
+      - "コードの重複検出（CPD）機能"
+      - "Java・JavaScript・Apex・PL/SQL・Kotlin等多言語対応"
+      - "カスタムルール開発用のDesigner GUIツール"
+
+  - id: spotbugs
+    name: SpotBugs
+    type: github
+    repo: spotbugs/spotbugs
+    homepage: https://spotbugs.github.io
+    features_url: https://spotbugs.readthedocs.io/en/latest/
+    license: LGPL-3.0
+    pricing: Free
+    description: "Static analysis tool that finds potential bugs in Java programs by analyzing bytecode."
+    description_ja: "バイトコードを解析してJavaプログラムの潜在的なバグを発見する静的解析ツール。"
+    features:
+      multi_language: false
+      dataflow_taint: false
+      ide_plugin: true
+      ci_cd_plugin: true
+      custom_rules: true
+      saas: false
+      api_server: false
+      dashboard: false
+      centralized_management: false
+      sarif_output: false
+      auto_fix: false
+      iac: false
+    unique_features:
+      - "Java bytecode analysis (works without source code)"
+      - "Eclipse and IntelliJ IDEA IDE plugins"
+      - "Find Security Bugs plugin for security-focused analysis"
+      - "Successor to FindBugs with active maintenance"
+    unique_features_ja:
+      - "Javaバイトコード解析（ソースコードなしで動作）"
+      - "EclipseとIntelliJ IDEAのIDEプラグイン"
+      - "セキュリティ解析のためのFind Security Bugsプラグイン"
+      - "FindBugsの後継としてアクティブにメンテナンス"
