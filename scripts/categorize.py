@@ -3,10 +3,12 @@ from scripts.models import Category
 
 # キーワードパターン（優先度順: security > pricing > bugfix > announcement > feature）
 # "security" 単体はイベント名等と区別するため、文脈が必要
+# 日本語の「セキュリティ」も同様に修正・パッチ等の文脈が必要
 _SECURITY_PATTERNS = [
-    r"(?i)(cve-\d{4}-\d+|hotfix|hot.?fix|critical|vulnerability|脆弱性|セキュリティ)",
+    r"(?i)(cve-\d{4}-\d+|hotfix|hot.?fix|critical|vulnerability|脆弱性)",
     r"(?i)\[重要\]",
     r"(?i)security.{0,30}(fix|patch|vulnerab|advisory|update|alert|bug)",
+    r"(?i)セキュリティ.{0,30}(fix|patch|修正|パッチ|脆弱性|advisory|アドバイザリ|アップデート|update|alert)",
 ]
 _PRICING_PATTERNS = [
     r"(?i)(pricing|price change|料金|価格|プラン変更)",

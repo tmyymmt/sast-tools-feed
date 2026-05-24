@@ -39,3 +39,20 @@ def test_empty_inputs_return_other():
 
 def test_security_takes_priority_over_bugfix():
     assert classify_release("security bugfix", "fix CVE-2024-0001", "github") == "security"
+
+
+def test_security_japanese_with_context():
+    """セキュリティ + 修正コンテキストはsecurityに分類される。"""
+    assert classify_release("セキュリティ修正のお知らせ", "", "github") == "security"
+
+
+def test_security_japanese_event_name_not_classified_as_security():
+    """セキュリティ単独のイベント名はsecurityに分類されない。"""
+    result = classify_release("セキュリティ Days 2024 出展のお知らせ", "", "scrape_saas")
+    assert result == "announcement"
+
+
+def test_security_japanese_event_name_github_not_classified_as_security():
+    """セキュリティ単独のリリースタイトルはsecurityに分類されない(github)。"""
+    result = classify_release("セキュリティ Days 2024", "", "github")
+    assert result != "security"

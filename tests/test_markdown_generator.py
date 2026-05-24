@@ -177,3 +177,28 @@ def test_render_html_contains_dark_mode():
 def test_render_html_nav_links_to_sast_feed():
     result = render_html("T", "# Hello")
     assert "SAST Tools Feed" in result
+
+
+def test_render_html_escapes_title():
+    result = render_html("A & B <Test>", "# Hello")
+    assert "A &amp; B &lt;Test&gt;" in result
+    assert "<title>A & B <Test></title>" not in result
+
+
+def test_generate_tool_page_type_with_distribution_field():
+    """distributionフィールドが指定された場合、_tool_typeがそれを使う。"""
+    tool_hybrid = {**TOOL, "distribution": "hybrid"}
+    result = generate_tool_page(tool_hybrid, [])
+    assert "OSS / SaaS" in result
+
+
+def test_generate_tool_page_type_oss_from_distribution():
+    tool_oss = {**TOOL, "distribution": "oss"}
+    result = generate_tool_page(tool_oss, [])
+    assert "| Type | OSS |" in result
+
+
+def test_generate_tool_page_type_saas_fallback():
+    """distributionフィールドがない場合はsaasフラグにフォールバックする。"""
+    result = generate_tool_page(TOOL, [])
+    assert "| Type | SaaS |" in result

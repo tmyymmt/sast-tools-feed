@@ -62,6 +62,7 @@ Feeds are categorized by release type, also used for filtering:
 - `feature`: Feature additions and changes
 - `pricing`: Pricing changes
 - `security`: Security fixes and hotfixes
+  - Classification requires CVE identifiers, hotfix/critical keywords, the word "security" with context (fix/patch/vulnerability/advisory/update/alert/bug), or "脆弱性"/"セキュリティ" with equivalent context — standalone "セキュリティ" (e.g., event names) is not classified as security
 - `bugfix`: Bug fixes
 - `announcement`: Announcements, conference appearances, awards, etc.
 - `other`: Other
@@ -89,7 +90,10 @@ Feeds are categorized by release type, also used for filtering:
 
 - Endpoint: `https://api.github.com/repos/{owner}/{repo}/releases`
 - Available fields: `tag_name` (version), `published_at` (date), `body` (CHANGELOG), `html_url`
-- Rate limits: 60 req/hour unauthenticated, 5000 req/hour with token
+- Pagination: requests `per_page=100` and follows `Link: rel="next"` until exhausted
+- Rate limits: 60 req/hour unauthenticated, 5000 req/hour with token; HTTP 429 and HTTP 403 with `X-RateLimit-Remaining: 0` are both treated as rate-limit signals (skip run, keep existing data)
+- Draft releases (`draft: true`) are skipped; entries missing `tag_name` or `html_url` are also skipped
+- If `published_at` is null (pre-releases), `created_at` is used as fallback; entries with neither field are skipped
 - **Prefer API over scraping** (scraping breaks when HTML structure changes)
 
 ### Execution Model
@@ -106,6 +110,7 @@ Feeds are categorized by release type, also used for filtering:
   - Minimizes impact when upstream sources change
 - History is retained permanently and accumulates indefinitely (never deleted)
 - Target tools are managed in a configuration file (YAML, etc.) so new tools can be added without code changes
+- `merge_entries` deduplicates by URL across both existing and new entries (including duplicates within the new batch)
 
 ---
 
@@ -141,6 +146,7 @@ The tool list in `index.html` uses the same sort order as the Summary table: sum
 Each per-tool page (`{tool_id}.html` / `{tool_id}_ja.html`) contains:
 
 - Tool overview (title, description, type, license, homepage link)
+  - **Type** is derived from an optional top-level `distribution` field in tools.yml (`oss` → "OSS", `saas` → "SaaS", `hybrid` → "OSS / SaaS"); if absent, falls back to the `saas` feature flag
 - **Features table**: all 12 feature flags with ✅/❌ status:
   - Multi-Language Support, Dataflow/Taint Analysis, IDE Plugin, CI/CD Plugin, Custom Rules, SaaS/Cloud Version, API Server, Dashboard, Centralized Management, SARIF Output, Auto-Fix, IaC Scanning
 - Feature reference link to official documentation (`features_url` in tools.yml, fallback to `homepage`)
@@ -166,3 +172,5 @@ See [spec-nonfunctional.md](spec-nonfunctional.md) for details.
 - Prefer GitHub API over scraping; scraping is a last resort
 - Tolerate partial failures; keep updating other tools' feeds on failure
 - Use atomic writes to prevent publishing partially written files
+- HTML output escapes tool names, IDs, and page titles via `html.escape` to prevent invalid markup
+- The `feed-failure` GitHub label is created automatically if it does not exist before an alert issue is opened

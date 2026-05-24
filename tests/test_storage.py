@@ -95,3 +95,15 @@ def test_merge_entries_does_not_overwrite_existing_body():
     merged = merge_entries([existing], [new_different_body])
     assert len(merged) == 1
     assert merged[0].body == "## Changes\n- fix: something"
+
+
+def test_merge_entries_deduplicates_within_new():
+    """new リスト内で同一 URL が重複している場合、最初のものだけを追加する。"""
+    existing = [make_entry(url="https://example.com/v1.0", version="v1.0")]
+    new = [
+        make_entry(url="https://example.com/v2.0", version="v2.0"),
+        make_entry(url="https://example.com/v2.0", version="v2.0"),  # duplicate within new
+    ]
+    merged = merge_entries(existing, new)
+    assert len(merged) == 2
+    assert [e.url for e in merged].count("https://example.com/v2.0") == 1

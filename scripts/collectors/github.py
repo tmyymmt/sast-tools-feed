@@ -35,7 +35,10 @@ def collect_github_releases(
             logger.warning("Failed to fetch %s: %s", next_url, e)
             return []
 
-        if resp.status_code == 429:
+        if resp.status_code == 429 or (
+            resp.status_code == 403
+            and int(resp.headers.get("X-RateLimit-Remaining", "1")) == 0
+        ):
             logger.warning("Rate limited for %s, skipping this run", repo)
             return []
 
@@ -53,14 +56,23 @@ def collect_github_releases(
 
     entries = []
     for r in releases:
-        title = r.get("name") or r.get("tag_name", "")
+        if r.get("draft"):
+            continue
+        tag_name = r.get("tag_name")
+        html_url = r.get("html_url")
+        if not tag_name or not html_url:
+            continue
+        published_at = r.get("published_at") or r.get("created_at")
+        if not published_at:
+            continue
+        title = r.get("name") or tag_name
         body = r.get("body") or ""
         entry = ReleaseEntry(
             tool_id=tool_id,
             tool_name=tool_name,
-            version=r["tag_name"],
-            published_at=r["published_at"],
-            url=r["html_url"],
+            version=tag_name,
+            published_at=published_at,
+            url=html_url,
             summary=title,
             body=body,
             category=classify_release(title, body, "github"),

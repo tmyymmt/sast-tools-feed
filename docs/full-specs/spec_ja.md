@@ -62,6 +62,7 @@
 - `feature`：機能追加・変更
 - `pricing`：料金変更
 - `security`：セキュリティ修正・Hotfix
+  - CVE識別子、hotfix/criticalキーワード、"security"+文脈語（fix/patch/vulnerability等）、「脆弱性」、または「セキュリティ」+文脈語（修正/パッチ/脆弱性等）のいずれかが必要 — 「セキュリティ Days」等の単独使用はsecurityに分類されない
 - `bugfix`：バグ修正
 - `announcement`：告知・登壇・受賞等
 - `other`：その他
@@ -89,7 +90,10 @@
 
 - エンドポイント：`https://api.github.com/repos/{owner}/{repo}/releases`
 - 取得可能なフィールド：`tag_name`（バージョン）、`published_at`（日時）、`body`（CHANGELOG相当）、`html_url`
-- レート制限：未認証60req/時、トークンあり5000req/時
+- ページネーション：`per_page=100` でリクエストし、`Link: rel="next"` を辿って全ページを取得する
+- レート制限：未認証60req/時、トークンあり5000req/時；HTTP 429 および `X-RateLimit-Remaining: 0` を伴うHTTP 403 はどちらもレート制限シグナルとして扱い、今回の実行をスキップして既存データを保持する
+- ドラフトリリース（`draft: true`）はスキップする；`tag_name` または `html_url` が欠けているエントリもスキップする
+- `published_at` が null の場合（プレリリース等）は `created_at` をフォールバックとして使用する；どちらもない場合はスキップする
 - **APIを優先し、スクレイピングは最終手段とする**（HTML変更で壊れやすいため）
 
 ### 実行方式
@@ -106,6 +110,7 @@
   - ソース変更時の影響範囲を最小化できる
 - 履歴は永久に保持・蓄積する（削除しない）
 - 対象ツールはYAML等の設定ファイルで管理し、コード変更なしで追加できる構造にする
+- `merge_entries` はURL単位で重複排除する（既存エントリとの重複だけでなく、新規エントリ内部の重複も除去）
 
 ---
 
@@ -141,6 +146,7 @@ HTMLページは `prefers-color-scheme` メディアクエリでブラウザ・O
 ツール個別ページ（`{tool_id}.html` / `{tool_id}_ja.html`）には以下を含む。
 
 - ツール概要（タイトル・説明・種別・ライセンス・ホームページリンク）
+  - **種別**は tools.yml のオプションのトップレベルフィールド `distribution`（`oss` → "OSS"、`saas` → "SaaS"、`hybrid` → "OSS / SaaS"）から取得する；未設定の場合は `saas` 機能フラグにフォールバックする
 - **機能表**：12 項目の機能フラグを ✅/❌ で表示
   - 多言語サポート、データフロー/テイント解析、IDEプラグイン、CI/CDプラグイン、カスタムルール、SaaS/クラウド版、APIサーバー、ダッシュボード、集中管理、SARIF出力、自動修正、IaCスキャン
 - 機能一覧の情報源リンク（tools.yml の `features_url`、未設定時は `homepage` にフォールバック）
@@ -166,3 +172,5 @@ HTMLページは `prefers-color-scheme` メディアクエリでブラウザ・O
 - GitHub API を優先し、スクレイピングは最終手段とする
 - 障害時は部分失敗を許容し、他ツールのフィードは継続して更新する
 - アトミック書き込みにより中途半端なファイルを公開しない
+- HTML 出力ではツール名・ID・ページタイトルを `html.escape` でエスケープし、不正なマークアップを防ぐ
+- `feed-failure` GitHub ラベルは存在しない場合に自動作成してからアラート Issue を作成する

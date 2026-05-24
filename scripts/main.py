@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """SASTツールのリリース情報を収集してフィードを生成するメインスクリプト。"""
+import html as _html
 import logging
 import os
 import tempfile
@@ -103,11 +104,11 @@ def _generate_index_html(tools: list) -> bytes:
     """public/index.html の内容を生成する。"""
     tool_rows = "\n".join(
         f'    <tr>'
-        f'<td>{t["name"]}</td>'
-        f'<td><a href="feeds/{t["id"]}.rss">RSS</a></td>'
-        f'<td><a href="feeds/{t["id"]}.atom">Atom</a></td>'
-        f'<td><a href="feeds/{t["id"]}.json">JSON</a></td>'
-        f'<td><a href="{t["id"]}.html">EN</a> / <a href="{t["id"]}_ja.html">JA</a></td>'
+        f'<td>{_html.escape(t["name"])}</td>'
+        f'<td><a href="feeds/{_html.escape(t["id"])}.rss">RSS</a></td>'
+        f'<td><a href="feeds/{_html.escape(t["id"])}.atom">Atom</a></td>'
+        f'<td><a href="feeds/{_html.escape(t["id"])}.json">JSON</a></td>'
+        f'<td><a href="{_html.escape(t["id"])}.html">EN</a> / <a href="{_html.escape(t["id"])}_ja.html">JA</a></td>'
         f'</tr>'
         for t in _sort_tools_summary(tools)
     )

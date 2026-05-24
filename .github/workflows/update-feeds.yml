@@ -62,6 +62,24 @@ jobs:
         with:
           script: |
             const title = `Feed update failed on ${new Date().toISOString().split('T')[0]}`;
+            // Ensure the feed-failure label exists
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'feed-failure',
+              });
+            } catch (e) {
+              if (e.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: 'feed-failure',
+                  color: 'd73a4a',
+                  description: 'Feed update workflow failure',
+                });
+              }
+            }
             const existing = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,

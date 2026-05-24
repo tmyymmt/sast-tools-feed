@@ -9,6 +9,7 @@ MOCK_RELEASES = [
         "html_url": "https://github.com/semgrep/semgrep/releases/tag/v1.90.0",
         "name": "Semgrep v1.90.0",
         "body": "## Changes\n- feat: add new rule category",
+        "draft": False,
     },
     {
         "tag_name": "v1.89.0",
@@ -16,6 +17,7 @@ MOCK_RELEASES = [
         "html_url": "https://github.com/semgrep/semgrep/releases/tag/v1.89.0",
         "name": "Semgrep v1.89.0",
         "body": "## Bug Fixes\n- fix: false positive in taint analysis",
+        "draft": False,
     },
 ]
 
@@ -73,6 +75,131 @@ def test_collect_github_releases_returns_empty_on_rate_limit():
         github_token=None,
     )
     assert entries == []
+
+
+@responses.activate
+def test_collect_github_releases_returns_empty_on_403_rate_limit():
+    """HTTP 403 with X-RateLimit-Remaining: 0 should be treated as rate-limited."""
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/semgrep/semgrep/releases",
+        status=403,
+        headers={"X-RateLimit-Remaining": "0"},
+    )
+    entries = collect_github_releases(
+        tool_id="semgrep",
+        tool_name="Semgrep",
+        repo="semgrep/semgrep",
+        github_token=None,
+    )
+    assert entries == []
+
+
+@responses.activate
+def test_collect_github_releases_403_non_rate_limit_is_unexpected():
+    """HTTP 403 without rate-limit header should fall through to 'unexpected status'."""
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/semgrep/semgrep/releases",
+        status=403,
+        headers={"X-RateLimit-Remaining": "100"},
+    )
+    entries = collect_github_releases(
+        tool_id="semgrep",
+        tool_name="Semgrep",
+        repo="semgrep/semgrep",
+        github_token=None,
+    )
+    assert entries == []
+
+
+@responses.activate
+def test_collect_github_releases_skips_drafts():
+    """Draft releases should be excluded from the results."""
+    releases = [
+        {
+            "tag_name": "v2.0.0-draft",
+            "published_at": None,
+            "html_url": "https://github.com/semgrep/semgrep/releases/tag/v2.0.0-draft",
+            "name": "Draft release",
+            "body": "",
+            "draft": True,
+        },
+        *MOCK_RELEASES,
+    ]
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/semgrep/semgrep/releases",
+        json=releases,
+        status=200,
+    )
+    entries = collect_github_releases(
+        tool_id="semgrep",
+        tool_name="Semgrep",
+        repo="semgrep/semgrep",
+        github_token=None,
+    )
+    assert len(entries) == 2
+    assert all(e.version != "v2.0.0-draft" for e in entries)
+
+
+@responses.activate
+def test_collect_github_releases_falls_back_to_created_at_when_published_at_null():
+    """When published_at is null, created_at should be used instead."""
+    releases = [
+        {
+            "tag_name": "v1.91.0",
+            "published_at": None,
+            "created_at": "2024-02-01T00:00:00Z",
+            "html_url": "https://github.com/semgrep/semgrep/releases/tag/v1.91.0",
+            "name": "Pre-release",
+            "body": "",
+            "draft": False,
+        }
+    ]
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/semgrep/semgrep/releases",
+        json=releases,
+        status=200,
+    )
+    entries = collect_github_releases(
+        tool_id="semgrep",
+        tool_name="Semgrep",
+        repo="semgrep/semgrep",
+        github_token=None,
+    )
+    assert len(entries) == 1
+    assert entries[0].published_at == "2024-02-01T00:00:00Z"
+
+
+@responses.activate
+def test_collect_github_releases_skips_entries_with_missing_required_fields():
+    """Entries without tag_name or html_url should be skipped."""
+    releases = [
+        {
+            "tag_name": None,
+            "published_at": "2024-01-01T00:00:00Z",
+            "html_url": "https://github.com/semgrep/semgrep/releases/tag/v1.92.0",
+            "name": "Missing tag",
+            "body": "",
+            "draft": False,
+        },
+        *MOCK_RELEASES,
+    ]
+    responses.add(
+        responses.GET,
+        "https://api.github.com/repos/semgrep/semgrep/releases",
+        json=releases,
+        status=200,
+    )
+    entries = collect_github_releases(
+        tool_id="semgrep",
+        tool_name="Semgrep",
+        repo="semgrep/semgrep",
+        github_token=None,
+    )
+    assert len(entries) == 2
 
 
 @responses.activate
