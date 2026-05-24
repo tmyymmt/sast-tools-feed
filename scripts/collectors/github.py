@@ -24,25 +24,33 @@ def collect_github_releases(
     if github_token:
         headers["Authorization"] = f"Bearer {github_token}"
 
-    try:
-        resp = requests.get(url, headers=headers, timeout=30)
-    except requests.RequestException as e:
-        logger.warning("Failed to fetch %s: %s", url, e)
-        return []
+    releases = []
+    next_url = url
+    params = {"per_page": 100}
 
-    if resp.status_code == 429:
-        logger.warning("Rate limited for %s, skipping this run", repo)
-        return []
+    while next_url:
+        try:
+            resp = requests.get(next_url, headers=headers, params=params, timeout=30)
+        except requests.RequestException as e:
+            logger.warning("Failed to fetch %s: %s", next_url, e)
+            return []
 
-    if resp.status_code == 404:
-        logger.warning("Repository not found: %s", repo)
-        return []
+        if resp.status_code == 429:
+            logger.warning("Rate limited for %s, skipping this run", repo)
+            return []
 
-    if not resp.ok:
-        logger.warning("Unexpected status %d for %s", resp.status_code, repo)
-        return []
+        if resp.status_code == 404:
+            logger.warning("Repository not found: %s", repo)
+            return []
 
-    releases = resp.json()
+        if not resp.ok:
+            logger.warning("Unexpected status %d for %s", resp.status_code, repo)
+            return []
+
+        releases.extend(resp.json())
+        next_url = resp.links.get("next", {}).get("url")
+        params = None
+
     entries = []
     for r in releases:
         title = r.get("name") or r.get("tag_name", "")
