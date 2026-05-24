@@ -21,7 +21,7 @@
 | Rate limiting | On GitHub API 429, skip that run and retry on the next scheduled execution |
 | 404 / page gone | Log the error and preserve existing data as-is |
 | GitHub Actions alerts | Auto-create an Issue after N consecutive failures |
-| Feed validation | Validate generated RSS/Atom/JSON Feed by parsing and schema-checking before publishing |
+| Feed validation | Feed files are generated directly; no schema-validation gate is currently enforced before publishing |
 | Rollback | Data is stored in Git, so broken state can be reverted with `git revert` |
 
 ## License

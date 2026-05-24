@@ -107,3 +107,13 @@ def test_merge_entries_deduplicates_within_new():
     merged = merge_entries(existing, new)
     assert len(merged) == 2
     assert [e.url for e in merged].count("https://example.com/v2.0") == 1
+
+
+def test_merge_entries_deduplicates_existing_entries():
+    existing = [
+        make_entry(url="https://example.com/v1.0", version="v1.0"),
+        make_entry(url="https://example.com/v1.0", version="v1.0"),
+    ]
+    merged = merge_entries(existing, [])
+    assert len(merged) == 1
+    assert merged[0].url == "https://example.com/v1.0"

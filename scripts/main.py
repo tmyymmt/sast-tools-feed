@@ -5,7 +5,7 @@ import logging
 import os
 import tempfile
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import yaml
 
@@ -38,7 +38,7 @@ def load_tools_config() -> list:
         return yaml.safe_load(f)["tools"]
 
 
-def collect_tool(tool: dict, github_token: str) -> List[ReleaseEntry]:
+def collect_tool(tool: dict, github_token: Optional[str]) -> List[ReleaseEntry]:
     """ツール設定に応じたコレクターを呼び出す。エラー時は空リストを返す。"""
     tool_type = tool["type"]
     try:
@@ -71,7 +71,7 @@ def write_file_atomic(path: Path, content: bytes) -> None:
         raise
 
 
-def write_feeds(all_entries: List[ReleaseEntry]) -> None:
+def write_feeds(all_entries: List[ReleaseEntry], tools: Optional[list] = None) -> None:
     """全エントリおよびツール別のRSS/Atom/JSON Feedをアトミックに書き込む。"""
     FEEDS_DIR.mkdir(parents=True, exist_ok=True)
     base_url = FEED_BASE_URL
@@ -86,9 +86,13 @@ def write_feeds(all_entries: List[ReleaseEntry]) -> None:
 
     # ツール別フィード
     tool_ids = dict.fromkeys(e.tool_id for e in all_entries)  # 順序を保持
+    if tools:
+        for tool in tools:
+            tool_ids.setdefault(tool["id"], None)
+    tool_name_by_id = {tool["id"]: tool["name"] for tool in tools} if tools else {}
     for tool_id in tool_ids:
         tool_entries = [e for e in all_entries if e.tool_id == tool_id]
-        tool_name = tool_entries[0].tool_name if tool_entries else tool_id
+        tool_name = tool_entries[0].tool_name if tool_entries else tool_name_by_id.get(tool_id, tool_id)
         title = f"{FEED_TITLE} - {tool_name}"
         write_file_atomic(FEEDS_DIR / f"{tool_id}.rss", generate_rss(tool_entries, title, f"{base_url}/{tool_id}.rss"))
         write_file_atomic(FEEDS_DIR / f"{tool_id}.atom", generate_atom(tool_entries, title, f"{base_url}/{tool_id}.atom"))
@@ -228,7 +232,7 @@ def main() -> None:
     # 公開日時でソート（新しい順）
     all_entries.sort(key=lambda e: e.published_at, reverse=True)
 
-    write_feeds(all_entries)
+    write_feeds(all_entries, tools)
 
     # ページ表示用にツールを対応機能数降順・ツール名昇順でソート
     # saas はスキャン機能ではなく提供形態のフラグのため除外する

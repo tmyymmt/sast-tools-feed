@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from typing import Dict, List, Optional
 
 import markdown as _md_lib
+from bs4 import BeautifulSoup
 
 from scripts.models import ReleaseEntry
 
@@ -37,6 +38,7 @@ _HTML_STYLE = """
 def render_html(title: str, md_content: str, lang: str = "en") -> str:
     """MarkdownをHTMLページに変換する。"""
     body_html = _md_lib.markdown(md_content, extensions=["tables", "fenced_code"])
+    body_html = _sanitize_html_fragment(body_html)
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -50,6 +52,22 @@ def render_html(title: str, md_content: str, lang: str = "en") -> str:
 {body_html}
 </body>
 </html>"""
+
+
+def _sanitize_html_fragment(html_fragment: str) -> str:
+    soup = BeautifulSoup(html_fragment, "html.parser")
+    for tag in soup.find_all(["script", "style", "iframe", "object", "embed", "link", "meta"]):
+        tag.decompose()
+    for tag in soup.find_all(True):
+        for attr in list(tag.attrs.keys()):
+            value = tag.attrs.get(attr)
+            if attr.lower().startswith("on"):
+                del tag.attrs[attr]
+                continue
+            if attr.lower() in ("href", "src") and isinstance(value, str):
+                if value.strip().lower().startswith(("javascript:", "data:")):
+                    del tag.attrs[attr]
+    return str(soup)
 
 BOOL_MARK: Dict[bool, str] = {True: "✅", False: "❌"}
 
@@ -90,16 +108,17 @@ def _features_url(tool: dict) -> str:
 
 def generate_tool_page(tool: dict, entries: List[ReleaseEntry]) -> str:
     """ツールごとのまとめページ（英語）を生成する。"""
-    name = tool["name"]
+    name = _html.escape(tool["name"])
     latest = _latest_entry(entries)
     latest_version = latest.version if latest else "—"
     last_updated = latest.published_at[:10] if latest else "—"
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    description = _html.escape(tool.get("description", ""))
 
     lines = [
         f"# {name}",
         "",
-        f"> {tool.get('description', '')}",
+        f"> {description}",
         "",
         "## Overview",
         "",
@@ -162,12 +181,12 @@ def generate_tool_page(tool: dict, entries: List[ReleaseEntry]) -> str:
 
 def generate_tool_page_ja(tool: dict, entries: List[ReleaseEntry]) -> str:
     """ツールごとのまとめページ（日本語）を生成する。"""
-    name = tool["name"]
+    name = _html.escape(tool["name"])
     latest = _latest_entry(entries)
     latest_version = latest.version if latest else "—"
     last_updated = latest.published_at[:10] if latest else "—"
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    description = tool.get("description_ja", tool.get("description", ""))
+    description = _html.escape(tool.get("description_ja", tool.get("description", "")))
 
     lines = [
         f"# {name}",

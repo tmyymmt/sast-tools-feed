@@ -185,6 +185,12 @@ def test_render_html_escapes_title():
     assert "<title>A & B <Test></title>" not in result
 
 
+def test_render_html_sanitizes_script_and_js_url():
+    result = render_html("T", '<script>alert(1)</script><a href="javascript:alert(1)">x</a>')
+    assert "<script>" not in result
+    assert 'href="javascript:alert(1)"' not in result
+
+
 def test_generate_tool_page_type_with_distribution_field():
     """distributionフィールドが指定された場合、_tool_typeがそれを使う。"""
     tool_hybrid = {**TOOL, "distribution": "hybrid"}
@@ -202,3 +208,17 @@ def test_generate_tool_page_type_saas_fallback():
     """distributionフィールドがない場合はsaasフラグにフォールバックする。"""
     result = generate_tool_page(TOOL, [])
     assert "| Type | SaaS |" in result
+
+
+def test_generate_tool_page_escapes_tool_name_and_description():
+    tool = {**TOOL, "name": "A <B>", "description": "<img src=x onerror=1>"}
+    result = generate_tool_page(tool, [])
+    assert "# A &lt;B&gt;" in result
+    assert "> &lt;img src=x onerror=1&gt;" in result
+
+
+def test_generate_tool_page_ja_escapes_tool_name_and_description():
+    tool = {**TOOL, "name": "A <B>", "description_ja": "<script>alert(1)</script>"}
+    result = generate_tool_page_ja(tool, [])
+    assert "# A &lt;B&gt;" in result
+    assert "> &lt;script&gt;alert(1)&lt;/script&gt;" in result

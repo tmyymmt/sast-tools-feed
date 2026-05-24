@@ -110,7 +110,7 @@ Feeds are categorized by release type, also used for filtering:
   - Minimizes impact when upstream sources change
 - History is retained permanently and accumulates indefinitely (never deleted)
 - Target tools are managed in a configuration file (YAML, etc.) so new tools can be added without code changes
-- `merge_entries` deduplicates by URL across both existing and new entries (including duplicates within the new batch)
+- `merge_entries` deduplicates by URL across both existing and new entries (including pre-existing duplicates and duplicates within the new batch)
 
 ---
 
@@ -131,7 +131,7 @@ https://tmyymmt.github.io/sast-tools-feed/
 | Path | Content |
 |---|---|
 | `feeds/all.{rss,atom,json}` | Combined feed for all tools |
-| `feeds/{tool_id}.{rss,atom,json}` | Per-tool feeds |
+| `feeds/{tool_id}.{rss,atom,json}` | Per-tool feeds (always generated for every configured tool, including empty feeds when no entries are available) |
 | `{tool_id}.html` / `{tool_id}_ja.html` | Per-tool summary pages (English/Japanese) |
 | `comparison.html` / `comparison_ja.html` | All-tools comparison pages (Summary table + Detailed Comparison table) |
 | `index.html` | Top page (feed list and links to comparison pages) |
@@ -173,4 +173,5 @@ See [spec-nonfunctional.md](spec-nonfunctional.md) for details.
 - Tolerate partial failures; keep updating other tools' feeds on failure
 - Use atomic writes to prevent publishing partially written files
 - HTML output escapes tool names, IDs, and page titles via `html.escape` to prevent invalid markup
+- Rendered Markdown HTML is sanitized before page output to strip potentially dangerous tags/attributes from raw HTML input
 - The `feed-failure` GitHub label is created automatically if it does not exist before an alert issue is opened

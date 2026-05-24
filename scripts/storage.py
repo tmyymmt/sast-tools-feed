@@ -46,5 +46,11 @@ def merge_entries(existing: List[ReleaseEntry], new: List[ReleaseEntry]) -> List
         if e.url not in existing_by_url and e.url not in seen_new_urls:
             truly_new.append(e)
             seen_new_urls.add(e.url)
-    updated_existing = [existing_by_url[e.url] for e in existing]
+    seen_existing_urls: set = set()
+    updated_existing = []
+    for e in existing:
+        if e.url in seen_existing_urls:
+            continue
+        updated_existing.append(existing_by_url[e.url])
+        seen_existing_urls.add(e.url)
     return truly_new + updated_existing
