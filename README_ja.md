@@ -1,7 +1,7 @@
-# sast-tools-feed
+# SAST Tools Feed
 静的コード解析ツールのリリース情報を集約し、ツールごとのまとめページや比較ページをHTMLで生成し、フィードとして公開するリポジトリです。
 
-## ツールカテゴリ
+## 対象ツールのカテゴリ
 
 本リポジトリは **SAST（Static Application Security Testing）ツール**（静的コード解析セキュリティツールとも呼ばれる）を対象とします。
 
@@ -10,7 +10,9 @@
 以下のカテゴリは**対象外**です。
 
 - **SCA（Software Composition Analysis）**：依存ライブラリ・パッケージの脆弱性を検出するツール（例：Trivy、Grype）
+  - https://github.com/tmyymmt/sca-tools-feed/
 - **DAST（Dynamic Application Security Testing）**：実行中のシステムにリクエストを送信して脆弱性を検出するツール（例：OWASP ZAP）
+  - https://github.com/tmyymmt/dast-tools-feed/
 
 ## 公開サイト
 
@@ -21,6 +23,25 @@ https://tmyymmt.github.io/sast-tools-feed/ を GitHub Pages として公開し�
 - 以下のいずれかの方法で、フィードファイルと HTML ページ（Markdownソースから生成）を更新します。
   - GitHub Actionsで週次自動実行（UTC 毎週金曜 22:00）
   - Issue を作成し、Copilot にPRを作成させ、レビュー完了後にmainへマージ
+
+## ツール一覧（ソート順）
+
+比較ページと本READMEのツール一覧は、以下の順序で並べます。
+
+1. 機能列のチェックマーク数が多い順
+2. 同数なら対応言語数が多い順
+3. さらに同数ならアルファベット順
+
+| ツール | チェックマーク数 | 対応言語数 |
+|---|---:|---:|
+| SonarQube | 12 | 12 |
+| Semgrep | 10 | 13 |
+| CodeQL | 10 | 11 |
+| PMD | 4 | 6 |
+| Bandit | 3 | 1 |
+| Brakeman | 3 | 1 |
+| gosec | 3 | 1 |
+| SpotBugs | 3 | 1 |
 
 ## ファイル構成
 

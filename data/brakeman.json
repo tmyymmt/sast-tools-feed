@@ -1,0 +1,1552 @@
+[
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v8.0.3",
+    "published_at": "2026-02-26T21:26:38Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.3",
+    "summary": "8.0.3",
+    "body": "* Add release age option for `--ensure-latest` ([#1989](https://github.com/presidentbeef/brakeman/issues/1989))\r\n* Fix `polymorphic_name` SQLi false positive ([Fredrico Franco](https://github.com/FFederi))\r\n* Fix logger behavior when loading config files ([#2009](https://github.com/presidentbeef/brakeman/issues/2009))\r\n* Handle application names with module prefixes ([#2011](https://github.com/presidentbeef/brakeman/issues/2011))",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v8.0.2",
+    "published_at": "2026-02-03T20:13:16Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.2",
+    "summary": "8.0.2",
+    "body": "* Reline console control should use `stderr`\r\n* Fix logger cleanup based method ([Imran Iqbal](https://github.com/imran-iq))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v8.0.1",
+    "published_at": "2026-01-30T00:10:19Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.1",
+    "summary": "8.0.1",
+    "body": "- Fix for disappearing cursor when no warnings are reported",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v8.0.0",
+    "published_at": "2026-01-29T20:15:07Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.0",
+    "summary": "8.0.0",
+    "body": "- Complete revamp of scan progress output and logging\r\n- `--skip-libs` removed ([#1839](https://github.com/presidentbeef/brakeman/issues/1839)\r\n- `--index-libs` removed\r\n- Fix qualified constant lookup to respect module/class context ([Mike Dalessio](https://github.com/flavorjones))\r\n- Fix singleton method prefixes ([viralpraxis](https://github.com/viralpraxis))\r\n- Faster file globbing for templates ([Mikael Henriksson](https://github.com/mhenrixon))\r\n- No longer produce weak dynamic render path warnings\r\n- Replace Erubis with Erubi ([#1970](https://github.com/presidentbeef/brakeman/issues/1970))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.1.2",
+    "published_at": "2026-01-27T07:16:03Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.1.2",
+    "summary": "7.1.2",
+    "body": "**This was released on December 25, 2025**\r\n\r\n- Update `ruby_parser` to remove max version restriction ([Chedli Bourguiba](https://github.com/chaadow))\r\n- Increase minimum Ruby version to 3.2.0\r\n- Reduce SQL injection false positives from `count` (and other) calls ([#1936](https://github.com/presidentbeef/brakeman/pull/1936))\r\n- Remove more XSS false positives related to Haml attribute builder\r\n- Update Minitest version to 6.0",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.1.1",
+    "published_at": "2025-11-04T00:33:56Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.1.1",
+    "summary": "7.1.1",
+    "body": "- Exclude directories before searching for files ([#1925](https://github.com/presidentbeef/brakeman/issues/1925))\r\n- Check for unsafe SQL when two arguments are passed to AR methods ([Patrick Brinich-Langlois](https://github.com/patbl))\r\n- Fix SQL injection check for `calculate` method ([Rohan Sharma](https://github.com/rsharma-figma))\r\n- Check each side of `or` SQL arguments ([#1935](https://github.com/presidentbeef/brakeman/issues/1935))\r\n- Consider `Tempfile.create.path` as safe input ([Ali Ismayilov](https://github.com/aliismayilov))\r\n- Fix false positive when calling `with_content` on ViewComponents ([Peer Allan](https://github.com/peerkleio))\r\n- Add `FilePath#to_path` for Ruby 3.5 compatibility ([S.H.](https://github.com/S-H-GAMELINKS))\r\n- Ignore attribute builder in Haml 6 ([#1952](https://github.com/presidentbeef/brakeman/issues/1952))\r\n- Word wrap text report output in pager\r\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.1.0",
+    "published_at": "2025-07-18T21:24:41Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.1.0",
+    "summary": "7.1.0",
+    "body": "* Add Haml 6.x support ([#1914](https://github.com/presidentbeef/brakeman/issues/1914), [#1841](https://github.com/presidentbeef/brakeman/issues/1841), etc.)\r\n* Support render model shortcut ([#959](https://github.com/presidentbeef/brakeman/issues/959), [#1940](https://github.com/presidentbeef/brakeman/issues/1940), etc.)\r\n* Add `--ensure-no-obsolete-config-entries` option ([viralpraxis](https://github.com/viralpraxis))\r\n* Update JUnit report for CircleCI (Philippe Bernery)\r\n* Improve ignored warnings layout in HTML report ([Sebastien Savater](https://github.com/inkstak))\r\n* Only load escape functionality from cgi library (Earlopain)\r\n* Add EOL dates for Rails 8.0 and Ruby 3.4\r\n* Use lazy file lists for AppTree",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.0.2",
+    "published_at": "2025-04-04T17:29:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.0.2",
+    "summary": "7.0.2",
+    "body": "* Fix error with empty `BUNDLE_GEMFILE` env variable",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.0.1",
+    "published_at": "2025-04-04T17:28:33Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.0.1",
+    "summary": "7.0.1",
+    "body": "* Avoid warning on evaluation of plain strings ([#1919](https://github.com/presidentbeef/brakeman/issues/1919))\r\n* Enable use of custom/alternative Gemfiles ([#1840](https://github.com/presidentbeef/brakeman/issues/1840), [#1907](https://github.com/presidentbeef/brakeman/issues/1907))\r\n* Fix error on directory with `rb` extension ([viralpraxis](https://github.com/viralpraxis))\r\n* Support `terminal-table` 4.0 ([Chedli Bourguiba](https://github.com/viralpraxis))\r\n* Better support Prism 1.4.0 ([#1927](https://github.com/presidentbeef/brakeman/issues/1927))\r\n* Only output timing for each file when using `--debug`",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v7.0.0",
+    "published_at": "2024-12-31T06:05:34Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v7.0.0",
+    "summary": "7.0.0",
+    "body": "* Default to using Prism parser if available (disable with `--no-prism`)\r\n* Disable following symbolic links by default (re-enable with `--follow-symlinks`)\r\n* Remove updated entry in Brakeman ignore files ([Toby Hsieh](https://github.com/tobyhs))\r\n* Major changes to how rescanning works\r\n* Fix hardcoded globally excluded paths ([#1830](https://github.com/presidentbeef/brakeman/issues/1830))\r\n* Always warn about deserializing from `Marshal`\r\n* Update `eval` check to be a little noisier\r\n* Output `originalBaseUriIds` for SARIF format report ([#1889](https://github.com/presidentbeef/brakeman/issues/1889))\r\n* Add step (and timing) for finding files\r\n* Fix recursion when handling multiple assignment expressions ([#1877](https://github.com/presidentbeef/brakeman/issues/1877))\r\n* Fix array/hash unknown index handling\r\n* Update `terminal-table` version\r\n* Add CSV library as explicit dependency for Ruby 3.4 support\r\n* Raise minimum Ruby version to 3.1",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.2.2",
+    "published_at": "2024-10-18T15:52:39Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.2.2",
+    "summary": "6.2.2",
+    "body": "* New end-of-support dates for Rails\r\n* Revamp command injection detection in `pipeline*` calls ([#1862](https://github.com/presidentbeef/brakeman/issues/1862))\r\n* Exclude more native gems from vendored gems in `brakeman` gem ([#1869](https://github.com/presidentbeef/brakeman/issues/1869))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.2.1",
+    "published_at": "2024-08-22T20:40:29Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.2.1",
+    "summary": "6.2.1",
+    "body": "* Add optional support for Prism parser (use `--prism`)\r\n* Handle parallel assignment with splats ([#1833](https://github.com/presidentbeef/brakeman/issues/1833))\r\n* Warn about unscoped finds with `find_by!` ([#1786](https://github.com/presidentbeef/brakeman/issues/1786))\r\n* Add initial Rails 8 support ([Ron Shinall](https://github.com/ron-shinall))\r\n* Add support for symbolic links ([Lu Zhu](https://github.com/lubert))\r\n* Support YAML aliases in secret configs ([Chedli Bourguiba](https://github.com/chaadow))\r\n* Add `--show-ignored` option ([Gabriel Arcangel Zayas](https://github.com/gazayas))\r\n* Treat `::X` and `X` the same, for now ([Jill Klang](https://github.com/that-jill))\r\n* Remediation advice for command injection [Nicholas Barone](https://github.com/rangerscience)\r\n* Fix compatibility with default frozen string literals ([Jean Boussier](https://github.com/casperisfine))\r\n* Fix Ruby warnings in test suite ([Jean Boussier](https://github.com/casperisfine))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.1.2",
+    "published_at": "2024-02-02T06:39:09Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.1.2",
+    "summary": "6.1.2",
+    "body": "* Avoid detecting Phlex components as dynamic render paths ([Máximo Mussini](https://github.com/ElMassimo))\r\n* Avoid detecting `ViewComponentContrib::Base` as dynamic render paths ([vividmuimui](https://github.com/vividmuimui))\r\n* Avoid copying Sexps that are too large ([#1818](https://github.com/presidentbeef/brakeman/issues/1818), [#1546](https://github.com/presidentbeef/brakeman/issues/1546))\r\n* Add EOL date for Ruby 3.3.0\r\n* Remove deprecated use of `Kernel#open(\"|...\")`\r\n* Remove `safe_yaml` gem dependency\r\n* Update Highline to 3.0 ([#1812](https://github.com/presidentbeef/brakeman/issues/1812))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.1.1",
+    "published_at": "2023-12-24T07:52:21Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.1.1",
+    "summary": "6.1.1",
+    "body": "* Handle racc as a default gem in Ruby 3.3.0",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.1.0",
+    "published_at": "2023-12-05T07:06:57Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.1.0",
+    "summary": "6.1.0",
+    "body": "* Add check for unfiltered search with Ransack\r\n* Add `--timing` to add timing duration for scan steps\r\n* Add `PG::Connection.escape_string` as a SQL sanitization method ([Joévin Soulenq](https://github.com/joevin-slq-docto))\r\n* Handle `class << self`\r\n* Fix class method lookup in parent classes\r\n* Fix keyword splats in filter arguments",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.0.0.1",
+    "published_at": "2023-05-25T16:11:32Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.0.0.1",
+    "summary": "6.0.0.1 - Docker only",
+    "body": "This release is to fix the Ruby version used in the Docker image.\r\n\r\nNo other changes.",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v6.0.0",
+    "published_at": "2023-05-25T16:09:50Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v6.0.0",
+    "summary": "6.0.0",
+    "body": "* Drop support for Ruby 1.8/1.9 syntax\r\n* Raise minimum Ruby version to 3.0\r\n* Add obsolete fingerprints to comparison report ([#1758](https://github.com/presidentbeef/brakeman/issues/1758))\r\n* Warn about missing CSRF protection when defaults are not loaded ([Chris Kruger](https://github.com/montdidier))\r\n* Fix false positive with `content_tag` in newer Rails ([#1778](https://github.com/presidentbeef/brakeman/issues/1778))\r\n* Scan directories that include the word `public`\r\n* Fix end-of-life dates for Ruby",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.4.1",
+    "published_at": "2023-02-21T17:33:50Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.4.1",
+    "summary": "5.4.1",
+    "body": "* Add Rails 6.1 and 7.0 default configuration values\r\n* Support Rails 7 redirect options\r\n* Add `redirect_back` and `redirect_back_or_to` to open redirect check\r\n* Revise checking for `request.env` to only consider request headers\r\n* Prevent redirects using `url_from` being marked as unsafe ([Lachlan Sylvester](https://github.com/lsylvester))\r\n* Warn about unscoped find for `find_by(id: ...)`\r\n* Support `presence`, `presence_in` and `in?` ([#1569](https://github.com/presidentbeef/brakeman/issues/1569))\r\n* Fix issue with `if` expressions in `when` clauses ([#1743](https://github.com/presidentbeef/brakeman/issues/1743))\r\n* Fix file/line location for EOL software warnings",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.4.0",
+    "published_at": "2022-11-18T06:34:34Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.4.0",
+    "summary": "5.4.0",
+    "body": "* Add check for weak RSA key sizes and padding modes ([#1736](https://github.com/presidentbeef/brakeman/issues/1736))\r\n* Add check for absolute paths issue with Pathname ([#1721](https://github.com/presidentbeef/brakeman/issues/1721))\r\n* Handle multiple values and splats in case/when ([#1730](https://github.com/presidentbeef/brakeman/issues/1730))\r\n* Ignore more model methods in redirects ([#1723](https://github.com/presidentbeef/brakeman/issues/1723))\r\n* Fix `load_rails_defaults` overwriting settings in the Rails application ([James Gregory-Monk](https://github.com/jamgregory))\r\n* Use relative paths for CodeClimate report format ([Mike Poage](https://github.com/RubyBrewsday))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.3.1",
+    "published_at": "2022-11-14T22:08:46Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.3.1",
+    "summary": "5.3.1",
+    "body": "* Fix version range for CVE-2022-32209",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.3.0",
+    "published_at": "2022-08-10T00:53:11Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.3.0",
+    "summary": "5.3.0",
+    "body": "* Add CWE information to warnings ([Stephen Aghaulor](https://github.com/saghaulor))\r\n* Include explicit engine or lib paths in `vendor/` ([Joe Rafaniello](https://github.com/jrafanie))\r\n* Add check for CVE-2022-32209\r\n* Load rexml as a Brakeman dependency\r\n* Fix \"full call\" information propagating unnecessarily",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.2.3",
+    "published_at": "2022-06-20T04:08:59Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.2.3",
+    "summary": "5.2.3",
+    "body": "* Fix error with hash shorthand syntax (#1700)\r\n* Match order of interactive options with help message (@roryokane)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.2.2",
+    "published_at": "2022-04-06T16:49:11Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.2.2",
+    "summary": "5.2.2",
+    "body": "* Respect equality in `if` conditions ([#1683](https://github.com/presidentbeef/brakeman/issues/1683))\r\n* Update message for unsafe reflection ([Pedro Baracho](https://github.com/pedropb))\r\n* Handle `nil` when joining values ([Dan Buettner](https://github.com/Capncavedan))\r\n* Add additional String methods for SQL injection check ([#1669](https://github.com/presidentbeef/brakeman/issues/1669))\r\n* Update `ruby_parser` for Ruby 3.1 support ([Merek Skubela](https://github.com/sqbell))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.2.1",
+    "published_at": "2022-01-30T19:24:50Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.2.1",
+    "summary": "5.2.1",
+    "body": "* Add warning codes for EOL software warnings (#1671)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.2.0",
+    "published_at": "2021-12-16T08:02:49Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.2.0",
+    "summary": "5.2.0",
+    "body": "* Initial Rails 7 support ([#1653](https://github.com/presidentbeef/brakeman/issues/1653))\r\n* Require Ruby 2.5.0+ ([#1649](https://github.com/presidentbeef/brakeman/issues/1649))\r\n* Fix issue with calls to `foo.root` in routes ([#1640](https://github.com/presidentbeef/brakeman/issues/1640))\r\n* Ignore `I18n.locale` in SQL queries ([#1597](https://github.com/presidentbeef/brakeman/issues/1597))\r\n* Do not treat `sanitize_sql_like` as safe\r\n* Add new checks for unsupported Ruby and Rails version\r\n* Bundled version of ruby_parser updated to 3.18.1",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.1.2",
+    "published_at": "2021-10-28T19:08:14Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.1.2",
+    "summary": "5.1.2",
+    "body": "* Updated `ruby_parser` ([Ryan Davis](https://www.zenspider.com/))\r\n* Fix issue where the previous output is still visible ([Jason Frey](https://github.com/Fryguy))\r\n* Handle cases where enums are not symbols ([#1627](https://github.com/presidentbeef/brakeman/issues/1627))\r\n* Support newer Haml with `::Haml::AttributeBuilder.build`\r\n* Fix sorting with `nil` line numbers",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.1.1",
+    "published_at": "2021-07-20T02:51:08Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.1.1",
+    "summary": "5.1.1",
+    "body": "* Unrefactor `IgnoreConfig`'s use of `Brakeman::FilePath`\r\n\r\n(Fixes bugs with `-I` and also relative paths for `-i`.)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.1.0",
+    "published_at": "2021-07-19T22:09:25Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.1.0",
+    "summary": "5.1.0",
+    "body": "* Report Formats\r\n  * Add GitHub Actions format ([Klaus Badelt](https://github.com/klausbadelt))\r\n  * Add ignored warnings to SARIF report ([Eli Block](https://github.com/eliblock))\r\n  * Fix SARIF report when checks have no description ([Eli Block](https://github.com/eliblock))\r\n  * Adjust copy of `--interactive` menu ([Elia Schito](https://github.com/elia))\r\n* Performance\r\n  * Read and parse files in parallel\r\n* Ruby Interpretation\r\n  * Initial support for ActiveRecord enums ([#1492](https://github.com/presidentbeef/brakeman/issues/1492))\r\n  * Interprocedural dataflow from very simple class methods\r\n  * Support `Array#fetch` and `Hash#fetch` ([#1571](https://github.com/presidentbeef/brakeman/issues/1571))\r\n  * Support `Array#push`\r\n  * Support `Array#*`\r\n  * Better `Array#join` support\r\n  * Support `Hash#values` and `Hash#values_at`\r\n  * Support `Hash#include?`\r\n* SQL Injection\r\n  * Update SQL injection check for Rails 6.0/6.1\r\n  * Add `--sql-safe-methods` option ([Esty Scheiner](https://github.com/escheiner))\r\n  * Ignore dates in SQL\r\n  * Ignore `sanitize_sql_like` in SQL ([#1571](https://github.com/presidentbeef/brakeman/issues/1571))\r\n  * Ignore method calls on numbers in SQL ([#1571](https://github.com/presidentbeef/brakeman/issues/1571))\r\n* Other Fixes\r\n  * Ignore renderables in dynamic render path check ([Brad Parker](https://github.com/bradparker))\r\n  * Fix false positive in command injection with `Open3.capture` ([Richard Fitzgerald](https://github.com/xulaus))\r\n  * Fix infinite loop on mixin self-includes ([Andrew Szczepanski](https://github.com/Skipants))\r\n  * Check for user-controlled evaluation even if it's a call target ([#1590](https://github.com/presidentbeef/brakeman/issues/1590))\r\n* Refactoring\r\n  * Refactor `cookie?`/`param?` methods ([Keenan Brock](https://github.com/kbrock))\r\n  * Better method definition tracking and lookup",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.0.4",
+    "published_at": "2021-06-16T17:14:07Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.0.4",
+    "summary": "5.0.4",
+    "body": "* Update bundled ruby_parser to include argument forwarding support (brakeman gem only)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.0.2",
+    "published_at": "2021-06-07T21:49:23Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.0.2",
+    "summary": "5.0.2",
+    "body": "* Fix Loofah version check",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.0.1",
+    "published_at": "2021-04-28T17:36:02Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.0.1",
+    "summary": "5.0.1",
+    "body": "* Support loading `slim/smart` ([#1570](https://github.com/presidentbeef/brakeman/issues/1570))\r\n* Set more line numbers on Sexps ([#1579](https://github.com/presidentbeef/brakeman/issues/1579))\r\n* Detect `::Rails.application.configure` too ([#1584](https://github.com/presidentbeef/brakeman/issues/1584))\r\n* Always ignore `slice`/`only` calls for mass assignment\r\n* Don't fail if $HOME/$USER are not defined\r\n* Convert splat array arguments to arguments\r\n* Bundle unreleased RubyParser changes",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.0.0",
+    "published_at": "2021-01-27T04:08:00Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.0.0",
+    "summary": "5.0.0",
+    "body": "* Scan (almost) all Ruby files in project\r\n* Revamp CSV report to a CSV list of warnings\r\n* Add Sonarqube report format ([Adam England](https://github.com/adamnengland))\r\n* Add check for (more) unsafe method reflection ([#1488](https://github.com/presidentbeef/brakeman/issues/1488), [#1507](https://github.com/presidentbeef/brakeman/issues/1507), and [#1508](https://github.com/presidentbeef/brakeman/issues/1508))\r\n* Add check for potential HTTP verb confusion ([#1432](https://github.com/presidentbeef/brakeman/issues/1432))\r\n* Add `--[no-]skip-vendor` option\r\n* Ignore `uuid` as a safe attribute\r\n* Ignore `Tempfile#path` in shell commands\r\n* Ignore development environment\r\n* Collapse `__send__` calls\r\n* Set Rails configuration defaults based on `load_defaults` version\r\n* Update Ruby requirement to version 2.4.0\r\n* Suggest using `--force` if no Rails application is detected",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.10.1",
+    "published_at": "2020-12-25T06:47:20Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.10.1",
+    "summary": "4.10.1",
+    "body": "* Declare REXML as a dependency (Ruby 3.0 compatibility)\r\n* Use `Sexp#sexp_body` instead of `Sexp#[..]` (Ruby 3.0 compatibility)\r\n* Prevent render loops when template names are absolute paths (#1536)\r\n* Ensure RubyParser is passed file path as a String (#1534)\r\n* Support new Haml 5.2.0 escaping method (#1517)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v5.0.0.pre1",
+    "published_at": "2020-11-18T05:37:35Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v5.0.0.pre1",
+    "summary": "5.0.0.pre1",
+    "body": "* Add check for (more) unsafe method reflection\r\n* Suggest using `--force` if no Rails application is detected\r\n* Add Sonarqube report format (Adam England)\r\n* Add check for potential HTTP verb confusion\r\n* Add `--[no-]skip-vendor` option\r\n* Scan (almost) all Ruby files in project\r\n* Add support for Haml 5.2.0",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.10.0",
+    "published_at": "2020-09-28T20:36:44Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.10.0",
+    "summary": "4.10.0",
+    "body": "* Add SARIF report format ([Steve Winton](https://github.com/swinton))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.9.1",
+    "published_at": "2020-09-04T19:44:29Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.9.1",
+    "summary": "4.9.1",
+    "body": "* Use version from `active_record` for non-Rails apps ([Ulysse Buonomo](https://github.com/BuonOmo))\r\n* Check `chomp`ed strings for SQL injection ([#1509](https://github.com/presidentbeef/brakeman/issues/1509))\r\n* Always set line number for joined arrays ([#1499](https://github.com/presidentbeef/brakeman/issues/1499))\r\n* Avoid warning about missing `attr_accessible` if `protected_attributes` gem is used ([#1512](https://github.com/presidentbeef/brakeman/issues/1512))\r\n* Bundle latest ruby_parser (4.15.0)",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.9.0",
+    "published_at": "2020-08-04T14:54:40Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.9.0",
+    "summary": "4.9.0",
+    "body": "* Add `--ensure-ignore-notes` ([Eli Block](https://github.com/eliblock))\r\n* Add check for user input in `ERB.new` ([Matt Hickman](https://github.com/mhickman))\r\n* Add check for CVE-2020-8166 ([Jamie Finnigan](https://github.com/chair6))\r\n* Always scan `environment.rb`\r\n* Avoid warning when `safe_yaml` is used via `YAML.load(..., safe: true)`\r\n* Do not warn about mass assignment with `params.permit!.slice`\r\n* Ignore `params.permit!` in path helpers\r\n* Treat `Dir.glob` as safe source of values in guards\r\n* Remove whitelist/blacklist language, add clarifications\r\n* Add \"full call\" information to call index results\r\n* Updated Slim dependency ([Jeremiah Church](https://github.com/JeremiahChurch))",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.8.2",
+    "published_at": "2020-05-12T23:47:49Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.8.2",
+    "summary": "4.8.2",
+    "body": "* Add `--text-fields` option\r\n* Add check for [CVE-2020-8159](ihttps://groups.google.com/d/msg/rubyonrails-security/CFRVkEytdP8/c5gmICECAgAJ)\r\n* Add check for escaping HTML entities in JSON configuration option\r\n* Fix `authenticate_or_request_with_http_basic` check for passed blocks ([Hugo Corbucci](https://github.com/hugocorbucci))",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.8.1",
+    "published_at": "2020-05-12T23:48:23Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.8.1",
+    "summary": "4.8.1",
+    "body": "* Warn about global(!) mass assignment\r\n* Check SQL query strings using `String#strip` or `String.squish` ([#1459](https://github.com/presidentbeef/brakeman/issues/1469))\r\n* Handle non-symbol keys in `locals` hash for `render` ([#1465](https://github.com/presidentbeef/brakeman/issues/1465))\r\n* Index calls in render arguments ([#1459](https://github.com/presidentbeef/brakeman/issues/1459))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.8.0",
+    "published_at": "2020-02-18T20:11:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.8.0",
+    "summary": "4.8.0",
+    "body": "* Add JUnit XML report format ([Naoki Kimurai](https://github.com/naokikimura))\r\n* Sort ignore files by fingerprint and line ([Ngan Pham](https://github.com/ngan))\r\n* Catch dangerous concatenation in `CheckExecute` ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* User-friendly message when ignore config file has invalid JSON ([D. Hicks](https://github.com/deevis))\r\n* Freeze call index results, fix thread-safety issue\r\n* Properly render confidence in Markdown report ([#1446](https://github.com/presidentbeef/brakeman/issues/1446))\r\n* Report old warnings as fixed if zero warnings reported\r\n* Initialize Rails version with `nil` ([Carsten Wirth](https://github.com/jethroo))\r\n* Fix output test when using newer Minitest",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.7.2",
+    "published_at": "2019-11-25T22:27:17Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.7.2",
+    "summary": "4.7.2",
+    "body": "* Add `request.params` as query parameters ([#1398](https://github.com/presidentbeef/brakeman/issues/1398))\r\n* Handle more `permit!` cases ([#1426](https://github.com/presidentbeef/brakeman/issues/1426))\r\n* Remove version guard for `named_scope` vs. `scope`\r\n* Find SQL injection in `String#strip_heredoc` target ([#1433](https://github.com/presidentbeef/brakeman/issues/1433))\r\n* Ensure file name is set when processing models\r\n* Bundle `ruby_parser` version 3.14.1 ([#1429](https://github.com/presidentbeef/brakeman/issues/1429))\r\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.7.1",
+    "published_at": "2019-10-29T21:45:45Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.7.1",
+    "summary": "4.7.1",
+    "body": "* Sort text report by file and line ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* Catch reverse tabnabbing with `:_blank` symbol ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* Convert `s(:lambda)` to `s(:call)` in `Sexp#block_call` ([#1410](https://github.com/presidentbeef/brakeman/issues/1410))\r\n* Check string length against limit before joining\r\n* Fix flaky rails4 test ([Adam Kiczula](https://github.com/adamkiczula))\r\n* Fix errors from frozen `Symbol#to_s` in Ruby 2.7\r\n* Add release dates to each version in CHANGES ([TheSpartan1980](https://github.com/TheSpartan1980))",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.7.0",
+    "published_at": "2019-10-17T23:37:01Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.7.0",
+    "summary": "4.7.0",
+    "body": "* Update Haml support to Haml 5.x ([#1044](https://github.com/presidentbeef/brakeman/issues/1044))\r\n* Catch shell injection from `-c` shell commands ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* Correctly handle non-symbols in `CheckCookieSerialization` ([Phil Turnbull](https://github.com/philipturnbull))\r\n* Refactor `Brakeman::Differ#second_pass` ([Benoit Côté-Jodoin](https://github.com/Becojo))\r\n* Fix `version_between?` ([Andrey Glushkov](https://github.com/aglushkov))\r\n* Ignore interpolation in `%W[]` ([#1399](https://github.com/presidentbeef/brakeman/issues/1399))\r\n* Ignore `form_for` for XSS check\r\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.6.1",
+    "published_at": "2019-07-24T16:39:18Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.6.1",
+    "summary": "4.6.1",
+    "body": "* Fix Reverse Tabnabbing warning message ([Steffen Schildknecht](https://github.com/stsc3000) / [Jörg Schiller](https://github.com/joergschiller))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.6.0",
+    "published_at": "2019-07-24T16:38:48Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.6.0",
+    "summary": "4.6.0",
+    "body": "* Add check for cookie serialization with Marshal ([#1316](https://github.com/presidentbeef/brakeman/issues/1316))\r\n* Add reverse tabnabbing check ([Linos Giannopoulos](https://github.com/linosgian))\r\n* Avoid warning about file access with `ActiveStorage::Filename#sanitized` ([Tejas Bubane](https://github.com/tejasbubane))\r\n* Update loofah version for fixing [CVE-2018-8048](https://nvd.nist.gov/vuln/detail/CVE-2018-8048) ([Markus Nölle](https://github.com/MartyBeGood))\r\n* Warn people that Haml 5 is not fully supported ([Jared Beck](https://github.com/jaredbeck))\r\n* Index calls in initializers\r\n* Improve template output handling in conditional branches\r\n* Avoid assigning `nil` line numbers to `Sexp`s\r\n* Add special warning code for custom checks\r\n* Add call matching by regular expression\r\n* Skip calls to `dup` ([#1374](https://github.com/presidentbeef/brakeman/issues/1374))\r\n* Restore `Warning#relative_path`\r\n* Better handling of gems with no version declared",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.5.1",
+    "published_at": "2019-05-11T22:14:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.5.1",
+    "summary": "4.5.1",
+    "body": "* Add initial Rails 6 support\r\n* Add optional check for `config.force_ssl` ([#1181](https://github.com/presidentbeef/brakeman/issues/1181))\r\n* Add deserialization warning for `Oj.load/object_load`\r\n* Add SQL injection checks for `destroy_by`/`delete_by`\r\n* Add SQL injection checks for `find_or_create_by` and friends\r\n* Check `link_to` with block for href XSS ([#1339](https://github.com/presidentbeef/brakeman/issues/1339))\r\n* Convert `!!` calls to boolean value ([#1343](https://github.com/presidentbeef/brakeman/issues/1343))\r\n* Use relative paths for `__FILE__`\r\n* Represent file paths internally as `Brakeman::FilePath`\r\n* Handle empty partial names\r\n* Handle trailing comma in block args\r\n* Remove code for Ruby versions prior to 1.9",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.5.0",
+    "published_at": "2019-03-16T05:53:12Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.5.0",
+    "summary": "4.5.0",
+    "body": "* Officially drop support for running with older Ruby versions\r\n* More thoroughly handle `Shellwords` escaping ([#1323](https://github.com/presidentbeef/brakeman/issues/1323))\r\n* Handle non-integer version number comparisons ([#1305](https://github.com/presidentbeef/brakeman/issues/1305))\r\n* Better handling of splat/kwsplat arguments ([#1204](https://github.com/presidentbeef/brakeman/issues/1204))\r\n* Handle `**` inside Hash literals\r\n* Add support for CoffeeScript in Slim templates\r\n* Improve support for embedded template \"filters\"\r\n* Remove Sass dependency\r\n* Avoid joining strings with different encodings\r\n* Improve \"user input\" reported for SQL injection\r\n* Stop swallowing exceptions in `AliasProcessor`\r\n* Add original exception to `Tracker#errors` list\r\n* Use `FileParser` in `Scanner` to parse files\r\n* Set location information in `CheckContentTag`\r\n* Update RubyParser to 3.13.0",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.4.0",
+    "published_at": "2019-01-17T21:22:18Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.4.0",
+    "summary": "4.4.0",
+    "body": "* Add check for [CVE-2018-3760](https://groups.google.com/d/msg/rubyonrails-security/ft_J--l55fM/7roDfQ50BwAJ)\r\n* Add `--enable` option to enable optional checks\r\n* Add Dockerfile to run Brakeman inside Docker ([Ryan Kemper](https://github.com/ryankemper))\r\n* Handle empty `secrets.yml` files ([Naoki Kimura](https://github.com/naokikimura))\r\n* Ignore Tempfiles in FileAccess warnings ([Christina Koller](https://github.com/cmkoller))\r\n* Avoid warning about command injection when `String#shellescape` and `Shellwords.shelljoin` are used ([George Ogata](https://github.com/oggy))\r\n* Treat `if not` like `unless` ([#1225](https://github.com/presidentbeef/brakeman/issues/1225))\r\n* Fix Rails 4 configuration handling\r\n* Set default encoding to UTF-8\r\n* Support reading gem versions from gemspecs\r\n* Support gem versions which are just major.minor (e.g. 3.0)\r\n* Correctly set `rel=\"noreferrer\"` in HTML reports\r\n* Fix thread-safety issue in CallIndex\r\n* Fix trim mode for ERb templates in old Rails versions\r\n* Avoid `nil` errors when concatenating arrays\r\n* Add rendered template information to render paths\r\n* Trim some unnecessary files from bundled gems\r\n* Deadcode and typo fixes found via Coverity\r\n* Complete overhaul of warning message construction\r\n* Update to Slim 4.0.1 ([Jake Peterson](https://github.com/Jakenberg))\r\n* Update to RubyParser 3.12.0\r\n* Updated [license](https://github.com/presidentbeef/brakeman/blob/master/LICENSE.md)",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.3.1",
+    "published_at": "2018-06-07T05:22:04Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.3.1",
+    "summary": "4.3.1",
+    "body": "* Add `:BRAKEMAN_SAFE_LITERAL` to represent known-safe literals\r\n* Handle `Array#map` and `Array#each` over literal arrays ([#1208](https://github.com/presidentbeef/brakeman/issues/1208) / [#1224](https://github.com/presidentbeef/brakeman/issues/1224))\r\n* Use safe literal when accessing literal hash with unknown key ([#1213](https://github.com/presidentbeef/brakeman/issues/1213))\r\n* Allow `symbolize_keys` to be called on `params` in SQL ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* Improve handling of conditionals in shell commands ([Jacob Evelyn](https://github.com/JacobEvelyn))\r\n* Avoid deprecated use of ERB in Ruby 2.6 ([Koichi ITO](https://github.com/koic))\r\n* Ignore `Object#freeze`, use the target instead ([#1211](https://github.com/presidentbeef/brakeman/issues/1211))\r\n* Ignore `foreign_key` calls in SQL ([#1202](https://github.com/presidentbeef/brakeman/issues/1202))\r\n* Handle `included` calls outside of classes/modules ([#1209](https://github.com/presidentbeef/brakeman/issues/1209))\r\n* Fix error when setting line number in implicit renders ([#1210](https://github.com/presidentbeef/brakeman/issues/1210))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.3.0",
+    "published_at": "2018-05-11T18:15:22Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.3.0",
+    "summary": "4.3.0",
+    "body": "* Add `--parser-timeout` option\r\n* Improve timeout error messages\r\n* Check exec-type calls even if they are targets ([#1199](https://github.com/presidentbeef/brakeman/issues/1199))\r\n* Index Kernel#\\` calls even if they are targets ([#1183](https://github.com/presidentbeef/brakeman/issues/1183))\r\n* `BaseCheck#include_interp?` should return first string interpolation ([#1189](https://github.com/presidentbeef/brakeman/issues/1189))\r\n* Ignore `Process.pid` in system calls\r\n* Warn about dangerous `link_to` href with `sanitize()` ([#1187](https://github.com/presidentbeef/brakeman/issues/1187))\r\n* Ignore `params#to_h` and `params#to_hash` in SQL checks ([#1180](https://github.com/presidentbeef/brakeman/issues/1180))\r\n* Convert `Array#join` to string interpolation ([#1179](https://github.com/presidentbeef/brakeman/issues/1179))\r\n* Change `\"\".freeze` to just `\"\"` ([#1182](https://github.com/presidentbeef/brakeman/issues/1182))\r\n* `--color` can be used to force color output ([#1175](https://github.com/presidentbeef/brakeman/issues/1175))\r\n* Track parent calls in call index\r\n* Fix reported line numbers for CVE-2018-3741 and CVE-2018-8048\r\n* Code Climate: omit leading dot from `only_files` ([Todd Mazierski](https://github.com/toddmazierski))",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.2.1",
+    "published_at": "2018-03-24T00:56:08Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.2.1",
+    "summary": "4.2.1",
+    "body": "* Add warning for CVE-2018-3741\r\n* Add warning for CVE-2018-8048\r\n* Scan `app/jobs/` directory\r\n* Handle `template_exists?` in controllers ([#1124](https://github.com/presidentbeef/brakeman/issues/1124))",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.2.0",
+    "published_at": "2018-02-21T22:54:02Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.2.0",
+    "summary": "4.2.0",
+    "body": "* Handle ERb use of `String#<<` method for Ruby 2.5 ([Pocke](https://github.com/pocke))\r\n* Exclude template folders in `lib/` ([kru0096](https://github.com/Kani999))\r\n* Warn about SQL injection with `not`\r\n* Avoid warning about symbol DoS on `Model#attributes` ([#1096](https://github.com/presidentbeef/brakeman/issues/1096))\r\n* Avoid warning about open redirects with model methods ending with `_path`([#1117](https://github.com/presidentbeef/brakeman/issues/1117))\r\n* Avoid warning about command injection with `Shellwords.escape` ([#1159](https://github.com/presidentbeef/brakeman/issues/1159))\r\n* Use ivars from `initialize` in libraries\r\n* Fix multiple assignment of globals ([#1155](https://github.com/presidentbeef/brakeman/issues/1155))\r\n* `Sexp#body=` can accept `:rlist` from `Sexp#body_list`\r\n* Update RubyParser to 3.11.0",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.1.1",
+    "published_at": "2017-12-19T06:57:24Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.1.1",
+    "summary": "4.1.1",
+    "body": "* Remove check for use of `permit` with `*_id` keys\r\n* Avoid duplicate warnings about permitted attributes",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.1.0",
+    "published_at": "2017-12-16T17:37:38Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.1.0",
+    "summary": "4.1.0",
+    "body": "* Add check for dangerous keys in `permit`\r\n* Add optional check for divide by zero\r\n* Remove errors about divide by zero\r\n* Warn about dynamic values in `Arel.sql`\r\n* Show better location for Sass errors ([Andrew Bromwich](https://github.com/abrom))\r\n* Avoid warning about file access for temp files ([#1110](https://github.com/presidentbeef/brakeman/issues/1110))\r\n* Avoid CSRF warning in Rails 5.2 default config ([#1132](https://github.com/presidentbeef/brakeman/issues/1132))\r\n* Better processing of `op_asgn1` (e.g. `x[:y] += 1`) ([#1103](https://github.com/presidentbeef/brakeman/issues/1103))\r\n* Handle nested destructuring/multiple assignment\r\n* Do not warn on `params.permit` with safe values ([#1000](https://github.com/presidentbeef/brakeman/issues/1000))\r\n* Use HTTPS for warning links\r\n* Try to guess options for `less` pager ([#1118](https://github.com/presidentbeef/brakeman/issues/1118))\r\n* Do not page if results fit on screen\r\n* Leave results on screen after paging\r\n* Fix upgrade version for CVE-2016-6316\r\n* Fix `include_paths` for Code Climate engine ([Will Fleming](https://github.com/wfleming))\r\n* Support `app_path` configuration for Code Climate engine ([Noah Davis](https://github.com/noahd1))\r\n* Refactor Code Climate engine options parsing ([Noah Davis](https://github.com/noahd1))",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.0.1",
+    "published_at": "2017-09-25T11:16:05Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.0.1",
+    "summary": "4.0.1",
+    "body": "* Disable pager when `CI` environment variable is set\r\n* Fix output when pager fails",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v4.0.0",
+    "published_at": "2017-09-25T05:14:11Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v4.0.0",
+    "summary": "4.0.0",
+    "body": "* `--exit-on-warn` is now the default ([#852](https://github.com/presidentbeef/brakeman/issues/852))\r\n* `--exit-on-error` is now the default ([#1083](https://github.com/presidentbeef/brakeman/issues/1083))\r\n* \"Plain\" report output is now the default\r\n* Add simple pager for reports output to terminal\r\n* Remove low confidence mass assignment warnings\r\n* Reduce warnings about XSS in `link_to`\r\n* Treat `request.cookies` like `cookies` ([#1090](https://github.com/presidentbeef/brakeman/issues/1090))\r\n* Treat `fail`/`raise` like early returns ([#754](https://github.com/presidentbeef/brakeman/issues/754))\r\n* Rename \"Cross Site Scripting\" to \"Cross-Site Scripting\" ([Paul Tetreau](https://github.com/paultetreau))\r\n* Remove reliance on `CONFIDENCE` constant in checks\r\n* Fix `--exit-on-error` and `--exit-on-warn` in config files",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.7.2",
+    "published_at": "2017-09-02T02:35:06Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.7.2",
+    "summary": "3.7.2",
+    "body": "* Fix `--ensure-latest` ([David Guyon](https://github.com/presidentbeef/brakeman/pull/1079))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.7.1",
+    "published_at": "2017-08-14T04:17:42Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.7.1",
+    "summary": "3.7.1",
+    "body": "* Handle simple guard with `return` at end of branch ([#1073](https://github.com/presidentbeef/brakeman/issues/1073))\r\n* Add more collection methods for iteration detection\r\n* Modularize `bin/brakeman`\r\n* Improve multi-value `Sexp` error message\r\n* Update `ruby2ruby` and `ruby_parser` dependencies",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.7.0",
+    "published_at": "2017-06-30T15:17:44Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.7.0",
+    "summary": "3.7.0",
+    "body": "* Avoid interpolating hashes/arrays on failed access ([#921](https://github.com/presidentbeef/brakeman/issues/921))\r\n* Fix false positive for `redirect_to` in Rails 4 ([Mário Areias](https://github.com/mario-areias))\r\n* Show progress indicator in interactive mode ([#1012](https://github.com/presidentbeef/brakeman/issues/1012))\r\n* Handle simple conditional guards that use `return` ([#1057](https://github.com/presidentbeef/brakeman/issues/1057))\r\n* Improve support for `rails4`/`rails5` options in config file ([#1059](https://github.com/presidentbeef/brakeman/issues/1059))\r\n* Updated RubyParser to master",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.6.2",
+    "published_at": "2017-05-20T00:14:44Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.6.2",
+    "summary": "3.6.2",
+    "body": "* Remove `--rake` option\r\n* By default, do not honor additional check paths in config\r\n* Properly handle template names without `.html` or `.js`\r\n* Catch YAML parsing errors in session settings check ([#1046](https://github.com/presidentbeef/brakeman/issues/1046))\r\n* Better handling of `if` expressions in HAML rendering ([#1032](https://github.com/presidentbeef/brakeman/issues/1032))\r\n* Avoid warning about SQLi with `to_s` in `exists?` ([#1045](https://github.com/presidentbeef/brakeman/issues/1045))\r\n* Handle safe call operator in checks ([#1031](https://github.com/presidentbeef/brakeman/issues/1031))\r\n* Handle empty `if` expressions when finding return values\r\n* Set template file names during rendering for better errors\r\n* Limit Slim dependency to before 3.0.8\r\n* Update RubyParser to 3.9.0",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.6.1",
+    "published_at": "2017-03-24T21:21:12Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.6.1",
+    "summary": "3.6.1",
+    "body": "* Fix error when using `--compare` ([Sean Gransee](https://github.com/seangransee))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.6.0",
+    "published_at": "2017-03-23T07:55:59Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.6.0",
+    "summary": "3.6.0",
+    "body": "* Branch inside of `case` expressions ([#944](https://github.com/presidentbeef/brakeman/issues/944), [#972](https://github.com/presidentbeef/brakeman/issues/972), [#1002](https://github.com/presidentbeef/brakeman/issues/1002))\r\n* Check targetless SQL calls outside of known models\r\n* Fix issue with nested interpolation inside SQL strings ([#1008](https://github.com/presidentbeef/brakeman/issues/1008))\r\n* Add `--exit-on-error` ([Michael Grosser](https://github.com/grosser))\r\n* Only report CVE-2015-3227 when exact version is known ([#933](https://github.com/presidentbeef/brakeman/issues/993), [#995](https://github.com/presidentbeef/brakeman/issues/995))\r\n* Print command line option errors without modification ([#1010](https://github.com/presidentbeef/brakeman/issues/1010))\r\n* Ignore GraphQL tags inside ERB templates\r\n* Avoid recursive `Concern`s",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.5.0",
+    "published_at": "2017-02-02T01:33:55Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.5.0",
+    "summary": "3.5.0",
+    "body": "- Warn about SQL injection even if target is not known ActiveRecord model\n- Avoid warning about models as SQL injection ([#655](https://github.com/presidentbeef/brakeman/issues/655), [#680](https://github.com/presidentbeef/brakeman/issues/680), [#833](https://github.com/presidentbeef/brakeman/issues/833))\n- Avoid warning about SQLi in `all`, `first`, or `last` after Rails 4.0\n- Treat templates without `.html` as HTML anyway ([#790](https://github.com/presidentbeef/brakeman/issues/790))\n- Report check name in JSON and plain reports ([#971](https://github.com/presidentbeef/brakeman/issues/971))\n- Add `--ensure-latest` option ([tamgrosser](https://github.com/tamgrosser) / [Michael Grosser](https://github.com/grosser))\n- Add `--no-summary` to hide summaries in HTML/text reports ([#963](https://github.com/presidentbeef/brakeman/issues/963))\n- Fail on invalid checks specified by `-x` or `-t` ([#970](https://github.com/presidentbeef/brakeman/issues/970))\n- Handle `included` block in concerns ([#958](https://github.com/presidentbeef/brakeman/pull/958))\n- Updated RubyParser/Ruby2Ruby dependencies\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.4.1",
+    "published_at": "2016-11-03T01:07:57Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.4.1",
+    "summary": "3.4.1",
+    "body": "- Configurable engines path ([Jason Yeo](https://github.com/jsyeo))\n- Check CSRF setting in direct subclasses of `ActionController::Base` ([Jason Yeo](https://github.com/jsyeo))\n- Pull Ruby version from `.ruby-version` or Gemfile\n- Use Ruby version to turn off SymbolDoS check ([#928](https://github.com/presidentbeef/brakeman/issues/928))\n- Fix ignoring link interpolation not at beginning of string ([#939](https://github.com/presidentbeef/brakeman/issues/939))\n- Show action help at start of interactive ignore ([#949](https://github.com/presidentbeef/brakeman/issues/949))\n- Avoid warning about `where_values_hash` in SQLi ([#942](https://github.com/presidentbeef/brakeman/issues/942))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.4.0",
+    "published_at": "2016-11-03T01:08:37Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.4.0",
+    "summary": "3.4.0",
+    "body": "- Show obsolete ignore entries in reports ([Jonathan Cheatham](https://github.com/jcheatham))\n- Add option to prune ignore file with `-I`\n- Add new `plain` report format ([#914](https://github.com/presidentbeef/brakeman/issues/914))\n- Support creating reports in non-existent paths ([#924](https://github.com/presidentbeef/brakeman/issues/924))\n- Add `--no-exit-warn` ([#925](https://github.com/presidentbeef/brakeman/issues/925))\n- Improved Slim template support\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.5",
+    "published_at": "2016-11-03T01:09:07Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.5",
+    "summary": "3.3.5",
+    "body": "- Fix bug in reports when using `--debug` \n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.4",
+    "published_at": "2016-08-12T15:24:18Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.4",
+    "summary": "3.3.4",
+    "body": "- Add generic warning for CVE-2016-6316\n- Warn about dangerous use of `content_tag` with CVE-2016-6316\n- Add warning for CVE-2016-6317\n- Use Minitest\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.3",
+    "published_at": "2016-07-21T21:56:22Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.3",
+    "summary": "3.3.3",
+    "body": "- Index calls in view helpers\n- Process inline template renders ([#672](https://github.com/presidentbeef/brakeman/issues/672))\n- Show path when no Rails app found ([Neil Matatall](https://github.com/oreoshake))\n- Avoid warning about hashes in `link_to` hrefs ([#897](https://github.com/presidentbeef/brakeman/issues/897))\n- Improve return value guesses\n- Ignore boolean methods in render paths\n- Reduce open redirect duplicates\n- Fix SymbolDoS error with unknown Rails version\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.2",
+    "published_at": "2016-06-13T04:26:59Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.2",
+    "summary": "3.3.2",
+    "body": "- Fix performance regression in global constant tracking\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.1",
+    "published_at": "2016-06-03T15:14:31Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.1",
+    "summary": "3.3.1",
+    "body": "- Improved line number accuracy in ERB templates ([Patrick Toomey](https://github.com/ptoomey3))\n- Allow multiple line regex in `validates_format_of` ([Dmitrij Fedorenko](https://github.com/c0va23))\n- Avoid overwriting instance/class methods with same name ([Tim Wade](https://github.com/imtayadeway))\n- Add `--force-scan` option ([Neil Matatall](https://github.com/oreoshake))\n- Only consider `if` branches in templates\n- Support more safe `&.` operations\n- Avoid warning about SQL injection with `quoted_primary_key` ([#884](https://github.com/presidentbeef/brakeman/issues/884))\n- Delay loading vendored gems and modifying load path\n- Added [brakeman-lib](https://rubygems.org/gems/brakeman-lib) gem\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.3.0",
+    "published_at": "2016-05-05T15:57:16Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.3.0",
+    "summary": "3.3.0",
+    "body": "- Bundle all dependencies in gem\n- Return exit code `4` if no Rails application is detected ([#869](https://github.com/presidentbeef/brakeman/issues/869))\n- Add optional check for secrets in source code ([#201](https://github.com/presidentbeef/brakeman/issues/201))\n- Track constants globally\n- Skip if branches with `Rails.env.test?` ([#862](https://github.com/presidentbeef/brakeman/issues/862))\n- Skip processing obviously false if branches (more broadly)\n- Handle HAML `find_and_preserve` with a block ([#837](https://github.com/presidentbeef/brakeman/issues/837))\n- Process `Array#first`\n- Allow non-Hash arguments in `protect_from_forgery` ([Jason Yeo](https://github.com/jsyeo))\n- Avoid warning about `u` helper ([Chad Dollins](https://github.com/cdollins))\n- Avoid warning about mass assignment and SQL injection with `params.slice` ([#866](https://github.com/presidentbeef/brakeman/issues/866))\n- Avoid warning about `slice` in `redirect_to` and `link_to` ([#832](https://github.com/presidentbeef/brakeman/issues/832))\n- Avoid warning on `popen` with array ([#851](https://github.com/presidentbeef/brakeman/issues/851))\n- [Code Climate engine] When possible, output to /dev/stdout ([Gordon Diggs](https://github.com/GordonDiggs))\n- [Code Climate engine] Remove nil entries from `include_paths` ([Gordon Diggs](https://github.com/GordonDiggs))\n- [Code Climate engine] Report end lines for issues ([Gordon Diggs](https://github.com/GordonDiggs))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.2.1",
+    "published_at": "2016-02-29T14:32:58Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.2.1",
+    "summary": "3.2.1",
+    "body": "- Remove multi_json from bin/brakeman\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.2.0",
+    "published_at": "2016-02-29T14:33:39Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.2.0",
+    "summary": "3.2.0",
+    "body": "- Support calls using `&.` operator ([#796](https://github.com/presidentbeef/brakeman/issues/796))\n- Handle CoffeeScript in HAML ([#813](https://github.com/presidentbeef/brakeman/issues/813))\n- Avoid render warnings about `params[:action]`/`params[:controller]` ([#812](https://github.com/presidentbeef/brakeman/issues/812))\n- Only update ignore config file on changes ([#824](https://github.com/presidentbeef/brakeman/issues/824))\n- Sort ignore config file\n- Index calls in class bodies but outside methods ([#814](https://github.com/presidentbeef/brakeman/issues/814))\n- Skip Symbol DoS check on Rails 5\n- Fix finding calls with `targets: nil`\n- Remove `fastercsv` dependency\n- Remove `multi-json` dependency\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.2.0.pre1",
+    "published_at": "2016-07-05T18:41:56Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.2.0.pre1",
+    "summary": "3.2.0.pre1",
+    "body": "Preview of 3.2.0\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.5",
+    "published_at": "2016-01-28T06:34:07Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.5",
+    "summary": "3.1.5",
+    "body": "- Support directories better in `--only-files` and `--skip-files` ([Patrick Toomey](https://github.com/ptoomey3))\n- Fix CodeClimate construction of `--only-files` ([Will Fleming](https://github.com/wfleming))\n- Avoid warning about `permit` in SQL ([669](https://github.com/presidentbeef/brakeman/issues/669))\n- Handle guards using `detect` ([376](https://github.com/presidentbeef/brakeman/issues/376))\n- Handle module names with self methods ([#785](https://github.com/presidentbeef/brakeman/issues/785))\n- Add session manipulation documentation ([#791](https://github.com/presidentbeef/brakeman/pull/791))\n- Check for implicit integer comparison in dynamic finders\n- Avoid warning on user input in comparisons\n- Add check for denial of service via routes (CVE-2015-7581)\n- Warn about RCE with `render params` (CVE-2016-0752)\n- Add check for `strip_tags` XSS (CVE-2015-7579)\n- Add check for `sanitize` XSS (CVE-2015-7578/80)\n- Add check for `reject_if` proc bypass (CVE-2015-7577)\n- Add check for mime-type denial of service (CVE-2016-0751)\n- Add check for basic auth timing attack (CVE-2015-7576)\n- Add initial Rails 5 support\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.4",
+    "published_at": "2016-01-21T08:33:39Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.4",
+    "summary": "3.1.4",
+    "body": "- Emit Brakeman's native fingerprints for Code Climate engine ([Noah Davis](https://github.com/noahd1))\n- Ignore `secrets.yml` if in .gitignore ([#777](https://github.com/presidentbeef/brakeman/issues/777))\n- Work around `safe_yaml` error ([#778](https://github.com/presidentbeef/brakeman/issues/778))\n- Increase test coverage for option parsing ([Zander Mackie](https://github.com/Zanadar))\n- Clean up Ruby warnings ([Andy Waite](https://github.com/andyw8))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.3",
+    "published_at": "2015-12-04T22:56:54Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.3",
+    "summary": "3.1.3",
+    "body": "- Add Code Climate output format ([Ashley Baldwin-Hunter](https://github.com/ABaldwinHunter) / [Devon Blandin](https://github.com/dblandin) / [John Pignata](https://github.com/presidentbeef/brakeman/pull/759) / [Michael Bernstein](https://github.com/mrb))\n- Restore minimum Highline version ([Kevin Glowacz](https://github.com/kjg))\n- Depend on safe_yaml 1.0 or later ([#753](https://github.com/presidentbeef/brakeman/issues/752))\n- Check for session secret in secrets.yml ([#760](https://github.com/presidentbeef/brakeman/issues/760))\n- Avoid warning on `without_protection: true` with hash literal ([#769](https://github.com/presidentbeef/brakeman/issues/769))\n- Respect `exit_on_warn` in config file ([#771](https://github.com/presidentbeef/brakeman/pull/771))\n- Avoid outputting false for `user_input` in JSON\n- Iteratively replace variables\n- CallIndex improvements\n- Improved tests for the Brakeman module ([Bethany Rentz](https://github.com/bethanyr))\n- Make sure a `before_filter` with block is a call ([#763](https://github.com/presidentbeef/brakeman/issues/763))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.2",
+    "published_at": "2015-10-29T01:08:28Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.2",
+    "summary": "3.1.2",
+    "body": "- Sortable tables in HTML report (David Lanner)\n- Add line numbers to class-level warnings\n- Warn on SQL query keys, not values in hashes ([#738](https://github.com/presidentbeef/brakeman/issues/738))\n- Set user input value for inline renders\n- Avoid warning on inline renders with safe content types\n- Treat `current_user` like a model ([#744](https://github.com/presidentbeef/brakeman/issues/744))\n- Avoid warning about model `find/find_by*` in hrefs\n- Handle `private def ...`\n- Handle empty interpolation in HAML filters ([#732](https://github.com/presidentbeef/brakeman/issues/732))\n- Catch divide-by-zero in alias processing ([#729](https://github.com/presidentbeef/brakeman/issues/729))\n- Ignore filters that are not method names\n- Search for config file relative to application root\n- Use SafeYAML to load configuration files\n- Allow inspection of recursive Sexps\n- Reduce string allocations in `Warning#initialize`\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.1",
+    "published_at": "2015-09-23T16:11:53Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.1",
+    "summary": "3.1.1",
+    "body": "- Add check for user input in session keys\n- Add optional check for use of MD5 and SHA1\n- Fix absolute paths for Windows ([Cody Frederick](https://github.com/spcoder))\n- Allow searching call index methods by regex ([Alex Ianus](https://github.com/aianus))\n- Consider `j`/`escape_javascript` safe inside Haml JavaScript blocks ([#708](https://github.com/presidentbeef/brakeman/issues/708))\n- Better Haml processing of `find_and_preserve` calls\n- Fix chained assignment\n- Treat `a.try(&:b)` like `a.b()`\n- Add more Arel methods to be ignored in SQL ([#711](https://github.com/presidentbeef/brakeman/issues/711))\n- Avoid warning when linking to decorated models ([#683](https://github.com/presidentbeef/brakeman/issues/683))\n- Support newer terminal-table releases ([#709](https://github.com/presidentbeef/brakeman/issues/709))\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.1.0",
+    "published_at": "2015-09-23T16:12:22Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.1.0",
+    "summary": "v3.1.0",
+    "body": "- Update dependencies to Ruby 1.8 incompatible versions\n- Update render path information in JSON reports\n- Remove renaming of several `Sexp` nodes\n- Treat `html_safe` like `raw`\n- Use railties version if rails gem is missing ([Lucas Mazza](https://github.com/lucasmazza))\n- Warn about unverified SSL mode in `Net::HTTP.start`\n- Expand XSS safe methods\n- Avoid warning on path creation methods in `link_to`\n- Add support for `gems.rb`/`gems.locked` ([#705](https://github.com/presidentbeef/brakeman/pull/705))\n- Fix low confidence XSS warning code\n- Avoid duplicate `eval` warnings\n- Convert YAML config keys to symbols ([Karl Glaser](https://github.com/KarlGl))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.5",
+    "published_at": "2015-06-20T01:08:39Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.5",
+    "summary": "3.0.5",
+    "body": "- Fix check for CVE-2015-3227\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.4",
+    "published_at": "2015-06-19T21:11:04Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.4",
+    "summary": "3.0.4",
+    "body": "- Add check for CVE-2015-3226 (XSS via JSON keys)\n- Add check for CVE-2015-3227 (XML DoS)\n- Treat `<%==` as unescaped output ([#661](https://github.com/presidentbeef/brakeman/issues/661))\n- Update `ruby_parser` dependency to 3.7.0\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.3",
+    "published_at": "2015-04-30T18:20:27Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.3",
+    "summary": "3.0.3",
+    "body": "- Warn about `protect_from_forgery` without exceptions ([Neil Matatall](https://github.com/oreoshake))\n- Add Rake task to exit with error code on warnings ([masarakki](https://github.com/masarakki))\n- Ignore `quoted_table_name` in SQL ([Gabriel Sobhrinho](https://github.com/sobrinho))\n- Ignore more Arel methods in SQL ([#604](https://github.com/presidentbeef/brakeman/issues/604))\n- Warn about RCE and file access with `open`\n- Handle `Array#include?` guard conditionals ([#604](https://github.com/presidentbeef/brakeman/issues/604))\n- Handle lambdas as filters\n- Do not ignore targets of `to_s` in SQL ([#638](https://github.com/presidentbeef/brakeman/issues/638))\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.2",
+    "published_at": "2015-03-10T06:56:25Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.2",
+    "summary": "3.0.2",
+    "body": "- Fix HTML reports with GitHub repos ([#624](https://github.com/presidentbeef/brakeman/issues/624))\n- Handle processing of explictly shadowed block arguments ([#612](https://github.com/presidentbeef/brakeman/issues/612))\n- Fix CSV output when there are no warnings ([#615](https://github.com/presidentbeef/brakeman/issues/615))\n- Update `ruby_parser` to ~> 3.6.2\n- Treat `primary_key`, `table_name_prefix`, `table_name_suffix` as safe in SQL\n- Fix using `--compare` and `--add-checks-path` together\n- Alias process methods called in class scope on models\n- Avoid warning about mass assignment with string literals\n- Only report original regex DoS locations\n- Report correct file for `simple_format` usage CVE warning\n- Ignore case value in XSS checks\n- Formatting newlines removed from HAML templates\n- Improved render path information tracking\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.1",
+    "published_at": "2015-03-10T06:55:19Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.1",
+    "summary": "3.0.1",
+    "body": "- Remove Slim dependency ([Casey West](https://github.com/cwest))\n- Properly process libraries ([Patrick Toomey](https://github.com/ptoomey3))\n- Add `--add-libs-path` for additional libraries ([Patrick Toomey](https://github.com/ptoomey3))\n- Allow for controllers/models/templates in directories under `app/` ([Neal Harris](https://github.com/nealharris))\n- Avoid `protect_from_forgery` warning unless `ApplicationController` inherits from `ActionController::Base` ([#573](https://github.com/presidentbeef/brakeman/issues/573))\n- Properly format command interpolation (again)\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v3.0.0",
+    "published_at": "2015-01-03T04:51:20Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v3.0.0",
+    "summary": "3.0.0",
+    "body": "- `--exit-on-warn --compare` only returns error code on new warnings ([Jeff Yip](https://github.com/jeffyip))\n- Sort warnings by fingerprint in JSON report ([Jeff Yip](https://github.com/jeffyip))\n- CVEs report correct line and file name (Gemfile/Gemfile.lock) ([Rob Fletcher](https://github.com/pwnetrationguru))\n- Change `--separate-models` to be the default\n- Local variables are no longer formatted as `(local var)`\n- Actually skip skipped before filters\n- Remove \"fake filters\" from warning fingerpints\n- Index calls in `lib/` files\n- Handle symmetric multiple assignment\n- Do not branch for self attribute assignment `x = x.y` ([#552](https://github.com/presidentbeef/brakeman/issues/552))\n- Move Symbol DoS to optional checks\n- Add check for cross site scripting via inline renders\n- Add check for CVE-2014-7829\n- Fix parsing of `<%==` in ERB\n- Fix output format of command interpolation\n- Fix CVE for CVE-2011-2932\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.6.3",
+    "published_at": "2014-10-16T15:58:43Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.6.3",
+    "summary": "2.6.3",
+    "body": "- Whitelist `exists` arel method from SQL injection check\n- Avoid warning about Symbol DoS on safe parameters as method targets\n- Fix stack overflow in ProcessHelper#class_name\n- Add optional check for unscoped find queries (Ben Toews)\n- Add framework for optional checks\n- Fix stack overflow for cycles in class ancestors (Jeff Rafter)\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.6.2",
+    "published_at": "2014-08-18T23:00:31Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.6.2",
+    "summary": "2.6.2",
+    "body": "- Add check for CVE-2014-3514\n- Add `--add-checks-path` option for external checks (Clint Gibler)\n- Add `-4` option to force Rails 4 mode\n- Fix SQL injection detection in deep nested string building\n- Check entire call for `send` ([#523](https://github.com/presidentbeef/brakeman/issues/523))\n- Check for .gitignore of secrets in subdirectories ([#519](https://github.com/presidentbeef/brakeman/issues/519))\n- Avoid warning about symbolizing safe parameters ([#536](https://github.com/presidentbeef/brakeman/issues/536))\n- Fix block statment endings in Erubis ([#518](https://github.com/presidentbeef/brakeman/issues/518))\n- Update ruby2ruby dependency to 2.1.1\n- Expand app path in one place instead of all over (Jeff Rafter)\n- Fix undefined variable in controller processing error (Jason Barnabe)\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.6.1",
+    "published_at": "2014-08-18T22:59:47Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.6.1",
+    "summary": "2.6.1",
+    "body": "- Add check for CVE-2014-3482 and CVE-2014-3483\n- Add support for keyword arguments in blocks ([#511](https://github.com/presidentbeef/brakeman/issues/511))\n- Remove unused warning codes ([Bill Fischer](https://github.com/bfish510))\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.6.0",
+    "published_at": "2014-06-11T05:53:31Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.6.0",
+    "summary": "2.6.0",
+    "body": "- Fix detection of `:host` setting in redirects with chained calls\n- Add check for CVE-2014-0130\n- Add `find_by`/`find_by!` to SQLi check for Rails 4\n- Parse most files upfront instead of on demand\n- Do not branch values for `+=`\n- Update to use RubyParser 3.5.0 (Patrick Toomey)\n- Improve default route detection in Rails 3/4 (Jeff Jarmoc)\n- Handle controllers and models split across files (Patrick Toomey)\n- Fix handling of `protected_attributes` gem in Rails 4 (Geoffrey Hichborn)\n- Ignore more model methods in redirects\n- Fix CheckRender with nested render calls\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.5.0",
+    "published_at": "2014-05-05T04:36:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.5.0",
+    "summary": "2.5.0",
+    "body": "- Add support for RailsLTS 2.3.18.7 and 2.3.18.8\n- Add support for Rails 4 `before_actions` and friends\n- Move SQLi CVE checks to `CheckSQLCVEs`\n- Check for protected_attributes gem\n- Fix SQLi detection in chain calls in scopes\n- Add GitHub-flavored Markdown output format (Greg Ose)\n- Fix false positives when sanitize() is used in SQL (Jeff Yip)\n- Add String#intern and Hash#symbolize_keys DoS check (Jan Rusnacko)\n- Check all arguments in Model.select for SQLi\n- Fix false positive when :host is specified in redirect\n- Handle more non-literals in routes\n- Add check for regex denial of service (Ben Toews) \n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.4.3",
+    "published_at": "2014-05-05T04:38:22Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.4.3",
+    "summary": "2.4.3",
+    "body": "Signed gem, same as 2.4.2 otherwise.\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.4.2",
+    "published_at": "2014-05-05T04:38:48Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.4.2",
+    "summary": "2.4.2",
+    "body": "- Remove `rescue Exception`\n- Fix duplicate warnings about sanitize CVE\n- Reuse duplicate call location information\n- Only track original template output locations\n- Skip identically rendered templates\n- Fix HAML template processing\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.4.1",
+    "published_at": "2014-02-19T10:32:55Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.4.1",
+    "summary": "2.4.1",
+    "body": "- Add check for CVE-2014-0082\n- Add check for CVE-2014-0081, replaces CVE-2013-6415\n- Add check for CVE-2014-0080\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.4.0",
+    "published_at": "2014-02-11T00:01:00Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.4.0",
+    "summary": "2.4.0",
+    "body": "- Detect Rails LTS versions\n  - Reduce false positives for SQL injection in string building\n  - More accurate user input marking for SQL injection warnings\n  - Detect SQL injection in `delete_all`/`destroy_all`\n  - Detect SQL injection raw SQL queries using `connection`\n  - Parse exact versions from Gemfile.lock for all gems\n  - Ignore generators\n  - Update to RubyParser 3.4.0\n  - Fix false positives when SQL methods are not called on AR models (Aaron Bedra)\n  - Add check for uses of OpenSSL::SSL::VERIFY_NONE (Aaron Bedra)\n  - No longer raise exceptions if a class name cannot be determined\n  - Fingerprint attribute warnings individually (Case Taintor)\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.3.1",
+    "published_at": "2014-02-11T00:00:52Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.3.1",
+    "summary": "2.3.1",
+    "body": "- Fix check for CVE-2013-4491 (i18n XSS) to detect workaround\n- Fix link for CVE-2013-6415 (number_to_currency)\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.3.0",
+    "published_at": "2014-02-11T00:00:40Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.3.0",
+    "summary": "2.3.0",
+    "body": "- Add check for Parameters#permit!\n- Add check for CVE-2013-4491 (i18n XSS)\n- Add check for CVE-2013-6414 (header DoS)\n- Add check for CVE-2013-6415 (number_to_currency)\n- Add check for CVE-2013-6416 (simple_format XSS)\n- Add check for CVE-2013-6417 (query generation)\n- Fix typos in reflection and translate bug messages\n- Collapse send/try calls\n- Fix Slim XSS false positives (Noah Davis)\n- Whitelist `Model#create` for redirects\n- Fix scoping issues with instance variables and blocks\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.2.0",
+    "published_at": "2014-02-11T00:00:12Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.2.0",
+    "summary": "2.2.0",
+    "body": "- Reduce command injection false positives\n- Use Rails version from Gemfile if it is available\n- Only add routes with actual names\n- Ignore redirects to models using friendly_id (AJ Ostrow)\n- Support scanning Rails engines (Geoffrey Hichborn)\n- Add check for detailed exceptions in production\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.1.2",
+    "published_at": "2014-02-11T00:00:03Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.1.2",
+    "summary": "2.1.2",
+    "body": "- Do not attempt to load custom Haml filters\n- Do not warn about `to_json` XSS in Rails 4\n- Add --table-width option to set width of text reports (ssendev)\n- Remove fuzzy matching on dangerous attr_accessible values\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.1.1",
+    "published_at": "2014-02-10T23:59:55Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.1.1",
+    "summary": "2.1.1",
+    "body": "- New warning code for dangerous attributes in attr_accessible\n- Do not warn on attr_accessible using roles\n- More accurate results for model attribute warnings\n- Use exit code zero with `-z` if all warnings ignored\n- Respect ignored warnings in rescans\n- Ignore dynamic controller names in routes\n- Fix infinite loop when run as rake task (Matthew Shanley)\n- Respect ignored warnings in tabs format reports\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.1.0",
+    "published_at": "2014-02-10T23:59:46Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.1.0",
+    "summary": "2.1.0",
+    "body": "- Support non-native line endings in Gemfile.lock (Paul Deardorff)\n- Support for ignoring warnings\n- Check for dangerous model attributes defined in attr_accessible (Paul Deardorff)\n- Update to ruby_parser 3.2.2\n- Add brakeman-min gemspec\n- Load gem dependencies on-demand\n- Output JSON diff to file if -o option is used\n- Add check for authenticate_or_request_with_http_basic\n- Refactor of SQL injection check code (Bart ten Brinke)\n- Fix detection of duplicate XSS warnings\n- Refactor reports into separate classes\n- Allow use of Slim 2.x (Ian Zabel)\n- Return error exit code when application path is not found\n- Add `--branch-limit` option, limit to 5 by default\n- Add more methods to check for command injection\n- Fix output format detection to be more strict again\n- Allow empty Brakeman configuration file\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v2.0.0",
+    "published_at": "2014-02-10T23:59:33Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v2.0.0",
+    "summary": "2.0.0",
+    "body": "- Add `--only-files` option to specify files/paths to scan (Ian Ehlert)\n- Add Marshal/CSV deserialization check\n- Combine deserialization checks into single check\n- Avoid duplicate \"Dangerous Send\" and \"Unsafe Reflection\" warnings\n- Avoid duplicate results for Symbol DoS check\n- Medium confidence for mass assignment to attr_protected models\n- Remove \"timestamp\" key from JSON reports\n- Remove deprecated config file locations\n- Relative paths are used by default in JSON reports\n- `--absolute-paths` replaces `--relative-paths`\n- Only treat classes with names containing `Controller` like controllers\n- Better handling of classes nested inside controllers\n- Better handling of controller classes nested in classes/modules\n- Handle `->` lambdas with no arguments\n- Handle explicit block argument destructuring\n- Skip Rails config options that are real objects\n- Detect Rails 3 JSON escape config option\n- Much better tracking of warning file names\n- Fix errors when using `--separate-models` (Noah Davis)\n- Fix fingerprint generation to actually use the file path\n- Fix text report console output in JRuby\n- Fix false positives on `Model#id`\n- Fix false positives on `params.to_json`\n- Fix model path guesses to use \"models/\" instead of \"controllers/\"\n- Clean up SQL CVE warning messages\n- Use exceptions instead of abort in brakeman lib\n- Update to Ruby2Ruby 2.0.5\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.5",
+    "published_at": "2014-02-10T23:59:23Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.5",
+    "summary": "1.9.5",
+    "body": "- Add check for unsafe symbol creation\n- Do not warn on mass assignment with `slice`/`only`\n- Do not warn on session secret if in `.gitignore`\n- Fix scoping for blocks and block arguments\n- Fix error when modifying blocks in templates\n- Fix session secret check for Rails 4\n- Fix crash on `before_filter` outside controller\n- Fix `Sexp` hash cache invalidation\n- Respect `quiet` option in configuration file\n- Convert assignment to simple `if` expressions to `or`\n- More fixes for assignments inside branches\n- Pin to ruby2ruby version 2.0.3\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.4",
+    "published_at": "2014-02-10T23:59:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.4",
+    "summary": "1.9.4",
+    "body": "- Add check for CVE-2013-1854\n- Add check for CVE-2013-1855\n- Add check for CVE-2013-1856\n- Add check for CVE-2013-1857\n- Fix `--compare` to work with older versions\n- Add \"no-referrer' to HTML report links\n- Don't warn when invoking `send` on user input\n- Slightly faster cloning of Sexps\n- Detect another way to add `strong_parameters`\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.3",
+    "published_at": "2014-02-10T23:58:49Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.3",
+    "summary": "1.9.3",
+    "body": "- Add render path to JSON report\n- Add warning fingerprints\n- Add check for unsafe reflection (Gabriel Quadros)\n- Add check for skipping authentication methods with blacklist\n- Add support for Slim templates\n- Remove empty tables from reports (Owen Ben Davies)\n- Handle `prepend/append_before_filter`\n- Performance improvements when handling branches\n- Fix processing of `production.rb`\n- Fix version check for Ruby 2.0\n- Expand HAML dependency to include 4.0\n- Scroll errors into view when expanding in HTML report\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.2",
+    "published_at": "2014-02-10T23:58:39Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.2",
+    "summary": "1.9.2",
+    "body": "- Add check for CVE-2013-0269\n- Add check for CVE-2013-0276\n- Add check for CVE-2013-0277\n- Add check for CVE-2013-0333\n- Check for more send-like methods\n- Check for more SQL injection locations\n- Check for more dangerous YAML methods\n- Support MultiJSON 1.2 for Rails 3.0 and 3.1\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.1",
+    "published_at": "2014-02-10T23:58:29Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.1",
+    "summary": "1.9.1",
+    "body": "- Update to RubyParser 3.1.1 (neersighted)\n- Remove ActiveSupport dependency (Neil Matatall)\n- Do not warn on arrays passed to `link_to` (Neil Matatall)\n- Warn on secret tokens\n- Warn on more mass assignment methods\n- Add check for CVE-2012-5664\n- Add check for CVE-2013-0155\n- Add check for CVE-2013-0156\n- Add check for unsafe `YAML.load`\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.9.0",
+    "published_at": "2014-02-10T23:58:18Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.9.0",
+    "summary": "1.9.0",
+    "body": "- Update to RubyParser 3\n- Ignore route information by default\n- Support `strong_parameters`\n- Support newer `validates :format` call\n- Add scan time to reports\n- Add Brakeman version to reports\n- Fix `CheckExecute` to warn on all string interpolation\n- Fix false positive on `to_sql` calls\n- Don't mangle whitespace in JSON code formatting\n- Add AppTree as facade for filesystem (brynary)\n- Add link for translate vulnerability warning (grosser)\n- Rename LICENSE to MIT-LICENSE, remove from README (grosser)\n- Add Rakefile to run tests (grosser)\n- Better default config file locations (grosser)\n- Reduce Sexp creation\n- Handle empty model files\n- Remove \"find by regex\" feature from `CallIndex`\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.8.3",
+    "published_at": "2014-02-10T23:58:03Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.8.3",
+    "summary": "1.8.3",
+    "body": "- Use `multi_json` gem for better harmony\n- Performance improvement for call indexing\n- Fix issue with processing HAML files\n- Handle pre-release versions when processing `Gemfile.lock`\n- Only check first argument of `redirect_to`\n- Fix false positives from `Model.arel_table` accesses\n- Fix false positives on redirects to models decorated with Draper gem\n- Fix false positive on redirect to model association\n- Fix false positive on `YAML.load`\n- Fix false positive XSS on any `to_i` output\n- Fix error on Rails 2 name routes with no args\n- Fix error in rescan of mixins with symbols in method name\n- Do not rescan non-Ruby files in config/\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.8.2",
+    "published_at": "2014-02-10T23:57:50Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.8.2",
+    "summary": "1.8.2",
+    "body": "- Fixed rescanning problems caused by 1.8.0 changes\n- Fix scope calls with single argument\n- Report specific model name in rendered collections\n- Handle overwritten JSON escape settings\n- Much improved test coverage\n- Add CHANGES to gemspec\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.8.1",
+    "published_at": "2014-02-10T23:57:19Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.8.1",
+    "summary": "1.8.1",
+    "body": "- Recover from errors in output formatting\n- Fix false positive in redirect_to (Neil Matatall)\n- Fix problems with removal of `Sexp#method_missing`\n- Fix array indexing in alias processing\n- Fix old mail_to vulnerability check\n- Fix rescans when only controller action changes\n- Allow comparison of versions with unequal lengths\n- Handle super calls with blocks\n- Respect `-q` flag for \"Rails 3 detected\" message\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.8.0",
+    "published_at": "2014-02-10T23:57:09Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.8.0",
+    "summary": "1.8.0",
+    "body": "- Support relative paths in reports (fsword)\n- Allow Brakeman to be run without tty (fsword)\n- Fix exit code with `--compare` (fsword)\n- Fix `--rake` option (Deepak Kumar)\n- Add high confidence warnings for `to_json` XSS (Neil Matatall)\n- Fix `redirect_to` false negative\n- Fix duplicate warnings with `raw` calls\n- Fix shadowing of rendered partials\n- Add \"render chain\" to HTML reports\n- Add check for XSS in `content_tag`\n- Add full backtrace for errors in debug mode\n- Treat model attributes in `or` expressions as immediate values\n- Switch to method access for Sexp nodes\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.7.1",
+    "published_at": "2014-02-10T23:56:59Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.7.1",
+    "summary": "1.7.1",
+    "body": "- Add check for CVE-2012-3463\n- Add check for CVE-2012-3464\n- Add check for CVE-2012-3465\n- Add charset to HTML report (hooopo)\n- Report XSS in select() for Rails 2\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.7.0",
+    "published_at": "2014-02-10T23:56:46Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.7.0",
+    "summary": "1.7.0",
+    "body": "- Add check for CVE-2012-3424\n- Link report types to descriptions on website\n- Report errors raised while running check\n- Improve processing of Rails 3 routes\n- Fix \"empty char-class\" error\n- Improve file access check\n- Avoid warning on non-ActiveModel models\n- Speed improvements by stripping down SexpProcessor\n- Fix how `params[:x] ||=` is handled\n- Treat user input in `or` expressions as immediate values\n- Fix processing of negative array indexes\n- Add line breaks to truncated table rows\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.6.2",
+    "published_at": "2014-02-10T23:56:36Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.6.2",
+    "summary": "1.6.2",
+    "body": "- Add checks for CVE-2012-2660, CVE-2012-2661, CVE-2012-2694, CVE-2012-2695 (Dave Worth)\n- Avoid warning when redirecting to a model instance\n- Add `request.parameters` as a parameters hash\n- Raise confidence level for model attributes in redirects\n- Return non-zero exit code when missing dependencies\n- Fix `before_filter :except` logic\n- Only accept symbol literals as before_filter names\n- Cache before_filter lookups\n- Turn off quiet mode by default for `--compare`\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.6.1",
+    "published_at": "2014-02-10T23:56:23Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.6.1",
+    "summary": "1.6.1",
+    "body": "- Major rewrite of CheckSQL\n- Fix rescanning of deleted templates\n- Process actions mixed into controllers\n- Handle `render :template => ...`\n- Check for inherited attr_accessible (Neil Matatall)\n- Fix highlighting of HTML escaped values in HTML report\n- Report line number of highlighted value, if available\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.6.0",
+    "published_at": "2014-02-10T23:56:08Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.6.0",
+    "summary": "1.6.0",
+    "body": "- Remove the Ruport dependency (Neil Matatall)\n- Add more informational JSON output (Neil Matatall)\n- Add comparison to previous JSON report (Neil Matatall)\n- Add highlighting of dangerous values in HTML/text reports\n- Model#update_attribute should not raise mass assignment warning (Dave Worth)\n- Don't check `find_by_*` method for SQL injection\n- Fix duplicate reporting of mass assignment and SQL injection\n- Fix rescanning of deleted files\n- Properly check for rails_xss in Gemfile\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.5.3",
+    "published_at": "2014-02-10T23:55:56Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.5.3",
+    "summary": "1.5.3",
+    "body": "- Add check for user input in Object#send (Neil Matatall)\n- Handle render :layout in views\n- Support output to multiple formats (Nick Green)\n- Prevent infinite loops in mutually recursive templates\n- Only check eval arguments for user input, not targets\n- Search subdirectories for models\n- Set values in request hashes and propagate to views\n- Add rake task file to gemspec (Anton Ageev)\n- Filter rescanning of templates (Neil Matatall)\n- Improve handling of modules and nesting\n- Test for zero errors in test reports\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.5.2",
+    "published_at": "2014-02-10T23:55:41Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.5.2",
+    "summary": "1.5.2",
+    "body": "- Fix link_to checks for Rails 2.0 and 2.3\n- Fix rescanning of lib files (Neil Matatall)\n- Output stack trace on interrupt when debugging\n- Ignore user input in if statement conditions\n- Fix --skip-files option\n- Only warn on user input in render paths\n- Fix handling of views when using rails_xss\n- Revert to ruby_parser 2.3.1 for Ruby 1.8 parsing\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.5.1",
+    "published_at": "2014-02-10T23:55:11Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.5.1",
+    "summary": "1.5.1",
+    "body": "- Fix detection of global mass assignment setting\n- Fix partial rendering in Rails 3\n- Show backtrace when interrupt received (Ruby 1.9 only)\n- More debug output\n- Remove duplicate method in Brakeman::Rails2XSSErubis\n- Add tracking of module and class to Brakeman::BaseProcessor\n- Report module when using Brakeman::FindCall\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.5.0",
+    "published_at": "2014-02-10T23:53:40Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.5.0",
+    "summary": "1.5.0",
+    "body": "- Add version check for SafeBuffer vulnerability\n- Add check for select vulnerability in Rails 3\n- select() is no longer considered safe in Rails 2\n- Add check for skipping CSRF protection with a blacklist\n- Add JSON report format\n- Model#id should not be considered XSS\n- Standardize methods to check for SQL injection\n- Fix Rails 2 route parsing issue with nested routes\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.4.0",
+    "published_at": "2014-02-10T23:53:27Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.4.0",
+    "summary": "1.4.0",
+    "body": "- Add check for user input in link_to href parameter\n- Match ERB processing to rails_xss plugin when plugin used\n- Add Brakeman::Report#to_json, Brakeman::Warning#to_json\n- Warnings below minimum confidence are dropped completely\n- Brakeman.run always returns a Tracker\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.3.0",
+    "published_at": "2014-02-10T23:53:11Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.3.0",
+    "summary": "1.3.0",
+    "body": "- Add file paths to HTML report\n- Add caching of filters\n- Add --skip-files option\n- Add support for attr_protected\n- Add detection of request.env as user input\n- Descriptions of checks in -k output\n- Improved processing of named scopes\n- Check for mass assignment in ActiveRecord::Associations::AssociationCollection#build\n- Better variable substitution\n- Table output option for rescan reports\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.2.2",
+    "published_at": "2014-02-10T23:53:02Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.2.2",
+    "summary": "1.2.2",
+    "body": "- --no-progress works again\n- Make CheckLinkTo a separate check\n- Don't fail on unknown options to resource(s)\n- Handle empty resource(s) blocks\n- Add RescanReport#existing_warnings\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.2.1",
+    "published_at": "2014-02-10T23:52:53Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.2.1",
+    "summary": "1.2.1",
+    "body": "- Remove link_to warning for Rails 3.x or when using rails_xss\n- Don't warn if first argument to link_to is escaped\n- Detect usage of attr_accessible with no arguments\n- Fix error when rendering a partial from a view but not through a controller\n- Fix some issues with rails_xss, CheckCrossSiteScripting, and CheckTranslateBug\n- Simplify Brakeman Rake task\n- Avoid modifying $VERBOSE\n- Add Brakeman::RescanReport#to_s\n- Add Brakeman::Warning#to_s\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.2.0",
+    "published_at": "2014-02-10T23:52:37Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.2.0",
+    "summary": "1.2.0",
+    "body": "- Speed improvements for CheckExecute and CheckRender\n- Check named_scope() and scope() for SQL injection\n- Add --rake option to create rake task to run Brakeman\n- Add experimental support for rescanning a subset of files\n- Add --summary option to only output summary\n- Fix a problem with Rails 3 routes\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.1.0",
+    "published_at": "2014-02-10T23:52:08Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.1.0",
+    "summary": "1.1.0",
+    "body": "- Relax required versions for dependencies\n- Performance improvements for source processing\n- Better progress reporting\n- Handle basic operators like << + - \\* /\n- Rescue more errors to prevent complete crashes\n- Compatibility with newer Haml versions\n- Fix some warnings\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v1.0.0",
+    "published_at": "2014-02-10T23:50:48Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v1.0.0",
+    "summary": "1.0.0",
+    "body": "- Better handling of assignments inside ifs\n- Check more expressions for SQL injection\n- Use latest ruby_parser for better 1.9 syntax support\n- Brakeman can now be used as a library\n- Faster call search\n- Add option to return error code if warnings are found (tw-ngreen)\n- Allow truncated messages to be expanded in HTML\n- Fix summary when using warning thresholds\n- Better support for Rails 3 routes\n- Reduce SQL injection duplicate warnings\n- Lower confidence on mass assignment with no user input\n- Ignore mass assignment using all literal arguments\n- Keep expanded context in view with HTML output\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.9.2",
+    "published_at": "2014-02-10T23:49:52Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.9.2",
+    "summary": "0.9.2",
+    "body": "- Fix Rails 3 configuration parsing\n- Add t() helper to check for translate XSS bug\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.9.1",
+    "published_at": "2014-02-10T23:49:38Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.9.1",
+    "summary": "0.9.1",
+    "body": "Add warning for translator helper XSS vulnerability\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.9.0",
+    "published_at": "2014-02-10T23:49:02Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.9.0",
+    "summary": "0.9.0",
+    "body": "- Process Rails 3 configuration files\n- Check for config.active_record.whitelist_attributes = true\n- Always produce a warning for without_protection => true\n- Fix CSV output\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.8.4",
+    "published_at": "2014-02-10T23:48:29Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.8.4",
+    "summary": "0.8.4",
+    "body": "- Option for separate attr_accessible warnings\n- Option to set CSS file for HTML output\n- Add file names for version-specific warnings\n- Add line number for default routes in a controller\n- Fix hash_insert()\n- Remove use of Queue from threaded checks\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.8.3",
+    "published_at": "2014-02-10T23:47:05Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.8.3",
+    "summary": "0.8.3",
+    "body": "- Respect -w flag in .tabs format ([tw-ngreen](https://github.com/tw-ngreen))\n- Escape HTML output of error messages\n- Add --skip-libs option\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.8.2",
+    "published_at": "2014-02-10T23:47:45Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.8.2",
+    "summary": "0.8.2",
+    "body": "- Run checks in parallel threads by default\n  - Fix compatibility with ruby_parser 2.3.1\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.8.1",
+    "published_at": "2014-02-10T23:47:31Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.8.1",
+    "summary": "0.8.1",
+    "body": "- Add option to assume all controller methods are actions\n- Recover from errors when parsing routes\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.8.0",
+    "published_at": "2014-02-10T23:43:25Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.8.0",
+    "summary": "0.8.0",
+    "body": "- Add check for mass assignment using without_protection\n- Add check for password in http_basic_authenticate_with\n- Warn on user input in hash argument with mass assignment\n- auto_link is now considered safe for Rails >= 3.0.6\n- Output detected Rails version in report\n- Keep track of methods called in class definition\n- Add ruby_parser hack for Ruby 1.9 hash syntax\n- Add a few Rails 3.1 tests\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.7.2",
+    "published_at": "2014-02-10T23:42:47Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.7.2",
+    "summary": "0.7.2",
+    "body": "- Fix handling of params and cookies with nested access\n- Add CVEs for checks added in 0.7.0\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.7.1",
+    "published_at": "2014-02-10T23:42:28Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.7.1",
+    "summary": "0.7.1",
+    "body": "Require BaseProcessor for GemProcessor\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.7.0",
+    "published_at": "2014-02-10T23:41:59Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.7.0",
+    "summary": "0.7.0",
+    "body": "- Allow local variable as a class name\n- Add checks for vulnerabilities fixed in Rails 2.3.14 and 3.0.10\n- Check for default routes in Rails 3 apps\n- Look in Gemfile or Gemfile.lock for Rails version\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.6.1",
+    "published_at": "2014-02-10T23:41:42Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.6.1",
+    "summary": "0.6.1",
+    "body": "- Fix XSS check for cookies as parameters in output\n- Don't bother calling super in CheckSessionSettings\n- Add escape_once as a safe method\n- Accept '\\Z' or '\\z' in model validations\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.6.0",
+    "published_at": "2014-02-10T23:41:20Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.6.0",
+    "summary": "0.6.0",
+    "body": "- Tests are in place and fully functional\n- Hide errors by default in HTML output\n- Warn if routes.rb cannot be found\n- Narrow methods assumed to be file access\n- Increase confidence for methods known to not escape output\n- Fixes to output processing for Erubis\n- Fixes for Rails 3 XSS checks\n- Fixes to line numbers with Erubis\n- Fixes to escaped output scanning\n- Update CSRF CVE-2011-0447 message to be less assertive\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.5.2",
+    "published_at": "2014-02-10T23:41:01Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.5.2",
+    "summary": "0.5.2",
+    "body": "- Output report file name when finished\n- Add initial tests for Rails 2.x\n- Fix ERB line numbers when using Ruby 1.9\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.5.1",
+    "published_at": "2014-02-10T23:40:50Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.5.1",
+    "summary": "0.5.1",
+    "body": "Fix issue with 'has_one' => in routes\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.5.0",
+    "published_at": "2014-02-10T23:40:30Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.5.0",
+    "summary": "0.5.0",
+    "body": "- Add support for routes like get 'x/y', :to => 'ctrlr#whatever'\n- Allow empty blocks in Rails 3 routes\n- Check initializer for session settings\n- Add line numbers to session setting warnings\n- Add --checks option to list checks\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.4.1",
+    "published_at": "2014-02-10T23:40:06Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.4.1",
+    "summary": "0.4.1",
+    "body": "Fix reported line numbers when using new Erubis parser (mostly affects Rails 3 apps).\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.4.0",
+    "published_at": "2014-02-10T23:39:36Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.4.0",
+    "summary": "0.4.0",
+    "body": "- Handle Rails XSS protection properly\n- More detection options for rails_xss\n- Add --escape-html option \n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.3.2",
+    "published_at": "2014-02-10T23:39:18Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.3.2",
+    "summary": "0.3.2",
+    "body": "- Autodetect Rails 3 applications\n- Turn on auto-escaping for Rails 3 apps\n- Check Model.create() for mass assignment\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.3.1",
+    "published_at": "2014-02-10T23:38:31Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.3.1",
+    "summary": "0.3.1",
+    "body": "- Always output a line number in tabbed output format\n- Restrict characters in category name in tabbed output format to word characters and spaces, for Hudson/Jenkins plugin\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.2.2",
+    "published_at": "2014-02-10T23:38:15Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.2.2",
+    "summary": "0.2.2",
+    "body": "- Fix version_between? when no Rails version is specified\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.2.1",
+    "published_at": "2014-02-10T23:37:32Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.2.1",
+    "summary": "0.2.1",
+    "body": "- Add code snippet to tab output messages\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.2.0",
+    "published_at": "2014-02-11T00:03:38Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.2.0",
+    "summary": "0.2.0",
+    "body": "- Add check for mail_to vulnerability - CVE-2011-0446\n- Add check for CSRF weakness - CVE-2011-0447\n",
+    "category": "security"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.1.1",
+    "published_at": "2014-02-10T23:36:34Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.1.1",
+    "summary": "0.1.1",
+    "body": "- Be more permissive with ActiveSupport version\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.1.0",
+    "published_at": "2014-02-10T23:36:10Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.1.0",
+    "summary": "0.1.0",
+    "body": "- Check link_to for XSS (because arguments are not escaped)\n- Process layouts better (although not perfectly yet)\n- Load custom Haml filters if they are in lib/\n- Tab separated output via .tabs output extension\n- Switch to normal versioning scheme\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.0.3",
+    "published_at": "2014-02-11T00:01:52Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.0.3",
+    "summary": "0.0.3",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
+    "version": "v0.0.2",
+    "published_at": "2014-02-10T23:33:29Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v0.0.2",
+    "summary": "0.0.2",
+    "body": "",
+    "category": "other"
+  }
+]

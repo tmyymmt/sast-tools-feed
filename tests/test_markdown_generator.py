@@ -18,6 +18,8 @@ TOOL = {
     "homepage": "https://semgrep.dev",
     "license": "LGPL-2.1",
     "pricing": "Free / Paid",
+    "pricing_url": "https://semgrep.dev/pricing",
+    "languages": ["Python", "JavaScript"],
     "description": "Fast, lightweight, multi-language static analysis tool.",
     "description_ja": "高速・軽量・多言語対応の静的解析ツール。",
     "features": {
@@ -83,7 +85,7 @@ def test_generate_tool_page_contains_features():
     result = generate_tool_page(TOOL, ENTRIES)
     assert "✅" in result
     assert "LGPL-2.1" in result
-    assert "Free / Paid" in result
+    assert "[Free / Paid](https://semgrep.dev/pricing)" in result
 
 
 def test_generate_tool_page_contains_sast_feature_labels():
@@ -122,6 +124,27 @@ def test_generate_comparison_page_contains_all_tools():
     assert "Semgrep" in result
     assert "CodeQL" in result
     assert "v1.90.0" in result
+    assert "Languages" in result
+    assert "Python, JavaScript" in result
+    assert "[Free / Paid](https://semgrep.dev/pricing)" in result
+
+
+def test_generate_tool_page_pricing_without_paid_has_no_link():
+    tool = {**TOOL, "pricing": "Free", "pricing_url": "https://example.com/pricing"}
+    result = generate_tool_page(tool, ENTRIES)
+    assert "| Pricing | Free |" in result
+
+
+def test_generate_tool_page_pricing_split_links_for_free_and_paid():
+    tool = {
+        **TOOL,
+        "pricing": "Free (Community Build) / Paid (Server)",
+        "pricing_free_url": "https://docs.sonarsource.com/sonarqube-community-build/",
+        "pricing_paid_url": "https://www.sonarsource.com/plans-and-pricing/sonarqube/",
+    }
+    result = generate_tool_page(tool, ENTRIES)
+    assert "[Free (Community Build)](https://docs.sonarsource.com/sonarqube-community-build/)" in result
+    assert "[Paid (Server)](https://www.sonarsource.com/plans-and-pricing/sonarqube/)" in result
 
 
 def test_generate_comparison_page_ja_contains_japanese_header():
@@ -129,6 +152,56 @@ def test_generate_comparison_page_ja_contains_japanese_header():
     result = generate_comparison_page_ja(tools, {"semgrep": ENTRIES})
     assert "SASTツール比較" in result
     assert "比較" in result
+    assert "対応言語" in result
+
+
+def test_generate_comparison_page_sorts_by_checks_then_languages_then_name():
+    tool_a = {
+        **TOOL,
+        "id": "a-tool",
+        "name": "ATool",
+        "languages": ["Python"],
+        "features": {"multi_language": True, "custom_rules": True},
+    }
+    tool_b = {
+        **TOOL,
+        "id": "b-tool",
+        "name": "BTool",
+        "languages": ["Python", "Go"],
+        "features": {"multi_language": True, "custom_rules": True},
+    }
+    tool_c = {
+        **TOOL,
+        "id": "c-tool",
+        "name": "CTool",
+        "languages": ["Python", "Go", "Java"],
+        "features": {"multi_language": True, "custom_rules": True, "sarif_output": True},
+    }
+    result = generate_comparison_page([tool_a, tool_b, tool_c], {"a-tool": [], "b-tool": [], "c-tool": []})
+
+    c_idx = result.find("CTool")
+    b_idx = result.find("BTool")
+    a_idx = result.find("ATool")
+    assert c_idx < b_idx < a_idx
+
+
+def test_generate_comparison_page_sorts_alphabetically_when_checks_and_languages_tie():
+    tool_a = {
+        **TOOL,
+        "id": "zebra",
+        "name": "Zebra",
+        "languages": ["Python"],
+        "features": {"custom_rules": True},
+    }
+    tool_b = {
+        **TOOL,
+        "id": "alpha",
+        "name": "Alpha",
+        "languages": ["Go"],
+        "features": {"custom_rules": True},
+    }
+    result = generate_comparison_page([tool_a, tool_b], {"zebra": [], "alpha": []})
+    assert result.find("Alpha") < result.find("Zebra")
 
 
 def test_generate_comparison_page_empty_entries_shows_dash():

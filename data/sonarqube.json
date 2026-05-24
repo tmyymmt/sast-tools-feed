@@ -1,0 +1,732 @@
+[
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "26.5.0.122743b",
+    "published_at": "2026-05-19T12:59:25Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.5.0.122743b",
+    "summary": "26.5.0.122743",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-5-0-122743-released/182210), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D30945%20AND%20issuetype%21%3DMaintenance).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "26.4.0.121862",
+    "published_at": "2026-04-10T13:17:33Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.4.0.121862",
+    "summary": "26.4.0.121862",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-4-0-121862-released/181111), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D29438%20AND%20issuetype!%3DMaintenance).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "26.3.0.120487",
+    "published_at": "2026-03-03T09:53:50Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.3.0.120487",
+    "summary": "26.3.0.120487",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-3-0-120487-released/179296/3), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D27891%20AND%20issuetype!%3DMaintenance).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "26.2.0.119303",
+    "published_at": "2026-02-04T10:07:42Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.2.0.119303",
+    "summary": "26.2.0.119303",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-2-0-119303-released/177334), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D26400%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "26.1.0.118079",
+    "published_at": "2026-01-06T14:46:07Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.1.0.118079",
+    "summary": "26.1.0.118079",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-1-0-118079-released/172488), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D24413%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.12.0.117093",
+    "published_at": "2025-12-23T15:00:10Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.12.0.117093",
+    "summary": "25.12.0.117093",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-12-0-117093-released/153805), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D23291%20AND%20issuetype%20%21%3D%20Task%20AND%20issuetype%20%21%3D%20sub-Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.11.0.114957",
+    "published_at": "2025-11-05T10:26:59Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.11.0.114957",
+    "summary": "25.11.0.114957",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-11-0-114957-released/151995), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D22533%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.10.0.114319",
+    "published_at": "2025-10-03T13:33:44Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.10.0.114319",
+    "summary": "25.10.0.114319",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-10-0-114319-released/149840), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D21905%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.9.0.112764",
+    "published_at": "2025-09-01T15:33:36Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.9.0.112764",
+    "summary": "25.9.0.112764",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-9-0-112764-released/147979), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D21212%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.8.0.112029",
+    "published_at": "2025-08-06T13:33:07Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.8.0.112029",
+    "summary": "25.8.0.112029",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-8-0-112029-released/146251), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D19334%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.7.0.110598",
+    "published_at": "2025-07-07T09:39:23Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.7.0.110598",
+    "summary": "25.7.0.110598",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-7-0-110598-released/143989), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D18739%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.6.0.109173",
+    "published_at": "2025-06-02T14:19:56Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.6.0.109173",
+    "summary": "25.6.0.109173",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-6-0-109173-released/142415), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D18176%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.5.0.107428",
+    "published_at": "2025-05-06T08:12:43Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.5.0.107428",
+    "summary": "25.5.0.107428",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-5-0-107428-released/140479), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D18145%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.4.0.105899",
+    "published_at": "2025-04-07T13:22:08Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.4.0.105899",
+    "summary": "25.4.0.105899",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-4-0-105899-released/138584), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%3D16790%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.3.0.104237",
+    "published_at": "2025-03-04T14:08:50Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.3.0.104237",
+    "summary": "25.3.0.104237",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-3-0-104237-released/136378), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2016527%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.2.0.102705",
+    "published_at": "2025-02-03T16:06:10Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.2.0.102705",
+    "summary": "25.2.0.102705",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-2-0-102705-released/134495), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2016130%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "25.1.0.102122",
+    "published_at": "2025-01-07T15:44:51Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/25.1.0.102122",
+    "summary": "25.1.0.102122",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-25-1-0-102122-released/133218), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2016129%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "24.12.0.100206",
+    "published_at": "2024-12-02T17:04:19Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/24.12.0.100206",
+    "summary": "24.12.0.100206",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-24-12-0-100206-released/131515), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2016125%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.8.100196",
+    "published_at": "2024-12-02T09:57:03Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.8.100196",
+    "summary": "9.9.8.100196",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-8-lta-released/131519), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2016011%20AND%20issuetype%20%21%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.7.0.96327",
+    "published_at": "2024-09-30T14:24:12Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.7.0.96327",
+    "summary": "10.7.0.96327",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-7/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-7-released/127319), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015728%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.7.96285",
+    "published_at": "2024-09-30T14:23:20Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.7.96285",
+    "summary": "9.9.7.96285",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-7-lta-released/127122), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015864%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.6.0.92116",
+    "published_at": "2024-06-21T15:19:00Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.6.0.92116",
+    "summary": "10.6.0.92116",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-6/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-6-released/117860), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015553%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.6.92038",
+    "published_at": "2024-06-24T15:40:28Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.6.92038",
+    "summary": "9.9.6.92038",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-6-lta-released/117862), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015633%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.5.1.90531",
+    "published_at": "2024-05-02T06:06:57Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.5.1.90531",
+    "summary": "10.5.1.90531",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-5-1-released/114587) and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015591%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.5.90363",
+    "published_at": "2024-04-26T09:59:21Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.5.90363",
+    "summary": "9.9.5.90363",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-5-lta-released/114464), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015495%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.5.0.89998",
+    "published_at": "2024-04-12T13:46:24Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.5.0.89998",
+    "summary": "10.5.0.89998",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-5/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-5-released/113673), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015441%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.4.1.88267",
+    "published_at": "2024-02-26T14:47:44Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.4.1.88267",
+    "summary": "10.4.1.88267",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-4-1-released/109966), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015509%20AND%20issuetype%20!%3D%20Task ).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.4.87374",
+    "published_at": "2024-02-20T09:25:05Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.4.87374",
+    "summary": "9.9.4.87374",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-4-lts-released/108794), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2015399%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.4.0.87286",
+    "published_at": "2024-02-05T10:54:02Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.4.0.87286",
+    "summary": "10.4.0.87286",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-4/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-4-released/108790), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014265%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.3.0.82913",
+    "published_at": "2023-11-17T08:58:03Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.3.0.82913",
+    "summary": "10.3.0.82913",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-3/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-3-released/104484), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014267%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.3.79811",
+    "published_at": "2023-11-10T13:52:41Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.3.79811",
+    "summary": "9.9.3.79811",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-3-lts-released/104351), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014285%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.2.1.78527",
+    "published_at": "2023-09-25T09:07:26Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.2.1.78527",
+    "summary": "10.2.1.78527",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-2-1-released/99671), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014296).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.2.0.77647",
+    "published_at": "2023-09-04T10:07:37Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.2.0.77647",
+    "summary": "10.2.0.77647",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-2/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-2-released/98771), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014093%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.2.77730",
+    "published_at": "2023-09-05T12:46:44Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.2.77730",
+    "summary": "9.9.2.77730",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-2-lts-released/98772), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014158%20AND%20issuetype%20!%3D%20Task).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.1.0.73491",
+    "published_at": "2023-06-20T15:22:31Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.1.0.73491",
+    "summary": "10.1.0.73491",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-1/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-1-released/94439), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014087).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.1.69595",
+    "published_at": "2023-04-28T09:02:54Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.1.69595",
+    "summary": "9.9.1.69595",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-1-lts-released/90049/), and more in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2014051).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "10.0.0.68432",
+    "published_at": "2023-04-04T09:30:08Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/10.0.0.68432",
+    "summary": "10.0.0.68432",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/whats-new/sonarqube-10-0/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-10-0-released/88544), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2012624).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.9.0.65466",
+    "published_at": "2023-02-03T14:43:29Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.9.0.65466",
+    "summary": "9.9.0.65466",
+    "body": "See details in the [official announcement](https://www.sonarsource.com/products/sonarqube/downloads/lts/9-9-lts/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-9-lts-released/83246), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2013931).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.8.0.63668",
+    "published_at": "2022-12-16T09:24:14Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.8.0.63668",
+    "summary": "9.8.0.63668",
+    "body": "See details in the [official announcement](https://www.sonarqube.org/sonarqube-9-8/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-8-released/79150), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2013884).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.7.1.62043",
+    "published_at": "2022-10-31T14:15:03Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.7.1.62043",
+    "summary": "9.7.1.62043",
+    "body": "You'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-7-1-released/75105), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2013916).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.7.0.61563",
+    "published_at": "2022-10-17T08:47:08Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.7.0.61563",
+    "summary": "9.7.0.61563",
+    "body": "See details in the [official announcement](https://www.sonarqube.org/sonarqube-9-7/).\r\nYou'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-9-7-released/74682), and full details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2013800).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.10.61524",
+    "published_at": "2022-10-21T11:33:37Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.10.61524",
+    "summary": "8.9.10.61524",
+    "body": "You'll find more in the [community announcement](https://community.sonarsource.com/t/sonarqube-8-9-10-lts-released/74738), and details in the [release notes](https://sonarsource.atlassian.net/issues/?jql=project%20%3D%2010139%20AND%20fixVersion%20%3D%2012634).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.6.1.59531",
+    "published_at": "2022-08-29T12:03:40Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.6.1.59531",
+    "summary": "9.6.1.59531",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.6.0.59041",
+    "published_at": "2022-08-12T10:04:06Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.6.0.59041",
+    "summary": "9.6.0.59041",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.9.56886",
+    "published_at": "2022-06-16T13:02:46Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.9.56886",
+    "summary": "8.9.9.56886",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.5.0.56709",
+    "published_at": "2022-06-10T13:00:51Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.5.0.56709",
+    "summary": "9.5.0.56709",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.8.54436",
+    "published_at": "2022-04-04T12:45:36Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.8.54436",
+    "summary": "8.9.8.54436",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.4.0.54424",
+    "published_at": "2022-04-01T11:16:39Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.4.0.54424",
+    "summary": "9.4.0.54424",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.7.52159",
+    "published_at": "2022-02-04T10:29:16Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.7.52159",
+    "summary": "8.9.7.52159",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.3.0.51899",
+    "published_at": "2022-01-28T10:11:57Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.3.0.51899",
+    "summary": "9.3.0.51899",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.2.4.50792",
+    "published_at": "2021-12-21T10:13:56Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.2.4.50792",
+    "summary": "9.2.4.50792",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.6.50800",
+    "published_at": "2021-12-21T09:57:48Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.6.50800",
+    "summary": "8.9.6.50800",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.2.3.50713",
+    "published_at": "2021-12-17T14:10:57Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.2.3.50713",
+    "summary": "9.2.3.50713",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.5.50698",
+    "published_at": "2021-12-17T12:25:01Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.5.50698",
+    "summary": "8.9.5.50698",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.2.2.50622",
+    "published_at": "2021-12-15T13:48:05Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.2.2.50622",
+    "summary": "9.2.2.50622",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.4.50575",
+    "published_at": "2021-12-14T15:27:13Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.4.50575",
+    "summary": "8.9.4.50575",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.2.1.49989",
+    "published_at": "2021-11-29T09:55:41Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.2.1.49989",
+    "summary": "9.2.1.49989",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.2.0.49834",
+    "published_at": "2021-11-22T12:06:30Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.2.0.49834",
+    "summary": "9.2.0.49834",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.3.48735",
+    "published_at": "2021-10-26T11:57:07Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.3.48735",
+    "summary": "8.9.3.48735",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.1.0.47736",
+    "published_at": "2021-10-07T14:26:32Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.1.0.47736",
+    "summary": "9.1.0.47736",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.2.46101",
+    "published_at": "2021-10-07T14:26:21Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.2.46101",
+    "summary": "8.9.2.46101",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.0.1.46107",
+    "published_at": "2021-10-07T14:25:53Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.0.1.46107",
+    "summary": "9.0.1.46107",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "9.0.0.45539",
+    "published_at": "2021-07-05T07:47:06Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/9.0.0.45539",
+    "summary": "9.0.0.45539",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.1.44547",
+    "published_at": "2021-07-05T07:47:22Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.1.44547",
+    "summary": "8.9.1.44547",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.9.0.43852",
+    "published_at": "2021-05-04T11:37:41Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.9.0.43852",
+    "summary": "8.9.0.43852",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.7.1.42226",
+    "published_at": "2021-03-12T14:23:15Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.7.1.42226",
+    "summary": "8.7.1",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "7.9.6",
+    "published_at": "2021-03-30T07:11:44Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/7.9.6",
+    "summary": "7.9.6",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.7.0.41497",
+    "published_at": "2021-02-16T10:16:05Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.7.0.41497",
+    "summary": "8.7.0",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.6.1.40680",
+    "published_at": "2021-01-27T07:25:20Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.6.1.40680",
+    "summary": "8.6.1",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.6.0.39681",
+    "published_at": "2020-12-10T08:45:46Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.6.0.39681",
+    "summary": "8.6.0",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.5.1.38104",
+    "published_at": "2020-10-23T09:36:58Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.5.1.38104",
+    "summary": "8.5.1",
+    "body": ".",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.5.0.37579",
+    "published_at": "2020-10-06T06:19:25Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.5.0.37579",
+    "summary": "8.5.0.37579",
+    "body": "",
+    "category": "other"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
+    "version": "8.3.0.34182",
+    "published_at": "2020-04-29T13:11:31Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/8.3.0.34182",
+    "summary": "8.3.0.34182",
+    "body": "",
+    "category": "other"
+  }
+]
