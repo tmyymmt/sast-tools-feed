@@ -139,7 +139,7 @@ https://tmyymmt.github.io/sast-tools-feed/
 
 HTML pages automatically apply dark mode by detecting browser/OS settings via the `prefers-color-scheme` media query.
 
-The tool list in `index.html` uses the same sort order as the Summary table: summary feature checkmark count descending, then `centralized_management: true` first, then alphabetically by tool name. Rows in `comparison.html` are sorted independently per table: each table sorts by its own checkmark count descending, then by `centralized_management: true` first, then alphabetically.
+The tool list in `index.html` uses the same sort order as the comparison tables: feature checkmark count descending, then supported language count descending, then alphabetically by tool name.
 
 ### Per-Tool Page Structure
 
@@ -157,11 +157,15 @@ Each per-tool page (`{tool_id}.html` / `{tool_id}_ja.html`) contains:
 
 The comparison pages (`comparison.html` / `comparison_ja.html`) contain two tables:
 
-- **Summary table**: Tool name (with link to per-tool page and feature reference link), latest version, last updated, type, license, pricing, and basic feature flags (Multi-Lang, Dataflow, Custom Rules, SARIF Output).
-- **Detailed Comparison table**: Tool name (with link to per-tool page and feature reference link), all feature flags plus a Unique Features column. Feature flags covered:
+- **Summary table**: Tool name (with link to per-tool page and feature reference link), latest version, last updated, type, license, pricing, supported programming languages, and basic feature flags (Multi-Lang, Dataflow, Custom Rules, SARIF Output).
+- **Detailed Comparison table**: Tool name (with link to per-tool page and feature reference link), supported programming languages, all feature flags plus a Unique Features column. Feature flags covered:
   - Multi-Lang, Dataflow, IDE Plugin, CI/CD Plugin, Custom Rules, SaaS, API Server, Dashboard, Centralized Mgmt, SARIF, Auto-Fix, IaC
 
-Each table uses its own sort order: checkmark count within that table's feature columns descending, then centralized_management true first, then alphabetical.
+When a tool's pricing text includes `Paid` and `pricing_url` is configured in `tools/tools.yml`, the pricing text is rendered as a link to the official pricing page.
+
+If `pricing_free_url` and `pricing_paid_url` are both configured and the pricing text contains ` / `, the pricing cell is rendered as two links: Free-part text links to `pricing_free_url`, and Paid-part text links to `pricing_paid_url`.
+
+Both tables use the same sort order: feature checkmark count descending, then supported language count descending, then alphabetical.
 
 ---
 

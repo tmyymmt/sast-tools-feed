@@ -7,8 +7,23 @@ tools:
     features_url: https://semgrep.dev/docs/
     license: LGPL-2.1
     pricing: Free / Paid
+    pricing_url: https://semgrep.dev/pricing
     description: "Fast, lightweight, multi-language static analysis tool for finding bugs and enforcing code standards."
     description_ja: "バグの発見とコード標準の強制に使用する、高速・軽量・多言語対応の静的解析ツール。"
+    languages:
+      - Python
+      - JavaScript
+      - TypeScript
+      - Java
+      - Go
+      - Ruby
+      - C
+      - C++
+      - C#
+      - Kotlin
+      - Swift
+      - Rust
+      - PHP
     features:
       multi_language: true
       dataflow_taint: true
@@ -40,9 +55,22 @@ tools:
     homepage: https://codeql.github.com
     features_url: https://docs.github.com/en/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql
     license: MIT
-    pricing: Free (public repos) / GitHub Advanced Security
+    pricing: Free (public repos) / Paid for private/internal repos (GitHub Advanced Security)
+    pricing_url: https://docs.github.com/en/billing/concepts/product-billing/github-advanced-security
     description: "Semantic code analysis engine by GitHub, deeply integrated with GitHub Actions and the GitHub Security tab."
     description_ja: "GitHubによるセマンティックコード解析エンジン。GitHub ActionsおよびGitHub Securityタブと深く統合。"
+    languages:
+      - C/C++
+      - C#
+      - Go
+      - Java
+      - Kotlin
+      - JavaScript
+      - TypeScript
+      - Python
+      - Ruby
+      - Rust
+      - Swift
     features:
       multi_language: true
       dataflow_taint: true
@@ -74,9 +102,25 @@ tools:
     homepage: https://www.sonarsource.com/products/sonarqube/
     features_url: https://docs.sonarsource.com/sonarqube-server/latest/
     license: LGPL-3.0
-    pricing: Free / Paid
+    pricing: Free (Community Build) / Paid (SonarQube Server self-hosted, commercial plans)
+    pricing_url: https://www.sonarsource.com/plans-and-pricing/
+    pricing_free_url: https://docs.sonarsource.com/sonarqube-community-build/
+    pricing_paid_url: https://www.sonarsource.com/plans-and-pricing/sonarqube/
     description: "Widely-used continuous code quality and security platform supporting 30+ languages."
     description_ja: "30以上の言語に対応する、広く使われているコード品質・セキュリティ継続改善プラットフォーム。"
+    languages:
+      - Java
+      - JavaScript
+      - TypeScript
+      - Python
+      - C
+      - C++
+      - C#
+      - Go
+      - Kotlin
+      - Swift
+      - PHP
+      - Ruby
     features:
       multi_language: true
       dataflow_taint: true
@@ -111,6 +155,8 @@ tools:
     pricing: Free
     description: "Security linter for Python code, designed to find common security issues in Python programs."
     description_ja: "Pythonプログラムの一般的なセキュリティ問題を検出するためのPythonコードセキュリティリンター。"
+    languages:
+      - Python
     features:
       multi_language: false
       dataflow_taint: false
@@ -145,6 +191,8 @@ tools:
     pricing: Free
     description: "Static analysis security vulnerability scanner for Ruby on Rails applications."
     description_ja: "Ruby on Railsアプリケーション向けの静的解析セキュリティ脆弱性スキャナー。"
+    languages:
+      - Ruby
     features:
       multi_language: false
       dataflow_taint: true
@@ -179,6 +227,8 @@ tools:
     pricing: Free
     description: "Security checker for Go source code that inspects the AST and SSA for security problems."
     description_ja: "セキュリティ問題のためにGoソースコードのASTとSSAを検査するセキュリティチェッカー。"
+    languages:
+      - Go
     features:
       multi_language: false
       dataflow_taint: false
@@ -213,6 +263,13 @@ tools:
     pricing: Free
     description: "Multi-language static source code analyzer with focus on Java and build tool plugin support."
     description_ja: "Javaを中心とした多言語対応の静的ソースコード解析ツール。ビルドツールプラグイン対応。"
+    languages:
+      - Java
+      - JavaScript
+      - Apex
+      - PL/SQL
+      - Kotlin
+      - XML
     features:
       multi_language: true
       dataflow_taint: false
@@ -247,6 +304,8 @@ tools:
     pricing: Free
     description: "Static analysis tool that finds potential bugs in Java programs by analyzing bytecode."
     description_ja: "バイトコードを解析してJavaプログラムの潜在的なバグを発見する静的解析ツール。"
+    languages:
+      - Java
     features:
       multi_language: false
       dataflow_taint: false

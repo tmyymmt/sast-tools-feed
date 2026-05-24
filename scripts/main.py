@@ -234,13 +234,8 @@ def main() -> None:
 
     write_feeds(all_entries, tools)
 
-    # ページ表示用にツールを対応機能数降順・ツール名昇順でソート
-    # saas はスキャン機能ではなく提供形態のフラグのため除外する
-    _SCAN_FEATURE_KEYS = ("multi_language", "dataflow_taint", "custom_rules", "sarif_output")
-    tools_for_pages = sorted(
-        tools,
-        key=lambda t: (-sum(t.get("features", {}).get(k, False) for k in _SCAN_FEATURE_KEYS), t["name"].lower()),
-    )
+    # 比較ページ/READMEと同じ基準で並べる（チェックマーク数→対応言語数→アルファベット順）
+    tools_for_pages = _sort_tools_summary(tools)
     write_pages(tools_for_pages, entries_by_tool)
 
     if failed_tools:

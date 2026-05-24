@@ -108,6 +108,23 @@ def _features_url(tool: dict) -> str:
     return tool.get("features_url", tool.get("homepage", ""))
 
 
+def _pricing_str(tool: dict) -> str:
+    pricing = str(tool.get("pricing", "—"))
+    pricing_url = str(tool.get("pricing_url", "")).strip()
+    pricing_free_url = str(tool.get("pricing_free_url", "")).strip()
+    pricing_paid_url = str(tool.get("pricing_paid_url", "")).strip()
+    if " / " in pricing and pricing_free_url and pricing_paid_url:
+        free_text, paid_text = pricing.split(" / ", 1)
+        return (
+            f"[{_escape_markdown_table_text(free_text)}]({pricing_free_url})"
+            f" / "
+            f"[{_escape_markdown_table_text(paid_text)}]({pricing_paid_url})"
+        )
+    if "paid" in pricing.lower() and pricing_url:
+        return f"[{_escape_markdown_table_text(pricing)}]({pricing_url})"
+    return _escape_markdown_table_text(pricing)
+
+
 def generate_tool_page(tool: dict, entries: List[ReleaseEntry]) -> str:
     """ツールごとのまとめページ（英語）を生成する。"""
     name = _html.escape(tool["name"])
@@ -128,7 +145,7 @@ def generate_tool_page(tool: dict, entries: List[ReleaseEntry]) -> str:
         "|------|-------|",
         f"| Type | {_tool_type(tool)} |",
         f"| License | {tool.get('license', '—')} |",
-        f"| Pricing | {tool.get('pricing', '—')} |",
+        f"| Pricing | {_pricing_str(tool)} |",
         f"| Homepage | {_homepage(tool)} |",
         f"| Latest Version | {latest_version} |",
         f"| Last Updated | {last_updated} |",
@@ -201,7 +218,7 @@ def generate_tool_page_ja(tool: dict, entries: List[ReleaseEntry]) -> str:
         "|------|------|",
         f"| 種別 | {_tool_type(tool)} |",
         f"| ライセンス | {tool.get('license', '—')} |",
-        f"| 費用 | {tool.get('pricing', '—')} |",
+        f"| 費用 | {_pricing_str(tool)} |",
         f"| 公式サイト | {_homepage(tool)} |",
         f"| 最新バージョン | {latest_version} |",
         f"| 最終更新日 | {last_updated} |",
@@ -254,44 +271,30 @@ def generate_tool_page_ja(tool: dict, entries: List[ReleaseEntry]) -> str:
     return "\n".join(lines)
 
 
-_SUMMARY_FEATURES = [
-    "multi_language", "dataflow_taint", "custom_rules", "sarif_output", "centralized_management",
-]
-
 _DETAILED_FEATURES = [
     "multi_language", "dataflow_taint", "ide_plugin", "ci_cd_plugin", "custom_rules", "saas",
     "api_server", "dashboard", "centralized_management", "sarif_output", "auto_fix", "iac",
 ]
 
 
-def _feature_count(tool: dict) -> int:
-    return sum(1 for k in _DETAILED_FEATURES if tool.get("features", {}).get(k, False))
+def _feature_count_for_keys(tool: dict, keys: List[str]) -> int:
+    return sum(1 for k in keys if tool.get("features", {}).get(k, False))
 
 
-def _summary_feature_count(tool: dict) -> int:
-    return sum(1 for k in _SUMMARY_FEATURES if tool.get("features", {}).get(k, False))
+def _language_count(tool: dict) -> int:
+    return len(tool.get("languages", []))
+
+
+def _sort_key(tool: dict, feature_keys: List[str]) -> tuple:
+    return (-_feature_count_for_keys(tool, feature_keys), -_language_count(tool), tool["name"].lower())
 
 
 def _sort_tools(tools: list) -> list:
-    return sorted(
-        tools,
-        key=lambda t: (
-            -_feature_count(t),
-            not t.get("features", {}).get("centralized_management", False),
-            t["name"],
-        ),
-    )
+    return sorted(tools, key=lambda t: _sort_key(t, _DETAILED_FEATURES))
 
 
 def _sort_tools_summary(tools: list) -> list:
-    return sorted(
-        tools,
-        key=lambda t: (
-            -_summary_feature_count(t),
-            not t.get("features", {}).get("centralized_management", False),
-            t["name"],
-        ),
-    )
+    return sorted(tools, key=lambda t: _sort_key(t, _DETAILED_FEATURES))
 
 
 def _unique_features_str(tool: dict) -> str:
@@ -302,6 +305,11 @@ def _unique_features_str(tool: dict) -> str:
 def _unique_features_str_ja(tool: dict) -> str:
     items = tool.get("unique_features_ja", tool.get("unique_features", []))
     return "<br>".join(f"• {_escape_markdown_table_text(str(f))}" for f in items) if items else "—"
+
+
+def _languages_str(tool: dict) -> str:
+    items = tool.get("languages", [])
+    return ", ".join(_escape_markdown_table_text(str(lang)) for lang in items) if items else "—"
 
 
 def _escape_markdown_table_text(text: str) -> str:
@@ -325,8 +333,8 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
         "",
         "## Summary",
         "",
-        "| Tool | Latest | Updated | Type | License | Pricing | Multi-Lang | Dataflow | Custom Rules | SARIF | Centralized Mgmt |",
-        "|------|--------|---------|------|---------|---------|------------|----------|--------------|-------|------------------|",
+        "| Tool | Latest | Updated | Type | License | Pricing | Languages | Multi-Lang | Dataflow | Custom Rules | SARIF | Centralized Mgmt |",
+        "|------|--------|---------|------|---------|---------|-----------|------------|----------|--------------|-------|------------------|",
     ]
 
     for tool in summary_tools:
@@ -341,7 +349,8 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
             f" | {updated}"
             f" | {_tool_type(tool)}"
             f" | {tool.get('license', '—')}"
-            f" | {tool.get('pricing', '—')}"
+            f" | {_pricing_str(tool)}"
+            f" | {_languages_str(tool)}"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'custom_rules')}"
@@ -353,8 +362,8 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
         "",
         "## Detailed Comparison",
         "",
-        "| Tool | Multi-Lang | Dataflow | IDE Plugin | CI/CD Plugin | Custom Rules | SaaS | API Server | Dashboard | Centralized Mgmt | SARIF | Auto-Fix | IaC | Unique Features |",
-        "|------|------------|----------|------------|--------------|--------------|------|------------|-----------|------------------|-------|----------|-----|-----------------|",
+        "| Tool | Languages | Multi-Lang | Dataflow | IDE Plugin | CI/CD Plugin | Custom Rules | SaaS | API Server | Dashboard | Centralized Mgmt | SARIF | Auto-Fix | IaC | Unique Features |",
+        "|------|-----------|------------|----------|------------|--------------|--------------|------|------------|-----------|------------------|-------|----------|-----|-----------------|",
     ]
 
     for tool in detailed_tools:
@@ -362,6 +371,7 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
         tool_name = _escape_markdown_link_text(tool["name"])
         lines.append(
             f"| [{tool_name}]({tid}.html)<br>[Features ↗]({_features_url(tool)})"
+            f" | {_languages_str(tool)}"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'ide_plugin')}"
@@ -394,8 +404,8 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
         "",
         "## 概要版",
         "",
-        "| ツール | 最新版 | 更新日 | 種別 | ライセンス | 費用 | 多言語 | データフロー | カスタムルール | SARIF | 集中管理 |",
-        "|--------|--------|--------|------|-----------|------|--------|-------------|--------------|-------|---------|",
+        "| ツール | 最新版 | 更新日 | 種別 | ライセンス | 費用 | 対応言語 | 多言語 | データフロー | カスタムルール | SARIF | 集中管理 |",
+        "|--------|--------|--------|------|-----------|------|----------|--------|-------------|--------------|-------|---------|",
     ]
 
     for tool in summary_tools:
@@ -410,7 +420,8 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
             f" | {updated}"
             f" | {_tool_type(tool)}"
             f" | {tool.get('license', '—')}"
-            f" | {tool.get('pricing', '—')}"
+            f" | {_pricing_str(tool)}"
+            f" | {_languages_str(tool)}"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'custom_rules')}"
@@ -422,8 +433,8 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
         "",
         "## 詳細版",
         "",
-        "| ツール | 多言語 | データフロー | IDEプラグイン | CI/CDプラグイン | カスタムルール | SaaS | APIサーバー | ダッシュボード | 集中管理 | SARIF | 自動修正 | IaC | 独自機能 |",
-        "|--------|--------|-------------|--------------|----------------|--------------|------|------------|--------------|---------|-------|---------|-----|---------|",
+        "| ツール | 対応言語 | 多言語 | データフロー | IDEプラグイン | CI/CDプラグイン | カスタムルール | SaaS | APIサーバー | ダッシュボード | 集中管理 | SARIF | 自動修正 | IaC | 独自機能 |",
+        "|--------|----------|--------|-------------|--------------|----------------|--------------|------|------------|--------------|---------|-------|---------|-----|---------|",
     ]
 
     for tool in detailed_tools:
@@ -431,6 +442,7 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
         tool_name = _escape_markdown_link_text(tool["name"])
         lines.append(
             f"| [{tool_name}]({tid}_ja.html)<br>[機能一覧 ↗]({_features_url(tool)})"
+            f" | {_languages_str(tool)}"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'ide_plugin')}"
