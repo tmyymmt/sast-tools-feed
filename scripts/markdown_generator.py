@@ -67,7 +67,9 @@ def _sanitize_html_fragment(html_fragment: str) -> str:
             if attr.lower() in ("href", "src") and isinstance(value, str):
                 if value.strip().lower().startswith(("javascript:", "data:")):
                     del tag.attrs[attr]
-    return str(soup)
+    if soup.body:
+        return soup.body.decode_contents()
+    return soup.decode_contents()
 
 BOOL_MARK: Dict[bool, str] = {True: "✅", False: "❌"}
 
@@ -294,12 +296,20 @@ def _sort_tools_summary(tools: list) -> list:
 
 def _unique_features_str(tool: dict) -> str:
     items = tool.get("unique_features", [])
-    return "<br>".join(f"• {f}" for f in items) if items else "—"
+    return "<br>".join(f"• {_escape_markdown_table_text(str(f))}" for f in items) if items else "—"
 
 
 def _unique_features_str_ja(tool: dict) -> str:
     items = tool.get("unique_features_ja", tool.get("unique_features", []))
-    return "<br>".join(f"• {f}" for f in items) if items else "—"
+    return "<br>".join(f"• {_escape_markdown_table_text(str(f))}" for f in items) if items else "—"
+
+
+def _escape_markdown_table_text(text: str) -> str:
+    return _html.escape(text).replace("|", "&#124;")
+
+
+def _escape_markdown_link_text(text: str) -> str:
+    return _escape_markdown_table_text(text).replace("[", "&#91;").replace("]", "&#93;")
 
 
 def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[ReleaseEntry]]) -> str:
@@ -321,11 +331,12 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
 
     for tool in summary_tools:
         tid = tool["id"]
+        tool_name = _escape_markdown_link_text(tool["name"])
         latest = _latest_entry(entries_by_tool.get(tid, []))
         version = latest.version if latest else "—"
         updated = latest.published_at[:10] if latest else "—"
         lines.append(
-            f"| [{tool['name']}]({tid}.html)<br>[Features ↗]({_features_url(tool)})"
+            f"| [{tool_name}]({tid}.html)<br>[Features ↗]({_features_url(tool)})"
             f" | {version}"
             f" | {updated}"
             f" | {_tool_type(tool)}"
@@ -348,8 +359,9 @@ def generate_comparison_page(tools: list, entries_by_tool: Dict[str, List[Releas
 
     for tool in detailed_tools:
         tid = tool["id"]
+        tool_name = _escape_markdown_link_text(tool["name"])
         lines.append(
-            f"| [{tool['name']}]({tid}.html)<br>[Features ↗]({_features_url(tool)})"
+            f"| [{tool_name}]({tid}.html)<br>[Features ↗]({_features_url(tool)})"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'ide_plugin')}"
@@ -388,11 +400,12 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
 
     for tool in summary_tools:
         tid = tool["id"]
+        tool_name = _escape_markdown_link_text(tool["name"])
         latest = _latest_entry(entries_by_tool.get(tid, []))
         version = latest.version if latest else "—"
         updated = latest.published_at[:10] if latest else "—"
         lines.append(
-            f"| [{tool['name']}]({tid}_ja.html)<br>[機能一覧 ↗]({_features_url(tool)})"
+            f"| [{tool_name}]({tid}_ja.html)<br>[機能一覧 ↗]({_features_url(tool)})"
             f" | {version}"
             f" | {updated}"
             f" | {_tool_type(tool)}"
@@ -415,8 +428,9 @@ def generate_comparison_page_ja(tools: list, entries_by_tool: Dict[str, List[Rel
 
     for tool in detailed_tools:
         tid = tool["id"]
+        tool_name = _escape_markdown_link_text(tool["name"])
         lines.append(
-            f"| [{tool['name']}]({tid}_ja.html)<br>[機能一覧 ↗]({_features_url(tool)})"
+            f"| [{tool_name}]({tid}_ja.html)<br>[機能一覧 ↗]({_features_url(tool)})"
             f" | {_feature_mark(tool, 'multi_language')}"
             f" | {_feature_mark(tool, 'dataflow_taint')}"
             f" | {_feature_mark(tool, 'ide_plugin')}"

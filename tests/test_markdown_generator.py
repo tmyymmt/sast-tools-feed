@@ -191,6 +191,12 @@ def test_render_html_sanitizes_script_and_js_url():
     assert 'href="javascript:alert(1)"' not in result
 
 
+def test_render_html_sanitizer_does_not_wrap_fragment_with_html_body():
+    result = render_html("T", "<div>ok</div>")
+    assert "<body><html>" not in result
+    assert "<body><body>" not in result
+
+
 def test_generate_tool_page_type_with_distribution_field():
     """distributionフィールドが指定された場合、_tool_typeがそれを使う。"""
     tool_hybrid = {**TOOL, "distribution": "hybrid"}
@@ -222,3 +228,21 @@ def test_generate_tool_page_ja_escapes_tool_name_and_description():
     result = generate_tool_page_ja(tool, [])
     assert "# A &lt;B&gt;" in result
     assert "> &lt;script&gt;alert(1)&lt;/script&gt;" in result
+
+
+def test_generate_comparison_page_escapes_tool_name_for_markdown_table():
+    tool = {**TOOL, "name": "A | B ] [ <tag>"}
+    result = generate_comparison_page([tool], {"semgrep": ENTRIES})
+    assert "A &#124; B &#93; &#91; &lt;tag&gt;" in result
+
+
+def test_generate_comparison_page_escapes_unique_features_for_markdown_table():
+    tool = {**TOOL, "unique_features": ["X | Y <img src=x>"]}
+    result = generate_comparison_page([tool], {"semgrep": ENTRIES})
+    assert "X &#124; Y &lt;img src=x&gt;" in result
+
+
+def test_generate_comparison_page_ja_escapes_unique_features_for_markdown_table():
+    tool = {**TOOL, "unique_features_ja": ["A | B <script>"]}
+    result = generate_comparison_page_ja([tool], {"semgrep": ENTRIES})
+    assert "A &#124; B &lt;script&gt;" in result

@@ -84,7 +84,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: 'open',
-              labels: ['feed-failure'],
+              labels: 'feed-failure',
             });
             if (existing.data.length === 0) {
               await github.rest.issues.create({
