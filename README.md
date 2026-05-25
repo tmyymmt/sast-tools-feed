@@ -22,33 +22,77 @@ The following categories are **out of scope**:
   - Run weekly via GitHub Actions (every Friday at UTC 22:00)
   - Create an Issue, have Copilot create a PR, complete review, and merge to main
 
-## Tool List (Sort Order)
+## Covered Tools
 
-The tool list order in the comparison pages and this README follows:
+| Tool | Type | License |
+|------|------|---------|
+| [SonarQube](https://www.sonarsource.com/products/sonarqube/) | OSS / SaaS | LGPL-3.0 |
+| [Semgrep](https://semgrep.dev) | OSS / SaaS | LGPL-2.1 |
+| [CodeQL](https://codeql.github.com) | OSS / GitHub Advanced Security | MIT |
+| [PMD](https://pmd.github.io) | OSS | BSD-style |
+| [Bandit](https://bandit.readthedocs.io) | OSS | Apache-2.0 |
+| [Brakeman](https://brakemanscanner.org) | OSS | MIT |
+| [gosec](https://github.com/securego/gosec) | OSS | Apache-2.0 |
+| [SpotBugs](https://spotbugs.github.io) | OSS | LGPL-3.0 |
 
-1. More checkmarks in feature columns first
-2. If tied, more supported languages first
-3. If still tied, alphabetical order
+## Feed URLs
 
-| Tool | Checkmarks | Supported Languages |
-|---|---:|---:|
-| SonarQube | 12 | 12 |
-| Semgrep | 10 | 13 |
-| CodeQL | 10 | 11 |
-| PMD | 4 | 6 |
-| Bandit | 3 | 1 |
-| Brakeman | 3 | 1 |
-| gosec | 3 | 1 |
-| SpotBugs | 3 | 1 |
+### All Tools (Combined)
 
-## File Structure
+| Format | URL |
+|--------|-----|
+| RSS 2.0 | `https://tmyymmt.github.io/sast-tools-feed/feeds/all.rss` |
+| Atom 1.0 | `https://tmyymmt.github.io/sast-tools-feed/feeds/all.atom` |
+| JSON Feed 1.1 | `https://tmyymmt.github.io/sast-tools-feed/feeds/all.json` |
 
-### Spec Template
-- GitHub Spec Kit style feature spec template: `.specify/templates/spec-template.md`
+### Per-Tool Feeds
 
-### Full Specification
-- docs/full-specs/spec.md
-- The full specification always reflects the latest spec
+Replace `{tool_id}` with: `semgrep`, `codeql`, `sonarqube`, `bandit`, `brakeman`, `gosec`, `pmd`, `spotbugs`
+
+| Format | URL |
+|--------|-----|
+| RSS 2.0 | `https://tmyymmt.github.io/sast-tools-feed/feeds/{tool_id}.rss` |
+| Atom 1.0 | `https://tmyymmt.github.io/sast-tools-feed/feeds/{tool_id}.atom` |
+| JSON Feed 1.1 | `https://tmyymmt.github.io/sast-tools-feed/feeds/{tool_id}.json` |
+
+## Pages
+
+- **Comparison**: [English](https://tmyymmt.github.io/sast-tools-feed/comparison.html) / [Japanese](https://tmyymmt.github.io/sast-tools-feed/comparison_ja.html)
+- **Per-tool summaries**: `https://tmyymmt.github.io/sast-tools-feed/{tool_id}.html`
+
+## Release Categories
+
+Releases are categorized for easy filtering:
+
+| Category | Description |
+|----------|-------------|
+| `feature` | Feature additions and changes |
+| `bugfix` | Bug fixes |
+| `security` | Security fixes and hotfixes |
+| `pricing` | Pricing changes |
+| `announcement` | Announcements, events, awards |
+| `other` | Other |
+
+## Repository Structure
+
+```
+.
+├── scripts/            # Python scripts
+│   ├── main.py         # Entry point
+│   ├── models.py       # Data models
+│   ├── categorize.py   # Release categorization
+│   ├── storage.py      # JSON storage
+│   ├── feed_generator.py   # RSS/Atom/JSON Feed generation
+│   ├── markdown_generator.py  # HTML page generation
+│   └── collectors/     # Data collectors per tool type
+│       └── github.py   # GitHub Releases API collector
+├── tools/
+│   └── tools.yml       # Tool configuration
+├── data/               # Persisted release data (JSON)
+├── public/             # Generated output (gitignored, deployed to GitHub Pages)
+├── tests/              # Test suite
+└── docs/               # Specifications
+```
 
 ## Rules
 
