@@ -1,6 +1,8 @@
 # SAST Tools Feed
 静的コード解析ツールのリリース情報を集約し、ツールごとのまとめページや比較ページをHTMLで生成し、フィードとして公開するリポジトリです。
 
+🌐 **公開サイト**: https://tmyymmt.github.io/sast-tools-feed/
+
 ## 対象ツールのカテゴリ
 
 本リポジトリは **SAST（Static Application Security Testing）ツール**（静的コード解析セキュリティツールとも呼ばれる）を対象とします。
@@ -13,10 +15,6 @@
   - https://github.com/tmyymmt/sca-tools-feed/
 - **DAST（Dynamic Application Security Testing）**：実行中のシステムにリクエストを送信して脆弱性を検出するツール（例：OWASP ZAP）
   - https://github.com/tmyymmt/dast-tools-feed/
-
-## 公開サイト
-
-https://tmyymmt.github.io/sast-tools-feed/ を GitHub Pages として公開しています。フィード一覧・ツールごとのまとめページ・比較ページを参照できます。HTMLページはすべて `prefers-color-scheme` によるダークモードに対応しています。
 
 ## 動作の仕組み
 
