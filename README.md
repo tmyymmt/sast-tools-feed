@@ -1,6 +1,8 @@
 # SAST Tools Feed
 A repository that aggregates release information from static code analysis tools, generates per-tool summary pages and comparison pages as HTML, and publishes them as feeds.
 
+🌐 **Live site**: https://tmyymmt.github.io/sast-tools-feed/
+
 ## Covered Tool Categories
 
 This repository covers **SAST (Static Application Security Testing) tools** — also known as static code analysis security tools.
@@ -13,10 +15,6 @@ The following categories are **out of scope**:
   - https://github.com/tmyymmt/sca-tools-feed/
 - **DAST (Dynamic Application Security Testing)**: Tools that detect vulnerabilities by sending requests to a running system (e.g., OWASP ZAP)
   - https://github.com/tmyymmt/dast-tools-feed/
-
-## Published Site
-
-https://tmyymmt.github.io/sast-tools-feed/ is published as GitHub Pages. You can browse feed listings, per-tool summary pages, and the comparison page. All HTML pages support dark mode via `prefers-color-scheme`.
 
 ## How It Works
 
