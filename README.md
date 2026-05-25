@@ -112,7 +112,7 @@ Go to the **Actions** tab in the GitHub repository → **Update Feeds** → **Ru
 
 - **Secrets**: `GITHUB_TOKEN` is provided automatically by GitHub Actions — no additional setup needed.
 - **Permissions**: `contents: write` (for data commits) and `pages: write` (for GitHub Pages deployment) are preconfigured.
-- **GitHub Pages**: In repository Settings → Pages, set Source to `GitHub Actions`.
+- **GitHub Pages**: If GitHub Pages is not enabled yet, the workflow enables it automatically before the first deployment.
 
 ## License
 

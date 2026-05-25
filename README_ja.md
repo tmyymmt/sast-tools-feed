@@ -112,7 +112,7 @@ GitHub リポジトリの **Actions** タブ → **Update Feeds** → **Run work
 
 - **Secrets**：`GITHUB_TOKEN` は GitHub Actions が自動的に提供するため、追加設定不要です。
 - **Permissions**：`contents: write`（data/ へのコミット用）と `pages: write`（GitHub Pages デプロイ用）はあらかじめ設定済みです。
-- **GitHub Pages**：リポジトリの Settings → Pages で、Source を `GitHub Actions` に設定してください。
+- **GitHub Pages**：まだ有効化されていない場合でも、初回デプロイ前にワークフローが自動で有効化します。
 
 ## ライセンス
 

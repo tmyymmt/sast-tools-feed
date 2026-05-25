@@ -75,6 +75,7 @@ Feeds are categorized by release type, also used for filtering:
 ### Publication Endpoint
 
 - Published via GitHub Pages
+- If GitHub Pages is not enabled yet, the update workflow enables it automatically before deployment
 
 ---
 
