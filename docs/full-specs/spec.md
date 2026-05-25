@@ -142,6 +142,23 @@ HTML pages automatically apply dark mode by detecting browser/OS settings via th
 
 The tool list in `index.html` uses the same sort order as the comparison tables: feature checkmark count descending, then supported language count descending, then alphabetically by tool name.
 
+The tool list order in the comparison pages follows:
+
+1. More checkmarks in feature columns first
+2. If tied, more supported languages first
+3. If still tied, alphabetical order
+
+| Tool | Checkmarks | Supported Languages |
+|---|---:|---:|
+| SonarQube | 12 | 12 |
+| Semgrep | 10 | 13 |
+| CodeQL | 10 | 11 |
+| PMD | 4 | 6 |
+| Bandit | 3 | 1 |
+| Brakeman | 3 | 1 |
+| gosec | 3 | 1 |
+| SpotBugs | 3 | 1 |
+
 ### Per-Tool Page Structure
 
 Each per-tool page (`{tool_id}.html` / `{tool_id}_ja.html`) contains:
