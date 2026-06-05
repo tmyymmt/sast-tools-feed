@@ -2,6 +2,26 @@
   {
     "tool_id": "gosec",
     "tool_name": "gosec",
+    "version": "v2.27.1",
+    "published_at": "2026-06-01T17:24:27Z",
+    "url": "https://github.com/securego/gosec/releases/tag/v2.27.1",
+    "summary": "v2.27.1",
+    "body": "## Changelog\n* 9e6a9843d7a4a6e3e9a8539b02612c8a4aa3f889 Downgrade google lib to avoid min Go version bump (#1687)\n\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "gosec",
+    "tool_name": "gosec",
+    "version": "v2.27.0",
+    "published_at": "2026-06-01T08:21:22Z",
+    "url": "https://github.com/securego/gosec/releases/tag/v2.27.0",
+    "summary": "v2.27.0",
+    "body": "## Changelog\n* 0a5c6504c46569257663726ac54c7cfdad42e846 Downgrade the jsonschema dep to v0.13.0 due to incompatibility with anthropick-sdk-go (#1686)\n* b48e668764ca9fd826a7b84c9e9194af3227fade Update all dependencies (#1685)\n* bd17b2589eb634e511b352f14fc30cb40863eefe Downgrade the github.com/invopop/jsonschema v0.13.0 to solve incopatibility with anthropic-sdk (#1683)\n* c6f8c3d9a75d897612c7beb55007ac5f29b2e3a2 Update all dependencies (#1682)\n* 5676cbccda635b33fab15bb85e32b2e741c9372f Update vulnerabilities alerts for indirect dependencies\n* ce167d4a37bc5fe3f49bb9be3209f9759b69ff6f Pin dependencies (#1681)\n* 74b726dfcebf218a1984a51b44fe962aecef5921 Skip pining for my repos\n* a68f8825bfa51b46cc517a5cd8baf4848e03a8d1 Update renovate configuration\n* 2f8791bad7bf8f6a11f0b29e41aec54ddb9fcb0b Fix typo\n* ad3778a7be907bf4e5cf5ed5c63333a377f3fb3b Update branch config in renovate config\n* b1583fe2f3ffb41074cb11996e58ca554c6c04e7 Migrate config renovate.json (#1678)\n* 139e33d474374c8e26a0e480f077526e131f43bb Update renovate to refresh the branch creation\n* f3c03ebb7f077f9b9ddfc64f710e0a2d2e92ded4 Update the renovate branch prefix\n* 85814f2e3964a6d38aeb6e6002ac9268c16fcab5 Update renovate config to pin the actions dependencies by digests (#1676)\n* 55f051973281b15900b2b8b30aaf467a7b9127ea Migrate the html remport to react v19. (#1675)\n* 6ad4476d269895a4a9b77883b3e3503f7e5e4103 Manually update version to fix renovate (#1674)\n* 8f88312a5f80dbf04d2248d75c372d165e54e589 feat: integrate Atlas Cloud provider (#1672)\n* 6351b0c6fcc7d75acb230a9be7f9047aada322ae Refactor error position parsing to support path with colon. (#1673)\n* de65614d10a6b84029e3e1215567b8ce7e490f23 Add two options to require rule ID and justificaiton for inline annotations (#1671)\n* e354c572d957eb8bf63481cc9ba2704b58a6ae35 Fix false positive in G118 when cancel is stored in a slice/map (#1670)\n* 4161f0b4333859990584c9fb3fd377a892eaf477 chore(go): update supported Go versions to 1.25.10 and 1.26.3 (#1669)\n* b4f29347566880540afec8205b633d2859377cec Harden the github workflows and action (#1665)\n* b7aca268861108d4446959fa92d2fe808eb7aa6f Fix justification delimiter in annotation format doc (#1661)\n* 945bce72d26a794e25a122d87527d063bf887903 Update all dependencies (#1664)\n* 5f4eec95fa28ce5dc6cf555de8c242cb57545f01 Update action to use gosec version v2.26.1 (#1660)\n\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "gosec",
+    "tool_name": "gosec",
     "version": "v2.26.1",
     "published_at": "2026-04-28T06:53:41Z",
     "url": "https://github.com/securego/gosec/releases/tag/v2.26.1",

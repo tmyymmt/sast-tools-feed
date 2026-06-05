@@ -2,6 +2,16 @@
   {
     "tool_id": "sonarqube",
     "tool_name": "SonarQube",
+    "version": "26.6.0.123539",
+    "published_at": "2026-06-03T09:56:25Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.6.0.123539",
+    "summary": "26.6.0.123539",
+    "body": "_Release notes are being prepared and will be published here shortly._",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
     "version": "26.5.0.122743b",
     "published_at": "2026-05-19T12:59:25Z",
     "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.5.0.122743b",
