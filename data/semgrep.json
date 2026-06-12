@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.166.0",
+    "published_at": "2026-06-11T14:00:10Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.166.0",
+    "summary": "Release v1.166.0",
+    "body": "## [1.166.0](https://github.com/semgrep/semgrep/releases/tag/v1.166.0) - 2026-06-11\n\n### ### Added\n\n- Pro: Added experimental cross-file (interfile) analysis for Gosu, enabling taint tracking across multiple Gosu source files. (gosu-interfile)\n- Added support for more operators for folding for constant propagation, including subtraction, division, bit ops, bit shifts, comparisons, and more (ENGINE-2789)\n\n### ### Fixed\n\n- Fixed parsing of integer literals with an underscore immediately after the radix prefix (e.g. `0x_dead_beef`, `0o_755`, `0b_1010_1010`). (LANG-533)\n- Python parsing now preserves type parameters on `def` and `class` definitions. (LANG-536)\n- Semgrep no longer stores the API token in  `~/.semgrep/settings.yml`'s stored\n  token when the current scan's token is supplied via the `SEMGREP_APP_TOKEN`\n  envvar. (SEC-2240)\n- `semgrep ci` scans originating from a pre-commit hook will no longer fail with\n  `Unable to create '<tmp>/.git/index.lock': Not a directory` in certain cases. (engine-2736)\n\n### ### Infra/Release Changes\n\n- Added parsing tests covering Python language features (Python 3.0–3.12). (LANG-531)\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.165.0",
     "published_at": "2026-06-03T22:02:47Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.165.0",
