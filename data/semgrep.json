@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.167.0",
+    "published_at": "2026-06-17T18:21:17Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.167.0",
+    "summary": "Release v1.167.0",
+    "body": "## [1.167.0](https://github.com/semgrep/semgrep/releases/tag/v1.167.0) - 2026-06-17\n\n### ### Added\n\n- Added support for more operators for folding for constant propagation, including subtraction, division, bit ops, bit shifts, comparisons, and more. (const-folding)\n- Added a `nosemgrep_disabled` field to the scan configuration so the platform can disable `nosemgrep` inline ignore comments org-wide for a scan. (APPEX-1122)\n- Semgrep now skips binary files (images, archives, compiled executables,\n  etc.) during scanning by default, detected via matching file extensions\n  to known file-format magic bytes Pass `--no-exclude-binary-files` to\n  scan binary files as before. (ENGINE-2708)\n\n### ### Fixed\n\n- `semgrep ci` with `--sarif` now correctly populates the output's `ignores`\n  field with nosemgrep-suppressed findings, in accordance with other output\n  formatters. (gh-6651)\n\n### ### Infra/Release Changes\n\n- Updated the `ocaml-tree-sitter-core` submodule to the latest upstream `main`, providing\n\n  * improved thread-safety\n  * bumps the tree-sitter CLI option used from 0.20.6 to 0.20.8.\n\n  (ocaml-tree-sitter-core-bump)\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.166.0",
     "published_at": "2026-06-11T14:00:10Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.166.0",

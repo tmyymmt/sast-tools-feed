@@ -2,6 +2,16 @@
   {
     "tool_id": "brakeman",
     "tool_name": "Brakeman",
+    "version": "v8.0.5",
+    "published_at": "2026-06-12T22:54:01Z",
+    "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.5",
+    "summary": "8.0.5",
+    "body": "- Add `quote_schema_name` to safe quote method list ([changes](https://github.com/presidentbeef/brakeman/pull/2028) by [Zsolt Kozaroczy](https://github.com/kiskoza))\r\n- Fix SQL injection false positive for `compact_blank`/`compact` on permitted params ([changes](https://github.com/presidentbeef/brakeman/pull/2025) by [Arpit Jain](https://github.com/arpitjain099))\r\n- Fix inline render false positive for local named `text` ([changes](https://github.com/presidentbeef/brakeman/pull/2027) by  [Arpit Jain](https://github.com/arpitjain099))\r\n- Fix HAML crash on `.raw` calls ([changes](https://github.com/presidentbeef/brakeman/pull/2023) by [Federico Franco](https://github.com/FFederi))\r\n- Fix Ruby version parsing - especially for non-CRuby versions ([changes](https://github.com/presidentbeef/brakeman/pull/2021) by [Chris Southerland Jr](https://github.com/ChrisJr404))\r\n- Fix `TemplateAliasProcessor#template_name` arity ([changes](https://github.com/presidentbeef/brakeman/pull/2010) by [viralpraxis](https://github.com/viralpraxis))\r\n- Reduce false positives when using shell escaping ([changes](https://github.com/presidentbeef/brakeman/commit/169a7d4a800ca13188e74e871fb8ade3ab349470))",
+    "category": "other"
+  },
+  {
+    "tool_id": "brakeman",
+    "tool_name": "Brakeman",
     "version": "v8.0.3",
     "published_at": "2026-02-26T21:26:38Z",
     "url": "https://github.com/presidentbeef/brakeman/releases/tag/v8.0.3",
