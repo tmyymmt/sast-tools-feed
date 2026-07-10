@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.169.0",
+    "published_at": "2026-07-08T22:47:29Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.169.0",
+    "summary": "Release v1.169.0",
+    "body": "## [1.169.0](https://github.com/semgrep/semgrep/releases/tag/v1.169.0) - 2026-07-08\n\n### ### Infra/Release Changes\n\n- Updated Dart parser to a more recent upstream version. (LANG-579)\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.168.0",
     "published_at": "2026-06-24T19:37:09Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.168.0",
