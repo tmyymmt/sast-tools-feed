@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.170.0",
+    "published_at": "2026-07-15T17:02:36Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.170.0",
+    "summary": "Release v1.170.0",
+    "body": "## [1.170.0](https://github.com/semgrep/semgrep/releases/tag/v1.170.0) - 2026-07-15\n\n### ### Added\n\n- Pro C/C++ scans now skip code inside statically-dead preprocessor branches\n  (for example, `#if 0 ... #else ... #endif`). Patterns that would otherwise\n  match against intentionally-disabled code no longer report on it. (cpp-if-zero-filter)\n- Restored obackward: semgrep-core and semgrep-core-proprietary once again print a backtrace when receiving a fatal signal (e.g. SIGSEGV) (obackward)\n- `semgrep install-semgrep-pro` now sends usage metrics so that\n  installation errors can be tracked. Metrics can be disabled with\n  `--metrics off` or `SEMGREP_SEND_METRICS=off`. Metrics payloads also\n  now include the method used to install the Semgrep CLI (pip, homebrew,\n  docker, or unknown), detected heuristically. See metrics.md for\n  more details of what exactly is sent. (engine-2858)\n\n### ### Changed\n\n- Increased the timeout for dynamic dependency resolution subprocesses from\n  600 to 900 seconds, giving large projects more time to resolve dependencies\n  before timing out. (SC-3699)\n- Pro C/C++ `#if 0` filtering now also handles cases where the directive splits a\n  syntactic unit.  For example, a function signature toggle like `#if 0 void\n  foo(int i) { #else void foo(uint32_t i) { #endif`. (engine-994)\n\n### ### Fixed\n\n- Fixed a crash at startup (`Fatal error: Failed to allocate signal stack for\n  domain 0`) when running Semgrep on systems with musl 1.2.6 (e.g. Alpine 3.24) on\n  recent Intel CPUs whose kernel-reported minimum signal-stack size exceeds musl's\n  build-time SIGSTKSZ (notably AMX-capable Xeons). (ENGINE-2863)\n- Dockerfile: Fixed parse errors on `RUN` instructions that use heredoc syntax\n  (`<<EOF`, `<<-EOF`, quoted delimiters). (LANG-263)\n- `metavariable-type` now supports fully qualified type names in languages\n  where a qualified name in type position parses as an expression (e.g.\n  Python's `types: [a.b.C]`) when the metavariable's type is determined by\n  type inference, such as Pro engine cross-file type resolution. (LANG-583)\n- Updated the ocaml-tree-sitter-core dependency to the latest `main`.\n\n    * Fails loudly on a parser/runtime ABI mismatch\n    * Stamps every generated `parser.c` with the tree-sitter version that produced it.\n    * Changed paths where tree-sitter versions are installed (lang-591)\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.169.0",
     "published_at": "2026-07-08T22:47:29Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.169.0",
