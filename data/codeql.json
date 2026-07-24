@@ -2,6 +2,46 @@
   {
     "tool_id": "codeql",
     "tool_name": "CodeQL",
+    "version": "v4.37.3",
+    "published_at": "2026-07-22T05:36:40Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.3",
+    "summary": "v4.37.3",
+    "body": "No user facing changes.\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.3",
+    "published_at": "2026-07-22T06:03:03Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.3",
+    "summary": "v3.37.3",
+    "body": "No user facing changes.\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v4.37.2",
+    "published_at": "2026-07-21T14:26:50Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.2",
+    "summary": "v4.37.2",
+    "body": "- The new address format for the `config-file` input that was introduced in CodeQL Action 4.37.0 is now enabled by default. In addition to the format described there, the `remote=` prefix can now be used to explicitly indicate that the input refers to a remote file. All previous input formats continue to be accepted as well. [#4023](https://github.com/github/codeql-action/pull/4023)\n- The CodeQL Action can now make use of [configured private registries](https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/manage-usage-and-access/giving-org-access-private-registries) in Default Setup to retrieve CodeQL configuration files from remote repositories that require authentication. This will allow customers to store their CodeQL configuration in a single repository that can then be referenced by Default Setup workflows in other repositories. We expect to roll this and other, related changes out to everyone in July. [#4007](https://github.com/github/codeql-action/pull/4007)\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.2",
+    "published_at": "2026-07-21T15:07:24Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.2",
+    "summary": "v3.37.2",
+    "body": "- The new address format for the `config-file` input that was introduced in CodeQL Action 4.37.0 is now enabled by default. In addition to the format described there, the `remote=` prefix can now be used to explicitly indicate that the input refers to a remote file. All previous input formats continue to be accepted as well. [#4023](https://github.com/github/codeql-action/pull/4023)\n- The CodeQL Action can now make use of [configured private registries](https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/manage-usage-and-access/giving-org-access-private-registries) in Default Setup to retrieve CodeQL configuration files from remote repositories that require authentication. This will allow customers to store their CodeQL configuration in a single repository that can then be referenced by Default Setup workflows in other repositories. We expect to roll this and other, related changes out to everyone in July. [#4007](https://github.com/github/codeql-action/pull/4007)\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
     "version": "v4.37.1",
     "published_at": "2026-07-16T15:35:08Z",
     "url": "https://github.com/github/codeql-action/releases/tag/v4.37.1",
