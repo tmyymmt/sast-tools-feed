@@ -2,6 +2,16 @@
   {
     "tool_id": "sonarqube",
     "tool_name": "SonarQube",
+    "version": "26.8.0.126808",
+    "published_at": "2026-08-05T07:17:56Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.8.0.126808",
+    "summary": "26.8.0.126808",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-8-0-126808-released/187165), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20AND%20fixVersion%3D36019%20AND%20issuetype%20%21%3D%20Maintenance).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
     "version": "26.7.0.124771",
     "published_at": "2026-07-08T13:48:56Z",
     "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.7.0.124771",

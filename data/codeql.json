@@ -2,6 +2,46 @@
   {
     "tool_id": "codeql",
     "tool_name": "CodeQL",
+    "version": "v4.37.6",
+    "published_at": "2026-08-04T13:34:40Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.6",
+    "summary": "v4.37.6",
+    "body": "- Changed the default filepath for the new remote file address format that was introduced in CodeQL Action 4.37.0 / 3.37.0 to `.github/codeql-config.yml` to align it with the suggested path that is used elsewhere. [#4070](https://github.com/github/codeql-action/pull/4070)",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.6",
+    "published_at": "2026-08-04T14:35:51Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.6",
+    "summary": "v3.37.6",
+    "body": "- Changed the default filepath for the new remote file address format that was introduced in CodeQL Action 4.37.0 / 3.37.0 to `.github/codeql-config.yml` to align it with the suggested path that is used elsewhere. [#4070](https://github.com/github/codeql-action/pull/4070)",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v4.37.5",
+    "published_at": "2026-08-03T11:02:52Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.5",
+    "summary": "v4.37.5",
+    "body": "- Fixed a bug where a network error while streaming the download of the CodeQL bundle could terminate the `init` Action instead of falling back to downloading the bundle before extracting it. [#4061](https://github.com/github/codeql-action/pull/4061)",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.5",
+    "published_at": "2026-08-03T11:30:41Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.5",
+    "summary": "v3.37.5",
+    "body": "- Fixed a bug where a network error while streaming the download of the CodeQL bundle could terminate the `init` Action instead of falling back to downloading the bundle before extracting it. [#4061](https://github.com/github/codeql-action/pull/4061)",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
     "version": "v4.37.4",
     "published_at": "2026-07-30T09:21:20Z",
     "url": "https://github.com/github/codeql-action/releases/tag/v4.37.4",
