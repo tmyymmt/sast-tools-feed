@@ -2,6 +2,36 @@
   {
     "tool_id": "codeql",
     "tool_name": "CodeQL",
+    "version": "v4.37.7",
+    "published_at": "2026-08-13T13:30:27Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.7",
+    "summary": "v4.37.7",
+    "body": "- Update default CodeQL bundle version to [2.26.3](https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.26.3). [#4085](https://github.com/github/codeql-action/pull/4085)",
+    "category": "feature"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.7",
+    "published_at": "2026-08-13T13:58:54Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.7",
+    "summary": "v3.37.7",
+    "body": "- Update default CodeQL bundle version to [2.26.3](https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.26.3). [#4085](https://github.com/github/codeql-action/pull/4085)",
+    "category": "feature"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "codeql-bundle-v2.26.3",
+    "published_at": "2026-08-12T15:28:11Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/codeql-bundle-v2.26.3",
+    "summary": "CodeQL Bundle v2.26.3",
+    "body": "Bundles CodeQL CLI v2.26.3\r\n- ([changelog](https://github.com/github/codeql-cli-binaries/blob/HEAD/CHANGELOG.md), [release](https://github.com/github/codeql-cli-binaries/releases/tag/v2.26.3))\r\n\r\nIncludes the following CodeQL language packs from [`github/codeql@codeql-cli/v2.26.3`](https://github.com/github/codeql/tree/codeql-cli/v2.26.3):\r\n- `codeql/actions-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/actions/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/actions/ql/src))\r\n- `codeql/actions-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/actions/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/actions/ql/lib))\r\n- `codeql/cpp-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/cpp/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/cpp/ql/src))\r\n- `codeql/cpp-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/cpp/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/cpp/ql/lib))\r\n- `codeql/csharp-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/csharp/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/csharp/ql/src))\r\n- `codeql/csharp-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/csharp/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/csharp/ql/lib))\r\n- `codeql/go-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/go/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/go/ql/src))\r\n- `codeql/go-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/go/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/go/ql/lib))\r\n- `codeql/java-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/java/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/java/ql/src))\r\n- `codeql/java-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/java/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/java/ql/lib))\r\n- `codeql/javascript-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/javascript/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/javascript/ql/src))\r\n- `codeql/javascript-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/javascript/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/javascript/ql/lib))\r\n- `codeql/python-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/python/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/python/ql/src))\r\n- `codeql/python-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/python/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/python/ql/lib))\r\n- `codeql/ruby-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/ruby/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/ruby/ql/src))\r\n- `codeql/ruby-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/ruby/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/ruby/ql/lib))\r\n- `codeql/rust-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/rust/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/rust/ql/src))\r\n- `codeql/rust-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/rust/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/rust/ql/lib))\r\n- `codeql/swift-queries` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/swift/ql/src/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/swift/ql/src))\r\n- `codeql/swift-all` ([changelog](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/swift/ql/lib/CHANGELOG.md), [source](https://github.com/github/codeql/tree/codeql-cli/v2.26.3/swift/ql/lib))\r\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
     "version": "v4.37.6",
     "published_at": "2026-08-04T13:34:40Z",
     "url": "https://github.com/github/codeql-action/releases/tag/v4.37.6",
