@@ -2,6 +2,16 @@
   {
     "tool_id": "spotbugs",
     "tool_name": "SpotBugs",
+    "version": "4.10.4",
+    "published_at": "2026-08-20T03:22:34Z",
+    "url": "https://github.com/spotbugs/spotbugs/releases/tag/4.10.4",
+    "summary": "4.10.4",
+    "body": "SpotBugs 4.10.4\n\n### CHANGELOG\n- https://github.com/spotbugs/spotbugs/blob/4.10.4/CHANGELOG.md\n\n### CHECKSUM\n| file | checksum (sha256) |\n| ---- | ----------------- |\n| spotbugs-4.10.4-javadoc.jar | 06bfc9ccdcfb9b594b5053817199b9489dff6312dc35c8864faa9b9357cf5be4 |\n| spotbugs-4.10.4-sources.jar | d087c11e3b0714e8445b29f2bef9bb4c62b4ee13ad67caf7a4b64d61e82ea400 |\n| spotbugs-4.10.4.tgz | 72bc0d4edd686e462c0f71f42a049b27bf4da6708797ff7b2b56dd202714b4e5 |\n| spotbugs-4.10.4.zip | 771c8702beb2b4b6aa20df87ea85f22fda7280c7ce36fce4077b7b3c076d1e14 |\n| spotbugs-annotations-4.10.4-javadoc.jar | 0fc9d3c529c6ee93aeddf9cfbd4b1438708e37fd53b5157aa47070446fbc7303 |\n| spotbugs-annotations-4.10.4-sources.jar | 87974d23caffbc8c6e66c567747627267b5ed06573cee966d7af6d236b8d65bd |\n| spotbugs-annotations.jar | 28fa4befaddce5d7b79b07c68e7c12fa27c5d9282c4229528717971606661ea3 |\n| spotbugs-ant-4.10.4-javadoc.jar | eaa1ee0a4e004b7b12e2dfc65290c6324effff6ffc0e7b7ee94c98875997e51c |\n| spotbugs-ant-4.10.4-sources.jar | af1c78c8e194c2f82ea3e0517ab38a5eb6ba608c8d0e776c9097605d6b7efca6 |\n| spotbugs-ant.jar | 9ec240477b7c87270be7dfe3196180cd3763f04c369e5691feeb12e66110a065 |\n| spotbugs.jar | a88cad2e0ea9bb74b908ce82ae89416c61fa8f8ea5cfcc9368b1baac2da878d2 |\n| test-harness-4.10.4-javadoc.jar | c1ff7bcd0c4f61f4356ae9734be34567df680175651a3104fdee241e324d6df7 |\n| test-harness-4.10.4-sources.jar | 805d2d124b0d4ea513ee9262d4ad6027c3471d45defd80fd7d20e23425d17df7 |\n| test-harness-4.10.4.jar | bd10d1f11a1b93e4ca4db4d27772f611bd3407f9452dbbd2d1ba62584ddc171f |\n| test-harness-core-4.10.4-javadoc.jar | ac735a1508609001d122a91e43f6dfb10c4c691cf555d5ba386f216df904ac9b |\n| test-harness-core-4.10.4-sources.jar | 043a55d99a517c0d9cf702b0c183b4afd3f03af9eff4a86d59bb37df1b35b532 |\n| test-harness-core-4.10.4.jar | 1f9a0ee8f150dd71f960ca4f59dcf7912a45d0e9e6aefc4585fd44b975454bc0 |\n| test-harness-jupiter-4.10.4-javadoc.jar | c9554b4a6509d0d24c6436b6e01171eb8e71fca96df6edf8f80c7b51ab5bda16 |\n| test-harness-jupiter-4.10.4-sources.jar | 17144f315686bfd01c02fa4ae7c916060c41de8eed58d5b8470416fa08f46ced |\n| test-harness-jupiter-4.10.4.jar | a91146da3e993479cfefd2690781cbd102c6360ecc63a96d88995be3bd60fcbb |\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "spotbugs",
+    "tool_name": "SpotBugs",
     "version": "4.10.3",
     "published_at": "2026-07-12T23:54:13Z",
     "url": "https://github.com/spotbugs/spotbugs/releases/tag/4.10.3",

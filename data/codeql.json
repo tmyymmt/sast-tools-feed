@@ -2,6 +2,26 @@
   {
     "tool_id": "codeql",
     "tool_name": "CodeQL",
+    "version": "v4.37.8",
+    "published_at": "2026-08-21T12:25:47Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.37.8",
+    "summary": "v4.37.8",
+    "body": "No user facing changes.",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.37.8",
+    "published_at": "2026-08-21T12:49:59Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.37.8",
+    "summary": "v3.37.8",
+    "body": "No user facing changes.",
+    "category": "other"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
     "version": "v4.37.7",
     "published_at": "2026-08-13T13:30:27Z",
     "url": "https://github.com/github/codeql-action/releases/tag/v4.37.7",
