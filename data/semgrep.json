@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.175.0",
+    "published_at": "2026-08-26T17:08:58Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.175.0",
+    "summary": "Release v1.175.0",
+    "body": "## [1.175.0](https://github.com/semgrep/semgrep/releases/tag/v1.175.0) - 2026-08-26\n\n### ### Changed\n\n- Semgrep is now built with OCaml 5.4 instead of OCaml 5.3. End users should notice no change. (ocaml-5.4)\n",
+    "category": "feature"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.174.0",
     "published_at": "2026-08-20T15:58:17Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.174.0",

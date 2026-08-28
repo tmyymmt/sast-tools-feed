@@ -2,6 +2,16 @@
   {
     "tool_id": "gosec",
     "tool_name": "gosec",
+    "version": "v2.29.0",
+    "published_at": "2026-08-26T08:34:58Z",
+    "url": "https://github.com/securego/gosec/releases/tag/v2.29.0",
+    "summary": "v2.29.0",
+    "body": "## Changelog\n* deb54465fea23d19a77f037e11e6589021f8501d analyzers/G703: stop treating Clean/Abs/PathEscape as path-traversal sanitizers (#1723)\n* 2e13f16ff12497b4af18e915ba3f819916828e9e fix(junit): properly escape XML in failure text (#1718)\n* 38330372ed9a6b612bfd988ff4ecc050cc24abef fix(csv): capture and report write errors on flush (#1716)\n* f6d07d7887600938dace7f29e1b11a09130a5ac9 fix(report): root path matching in formatters (#1719)\n* 17d3916e34a3d052b67f88fcccae9f1e43730bac fix(config): handle nosec tags with leading hash (#1717)\n* 3958f0ed831c3020752ed07e45a8a24a531edd91 Update all dependencies (#1720)\n* 9c38a8648388bc22c13673207ac091df80100be2 Add support for go version 1.27.0 and update to version 1.25.14 and 1… (#1726)\n* 2eb4727ebc7504944ddbcdd2f7157db492026c3f Update all dependencies (#1713)\n* 5e72efc19d97e11549b3427b83fab3257a8c9894 Update all dependencies (#1710)\n* 45b083a0cb42119d61b1e0e364d8c62c68f6f5cd fix(G202): don't flag strings.Builder built from constants (#1707)\n* 82da19cc73c6fb5034aaab7a779a2ef1b123c791 ci: allow fork PR checkout in barry-ai-security-review job (#1708)\n* 9f7cd131bdd1160cd7c0205d89856ebd99530da7 Update all dependencies (#1709)\n* 1769a22fd149bfd9e5e546e06a7f9d596eab2f65 Downgrade min Go version (#1706)\n* 5bb2909d48fa8072136f38ad329b37575ab15c9f Udpate action to use gosec v2.28.0 (#1705)\n\n",
+    "category": "other"
+  },
+  {
+    "tool_id": "gosec",
+    "tool_name": "gosec",
     "version": "v2.28.0",
     "published_at": "2026-07-14T11:26:26Z",
     "url": "https://github.com/securego/gosec/releases/tag/v2.28.0",
