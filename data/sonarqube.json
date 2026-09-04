@@ -2,6 +2,16 @@
   {
     "tool_id": "sonarqube",
     "tool_name": "SonarQube",
+    "version": "26.9.0.129388",
+    "published_at": "2026-09-02T10:29:07Z",
+    "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.9.0.129388",
+    "summary": "26.9.0.129388",
+    "body": "See details in the [community announcement](https://community.sonarsource.com/t/sonarqube-community-build-26-9-0-129388-released/187927), and more in the [release notes](https://sonarsource.atlassian.net/issues?jql=project%20%3D%2010139%20and%20fixVersion%20%3D%2037836%20and%20issuetype%20!%3D%20Maintenance%20ORDER%20BY%20summary%20ASC).",
+    "category": "feature"
+  },
+  {
+    "tool_id": "sonarqube",
+    "tool_name": "SonarQube",
     "version": "26.8.0.126808",
     "published_at": "2026-08-05T07:17:56Z",
     "url": "https://github.com/SonarSource/sonarqube/releases/tag/26.8.0.126808",
