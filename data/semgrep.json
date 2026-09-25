@@ -2,6 +2,16 @@
   {
     "tool_id": "semgrep",
     "tool_name": "Semgrep",
+    "version": "v1.178.0",
+    "published_at": "2026-09-23T21:05:39Z",
+    "url": "https://github.com/semgrep/semgrep/releases/tag/v1.178.0",
+    "summary": "Release v1.178.0",
+    "body": "## [1.178.0](https://github.com/semgrep/semgrep/releases/tag/v1.178.0) - 2026-09-23\n\n### ### Changed\n\n- The bundled tree-sitter C runtime is now 0.26.3. (CODE-9425)\n\n### ### Fixed\n\n- Fixed an occasional hang when `semgrep-core` exited on Windows. (windows-hang)\n",
+    "category": "bugfix"
+  },
+  {
+    "tool_id": "semgrep",
+    "tool_name": "Semgrep",
     "version": "v1.177.0",
     "published_at": "2026-09-10T19:37:56Z",
     "url": "https://github.com/semgrep/semgrep/releases/tag/v1.177.0",
