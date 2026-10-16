@@ -2,6 +2,26 @@
   {
     "tool_id": "codeql",
     "tool_name": "CodeQL",
+    "version": "v4.39.0",
+    "published_at": "2026-10-15T10:57:05Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v4.39.0",
+    "summary": "v4.39.0",
+    "body": "- _Breaking change_: Bump the minimum required CodeQL bundle version to 2.20.7. [#4205](https://github.com/github/codeql-action/pull/4205)\n- The `codeql-action/analyze` step now validates that a correct argument for the `checkout_path` input has been provided. The `checkout_path` input must be set to the path where the repository that is being analyzed is checked out at on the runner, if that path is something other than the workspace root. If the path does not point to a repository checkout or is different from the path that was used by `codeql-action/init`, then the CodeQL Action now produces a warning. [#4148](https://github.com/github/codeql-action/pull/4148)\n- Resolved an issue with third-party caching implementations that prevented caches from being restored correctly. [#4206](https://github.com/github/codeql-action/pull/4206)\n- The `codeql-action/start-proxy` step that is used in Code Scanning Default Setup now finds CodeQL releases using the same logic as `codeql-action/init`. This primarily benefits customers who are using GitHub instances other than `github.com` where the `codeql-action/start-proxy` step may previously have been unable to locate recent releases and ended up using outdated versions of the private registry authentication proxy as a result. [#4198](https://github.com/github/codeql-action/pull/4198)",
+    "category": "feature"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
+    "version": "v3.39.0",
+    "published_at": "2026-10-15T11:41:02Z",
+    "url": "https://github.com/github/codeql-action/releases/tag/v3.39.0",
+    "summary": "v3.39.0",
+    "body": "- _Breaking change_: Bump the minimum required CodeQL bundle version to 2.20.7. [#4205](https://github.com/github/codeql-action/pull/4205)\n- The `codeql-action/analyze` step now validates that a correct argument for the `checkout_path` input has been provided. The `checkout_path` input must be set to the path where the repository that is being analyzed is checked out at on the runner, if that path is something other than the workspace root. If the path does not point to a repository checkout or is different from the path that was used by `codeql-action/init`, then the CodeQL Action now produces a warning. [#4148](https://github.com/github/codeql-action/pull/4148)\n- Resolved an issue with third-party caching implementations that prevented caches from being restored correctly. [#4206](https://github.com/github/codeql-action/pull/4206)\n- The `codeql-action/start-proxy` step that is used in Code Scanning Default Setup now finds CodeQL releases using the same logic as `codeql-action/init`. This primarily benefits customers who are using GitHub instances other than `github.com` where the `codeql-action/start-proxy` step may previously have been unable to locate recent releases and ended up using outdated versions of the private registry authentication proxy as a result. [#4198](https://github.com/github/codeql-action/pull/4198)",
+    "category": "feature"
+  },
+  {
+    "tool_id": "codeql",
+    "tool_name": "CodeQL",
     "version": "v4.38.3",
     "published_at": "2026-10-08T13:01:01Z",
     "url": "https://github.com/github/codeql-action/releases/tag/v4.38.3",
